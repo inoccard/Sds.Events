@@ -30,9 +30,9 @@ namespace ProAgil.WebAPI {
                 app.UseDeveloperExceptionPage ();
             }
 
-            app.UseCors (x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseCors (x => x.AllowAnyOrigin ().AllowAnyMethod ().AllowAnyHeader ());
             app.UseHttpsRedirection ();
-
+            app.UseStaticFiles ();
             app.UseRouting ();
 
             //app.UseAuthorization ();
