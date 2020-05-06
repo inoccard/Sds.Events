@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EventsComponent implements OnInit {
 
-  events: any;
+  events: any = [];
 
   constructor(private http: HttpClient) { }
 
