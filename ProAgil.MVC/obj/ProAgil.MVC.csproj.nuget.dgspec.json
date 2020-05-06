@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\ProAgil.MVC.csproj": {}
+    "c:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\ProAgil.MVC.csproj": {}
   },
   "projects": {
-    "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\ProAgil.MVC.csproj": {
+    "c:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\ProAgil.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\ProAgil.MVC.csproj",
+        "projectUniqueName": "c:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\ProAgil.MVC.csproj",
         "projectName": "ProAgil.MVC",
-        "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\ProAgil.MVC.csproj",
+        "projectPath": "c:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\ProAgil.MVC.csproj",
         "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
-        "outputPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\obj\\",
+        "outputPath": "c:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
