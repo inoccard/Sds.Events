@@ -17,9 +17,10 @@ namespace ProAgil.WebAPI {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
-            services.AddDbContext<DataContext>(d => d.UseSqlite(Configuration.GetConnectionString ("DefaultConnection")));
+            services.AddDbContext<DataContext> (d => d.UseSqlite (Configuration.GetConnectionString ("DefaultConnection")));
 
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_3_0);
+            services.AddCors ();
             //services.AddControllers();
         }
 
@@ -29,6 +30,7 @@ namespace ProAgil.WebAPI {
                 app.UseDeveloperExceptionPage ();
             }
 
+            app.UseCors (x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseHttpsRedirection ();
 
             app.UseRouting ();
