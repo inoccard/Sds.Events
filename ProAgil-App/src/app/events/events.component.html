@@ -35,11 +35,11 @@
       [style.margin.px]="2">
     </td>
     <td>{{event.id}}</td>
-    <td>{{event.theme}}</td>
+    <td>{{event.theme | uppercase }}</td>
     <td>{{event.local}}</td>
-    <td>{{event.eventDate}}</td>
+    <td>{{event.eventDate | date }}</td>
     <td>{{event.personQtd}}</td>
-    <td>{{event.lot}}</td>
+    <td>{{event.lot | uppercase}}</td>
     <td>
       <button class="btn btn-success"></button>
       <button class="btn btn-danger"></button>
