@@ -26,7 +26,7 @@
   </tr>
 </thead>
 <tbody *ngIf="events && events.length">
-  <tr *ngFor="let event of events">
+  <tr *ngFor="let event of eventsFiltered">
     <td>
       <img *ngIf="showImg"
       src="https://miro.medium.com/max/2000/1*P7x-_0XfQz6CVmMY_QAv0w.png"

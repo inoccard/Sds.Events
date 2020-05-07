@@ -7,29 +7,42 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
+  // tslint:disable-next-line: variable-name
+  _filterList: string;
 
+  get filterList(): string {
+    return this._filterList;
+  }
+  set filterList(value: string) {
+    this._filterList = value;
+    this.eventsFiltered = this._filterList ? this.filterEvent(this._filterList) : this.events;
+  }
+  eventsFiltered: any = [];
   events: any = [];
   showImg = false;
-  filterList = '';
 
   constructor(private http: HttpClient) { }
-
   ngOnInit() {
     this.getEvents();
+  }
+
+  filterEvent(filterBy: string): any {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.events.filter(
+      (      event: { theme: string; }) => event.theme.toLocaleLowerCase().indexOf(filterBy) !== -1
+    );
   }
 
   alterImg() {
     this.showImg = !this.showImg;
   }
-
   getEvents() {
     this.http.get('http://localhost:5000/event').subscribe(
-      response => {
-        this.events = response;
-      }, error => {
-        console.log(error);
-      }
+    response => {
+      this.events = response;
+    }, error => {
+      console.log(error);
+    }
     );
   }
-
 }
