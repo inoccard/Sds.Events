@@ -8,6 +8,12 @@
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
+      <th>
+        <button class="btn btn-outline-light"
+        (click)="alterImg()">
+          Mostrar Imagem
+        </button>
+      </th>
       <th>#</th>
       <th>Tema</th>
       <th>Local</th>
@@ -19,7 +25,14 @@
   </thead>
   <tbody *ngIf="events && events.length">
     <tr *ngFor="let event of events">
-      <td></td>
+      <td>
+        <img *ngIf="showImg"
+          src="https://miro.medium.com/max/2000/1*P7x-_0XfQz6CVmMY_QAv0w.png"
+          alt="Imagem"
+          [style.width.px]="50"
+          [style.margin.px]="2">
+      </td>
+      <td>{{event.id}}</td>
       <td>{{event.theme}}</td>
       <td>{{event.local}}</td>
       <td>{{event.eventDate}}</td>
