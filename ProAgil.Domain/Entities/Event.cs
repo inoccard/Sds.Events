@@ -11,6 +11,7 @@ namespace ProAgil.Domain.Entities {
         public string ImageURL { get; set; }
         public string ContactPhone { get; set; }
         public string contactEmail { get; set; }
+        
         public List<Lot> Lots { get; set; }
         public List<SocialNetWork> SocialNetworks { get; set; }
         public List<SpeakerEvent> SpeakerEvents { get; set; }
