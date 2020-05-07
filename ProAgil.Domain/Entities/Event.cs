@@ -8,7 +8,7 @@ namespace ProAgil.Domain.Entities {
         public DateTime EventDate { get; set; }
         public string Theme { get; set; }
         public int PersonQtd { get; set; }
-        public string ImageUrl { get; set; }
+        public string ImageURL { get; set; }
         public string ContactPhone { get; set; }
         public string contactEmail { get; set; }
         public List<Lot> Lots { get; set; }
