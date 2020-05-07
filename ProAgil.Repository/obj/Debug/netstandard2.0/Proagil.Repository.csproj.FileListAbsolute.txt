@@ -1,0 +1,11 @@
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\bin\Debug\netstandard2.0\Proagil.Repository.deps.json
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\bin\Debug\netstandard2.0\Proagil.Repository.dll
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\bin\Debug\netstandard2.0\Proagil.Repository.pdb
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\bin\Debug\netstandard2.0\Proagil.Domain.dll
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\bin\Debug\netstandard2.0\Proagil.Domain.pdb
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.0\Proagil.Repository.csprojAssemblyReference.cache
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.0\Proagil.Repository.AssemblyInfoInputs.cache
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.0\Proagil.Repository.AssemblyInfo.cs
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.0\Proagil.Repository.csproj.CopyComplete
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.0\Proagil.Repository.dll
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.0\Proagil.Repository.pdb

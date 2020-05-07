@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Proagil.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Proagil.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Proagil.Domain.dll": {}
+        }
       }
     }
   },
@@ -172,11 +182,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Proagil.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ProAgil.Domain/Proagil.Domain.csproj",
+      "msbuildProject": "../ProAgil.Domain/Proagil.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "Proagil.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -187,9 +203,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Repository\\ProAgil.Repository.csproj",
-      "projectName": "ProAgil.Repository",
-      "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Repository\\ProAgil.Repository.csproj",
+      "projectUniqueName": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj",
+      "projectName": "Proagil.Repository",
+      "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj",
       "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
       "outputPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Repository\\obj\\",
       "projectStyle": "PackageReference",
@@ -211,7 +227,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
+              "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

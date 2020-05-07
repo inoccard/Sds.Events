@@ -81,3 +81,7 @@ C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\runti
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Domain.dll
+C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Domain.pdb
+C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Repository.dll
+C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Repository.pdb

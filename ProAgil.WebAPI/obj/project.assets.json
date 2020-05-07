@@ -1571,6 +1571,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Proagil.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Proagil.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Proagil.Domain.dll": {}
+        }
+      },
+      "Proagil.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Proagil.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Proagil.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Proagil.Repository.dll": {}
+        }
       }
     }
   },
@@ -5755,6 +5778,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Proagil.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ProAgil.Domain/Proagil.Domain.csproj",
+      "msbuildProject": "../ProAgil.Domain/Proagil.Domain.csproj"
+    },
+    "Proagil.Repository/1.0.0": {
+      "type": "project",
+      "path": "../ProAgil.Repository/Proagil.Repository.csproj",
+      "msbuildProject": "../ProAgil.Repository/Proagil.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5763,7 +5796,9 @@
       "EntityFramework >= 6.4.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.3",
-      "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.3"
+      "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.3",
+      "Proagil.Domain >= 1.0.0",
+      "Proagil.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5774,9 +5809,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj",
-      "projectName": "ProAgil.WebAPI",
-      "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj",
+      "projectUniqueName": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.WebAPI\\Proagil.WebAPI.csproj",
+      "projectName": "Proagil.WebAPI",
+      "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.WebAPI\\Proagil.WebAPI.csproj",
       "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
       "outputPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
@@ -5798,7 +5833,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
+              "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj"
+            },
+            "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj": {
+              "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

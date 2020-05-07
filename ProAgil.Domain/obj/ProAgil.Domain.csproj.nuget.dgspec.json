@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\ProAgil.Domain.csproj": {}
+    "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {}
   },
   "projects": {
-    "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+    "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\ProAgil.Domain.csproj",
-        "projectName": "ProAgil.Domain",
-        "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\ProAgil.Domain.csproj",
+        "projectUniqueName": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
+        "projectName": "Proagil.Domain",
+        "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
         "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
         "outputPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
