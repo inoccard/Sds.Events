@@ -10,6 +10,7 @@ export class EventsComponent implements OnInit {
 
   events: any = [];
   showImg = false;
+  filterList = '';
 
   constructor(private http: HttpClient) { }
 

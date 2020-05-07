@@ -1,54 +1,56 @@
-<form class="form-inline" action="" method="get">
+<div class="form-inline" action="" method="get">
   <div class="form-group mb-2">
-    <input type="text" class="form-control mr-2" name="" id="" placeholder="Buscar"/>
+    <input type="text" class="form-control mr-2"
+    placeholder="Buscar"
+    [(ngModel)]="filterList"/>
     <button class="btn btn-outline-success">Buscar</button>
   </div>
-</form>
-
+</div>
+<h3>FIlter {{filterList}}</h3>
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
       <th>
         <button class="btn btn-outline-light"
         (click)="alterImg()">
-          Mostrar Imagem
-        </button>
-      </th>
-      <th>#</th>
-      <th>Tema</th>
-      <th>Local</th>
-      <th>Data</th>
-      <th>Qtd Pessoas</th>
-      <th>Lote</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody *ngIf="events && events.length">
-    <tr *ngFor="let event of events">
-      <td>
-        <img *ngIf="showImg"
-          src="https://miro.medium.com/max/2000/1*P7x-_0XfQz6CVmMY_QAv0w.png"
-          alt="Imagem"
-          [style.width.px]="50"
-          [style.margin.px]="2">
-      </td>
-      <td>{{event.id}}</td>
-      <td>{{event.theme}}</td>
-      <td>{{event.local}}</td>
-      <td>{{event.eventDate}}</td>
-      <td>{{event.personQtd}}</td>
-      <td>{{event.lot}}</td>
-      <td>
-        <button class="btn btn-success"></button>
-        <button class="btn btn-danger"></button>
-      </td>
-    </tr>
-  </tbody>
-  <tfoot *ngIf="!events.length">
-    <tr>
-      <td colspan="7" class="text-center">
-        <h4>Nenhum evento encontrado</h4>
-      </td>
-    </tr>
-  </tfoot>
+        Mostrar Imagem
+      </button>
+    </th>
+    <th>#</th>
+    <th>Tema</th>
+    <th>Local</th>
+    <th>Data</th>
+    <th>Qtd Pessoas</th>
+    <th>Lote</th>
+    <th>Ações</th>
+  </tr>
+</thead>
+<tbody *ngIf="events && events.length">
+  <tr *ngFor="let event of events">
+    <td>
+      <img *ngIf="showImg"
+      src="https://miro.medium.com/max/2000/1*P7x-_0XfQz6CVmMY_QAv0w.png"
+      alt="Imagem"
+      [style.width.px]="50"
+      [style.margin.px]="2">
+    </td>
+    <td>{{event.id}}</td>
+    <td>{{event.theme}}</td>
+    <td>{{event.local}}</td>
+    <td>{{event.eventDate}}</td>
+    <td>{{event.personQtd}}</td>
+    <td>{{event.lot}}</td>
+    <td>
+      <button class="btn btn-success"></button>
+      <button class="btn btn-danger"></button>
+    </td>
+  </tr>
+</tbody>
+<tfoot *ngIf="!events.length">
+  <tr>
+    <td colspan="7" class="text-center">
+      <h4>Nenhum evento encontrado</h4>
+    </td>
+  </tr>
+</tfoot>
 </table>
