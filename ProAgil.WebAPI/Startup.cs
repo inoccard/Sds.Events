@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ProAgil.WebAPI.Data;
+using ProAgil.Repository.Data;
 
 namespace ProAgil.WebAPI {
     public class Startup {
