@@ -25,7 +25,7 @@ namespace ProAgil.Repository.Data {
         /// <summary>
         /// Obtém Eventos por tema
         /// </summary>
-        /// <param name="tehme"></param>
+        /// <param name="theme"></param>
         /// <returns></returns>
         Task<Event[]> GetEventsAssyncByTheme (string theme, bool includeSpeaker);
         
@@ -47,16 +47,23 @@ namespace ProAgil.Repository.Data {
         /// <summary>
         /// Obtém palestrantes
         /// </summary>
-        /// <param name="includeSpeaker"></param>
+        /// <param name="includeEvents"></param>
         /// <returns></returns>
-        Task<Speaker[]> GetSpeakersAssync (bool includeSpeaker);
+        Task<Speaker[]> GetSpeakersAssync (bool includeEvents);
 
         /// <summary>
         /// Obtém palestrantes por ID
         /// </summary>
         /// <param name="Id"></param>
-        /// <param name="includeSpeaker"></param>
+        /// <param name="includeEvents"></param>
         /// <returns></returns>
-        Task<Speaker> GetSpeakersAssyncById (int Id, bool includeSpeaker);
+        Task<Speaker> GetSpeakersAssyncById (int Id, bool includeEvents);
+
+        /// <summary>
+        /// Obtém Eventos por tema
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<Speaker[]> GetSpeakersAssyncByName (string name, bool includeEvents);
     }
 }
