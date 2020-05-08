@@ -1,6 +1,6 @@
 # dontnet-angular
 
-##Comandos utilizados no VS Code
+## Comandos utilizados no VS Code
 
 ## Criando o projeto Angular
 * `ng new ProAgil-App`
