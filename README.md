@@ -1,4 +1,4 @@
-# dontnet-angular
+# dotnet-angular
 
 ## Comandos utilizados no VS Code
 
