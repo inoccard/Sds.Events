@@ -33,7 +33,7 @@ namespace ProAgil.Repository.Data {
 
             events = events.OrderByDescending (e => e.EventDate).Where(e => e.Id == Id);
 
-            return await events.FirstOrDefaultAsync ();
+            return await events.AsNoTracking().FirstOrDefaultAsync ();
         }
 
         public async Task<Event[]> GetEventsAssync (bool includeSpeaker) {
@@ -46,7 +46,7 @@ namespace ProAgil.Repository.Data {
                     .ThenInclude (s => s.Spreaker);
             }
 
-            events = events.OrderByDescending (e => e.EventDate);
+            events = events.AsNoTracking().OrderByDescending (e => e.EventDate);
 
             return await events.ToArrayAsync ();
         }
@@ -63,7 +63,7 @@ namespace ProAgil.Repository.Data {
 
             events = events.OrderByDescending (e => e.EventDate).Where (e => e.Theme.ToLower().Contains(theme));
 
-            return await events.ToArrayAsync ();
+            return await events.AsNoTracking().ToArrayAsync ();
         }
 
         public async Task<Speaker[]> GetSpeakersAssync (bool includeEvents = false) {
@@ -77,7 +77,7 @@ namespace ProAgil.Repository.Data {
 
             speakers = speakers.OrderBy (e => e.Name);
 
-            return await speakers.ToArrayAsync ();
+            return await speakers.AsNoTracking().ToArrayAsync ();
         }
 
         public async Task<Speaker> GetSpeakersAssyncById (int Id, bool includeEvents) {
@@ -91,7 +91,7 @@ namespace ProAgil.Repository.Data {
 
             speakers = speakers.Where(e => e.Id == Id).OrderBy (e => e.Name);
 
-            return await speakers.FirstOrDefaultAsync ();
+            return await speakers.AsNoTracking().FirstOrDefaultAsync ();
         }
 
         public async Task<Speaker[]> GetSpeakersAssyncByName(string name, bool includeEvents)
@@ -106,7 +106,7 @@ namespace ProAgil.Repository.Data {
 
             speakers = speakers.Where (e => e.Name.ToLower().Contains(name));
 
-            return await speakers.ToArrayAsync ();
+            return await speakers.AsNoTracking().ToArrayAsync ();
         }
         #endregion
     }
