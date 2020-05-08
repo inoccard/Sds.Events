@@ -14,7 +14,7 @@
 ## Criando o projeto webapi
 * `dotnet new webapi -n ProAgil.WebAPI`
 
-## Criando o projeto Domnímio: 
+## Criando o projeto Domímio: 
 * `dotnet new classlib -n ProAgil.Domain`
 
 ## Criando o projeto Repositório
