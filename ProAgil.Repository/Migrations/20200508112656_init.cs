@@ -54,8 +54,7 @@ namespace ProAgil.Repository.Migrations
                     InitDate = table.Column<DateTime>(nullable: true),
                     EndDate = table.Column<DateTime>(nullable: true),
                     Qty = table.Column<int>(nullable: false),
-                    EventiId = table.Column<int>(nullable: false),
-                    EventId = table.Column<int>(nullable: true)
+                    EventId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,7 +64,7 @@ namespace ProAgil.Repository.Migrations
                         column: x => x.EventId,
                         principalTable: "Events",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

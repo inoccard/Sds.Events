@@ -9,7 +9,7 @@ using ProAgil.Repository.Data;
 namespace ProAgil.Repository.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200507231904_init")]
+    [Migration("20200508112656_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,10 +59,7 @@ namespace ProAgil.Repository.Migrations
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("EventId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("EventiId")
+                    b.Property<int>("EventId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime?>("InitDate")
@@ -157,18 +154,20 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("ProAgil.Domain.Entities.Lot", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Entities.Event", "Event")
+                    b.HasOne("ProAgil.Domain.Entities.Event", null)
                         .WithMany("Lots")
-                        .HasForeignKey("EventId");
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProAgil.Domain.Entities.SocialNetWork", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Entities.Event", "Event")
+                    b.HasOne("ProAgil.Domain.Entities.Event", null)
                         .WithMany("SocialNetworks")
                         .HasForeignKey("EventId");
 
-                    b.HasOne("ProAgil.Domain.Entities.Speaker", "Speraker")
+                    b.HasOne("ProAgil.Domain.Entities.Speaker", null)
                         .WithMany("SocialNetworks")
                         .HasForeignKey("SpeakerId");
                 });
