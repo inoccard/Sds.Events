@@ -17,7 +17,20 @@ namespace ProAgil.WebAPI {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
+            /// <summary>
+            /// Injeção de Dependêncica
+            /// </summary>
+            /// <param name="("DefaultConnection""></param>
+            /// <typeparam name="DataContext"></typeparam>
+            /// <returns></returns>
             services.AddDbContext<DataContext> (d => d.UseSqlite (Configuration.GetConnectionString ("DefaultConnection")));
+            /// <summary>
+            /// Injeção de Dependência do ProAgilRepository
+            /// </summary>
+            /// <typeparam name="IProAgilRepository"></typeparam>
+            /// <typeparam name="ProAgilRepository"></typeparam>
+            /// <returns></returns>
+            services.AddScoped <IProAgilRepository, ProAgilRepository>();
 
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_3_0);
             services.AddCors ();

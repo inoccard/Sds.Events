@@ -8,7 +8,7 @@ namespace ProAgil.Domain.Entities {
         public DateTime? EndDate { get; set; }
         public int Qty { get; set; }
         public int EventiId { get; set; }
-        public Event Event { get; set; }
+        public Event Event { get; }
         
     }
 }
