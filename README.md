@@ -61,5 +61,8 @@
 * `dotnet ef --startup-project ../ProAgil.WebAPI migrations add init`
 * `dotnet ef --startup-project ../ProAgil.WebAPI database update`
 
+## Instalando Ngx Bootstrap
+* `npm install ngx-bootstrap --save`
+
 
 
