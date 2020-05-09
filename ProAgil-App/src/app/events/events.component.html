@@ -13,7 +13,7 @@
       <th>
         <button class="btn btn-outline-light"
         (click)="alterImg()">
-        Mostrar Imagem
+        <i class="{{showImg ? 'fa fa-eye-slash' : 'fa fa-eye'}}"></i>
       </button>
     </th>
     <th>#</th>
@@ -29,7 +29,7 @@
   <tr *ngFor="let event of eventsFiltered">
     <td>
       <img *ngIf="showImg"
-      src="https://miro.medium.com/max/2000/1*P7x-_0XfQz6CVmMY_QAv0w.png"
+      src="http://localhost:5000/img/{{event.imageURL}}"
       alt="Imagem"
       [style.width.px]="50"
       [style.margin.px]="2">
@@ -39,7 +39,10 @@
     <td>{{event.local}}</td>
     <td>{{event.eventDate | date }}</td>
     <td>{{event.personQtd}}</td>
-    <td>{{event.lot | uppercase}}</td>
+    <td>
+      <div *ngIf="!event.lots.length">Sem Lote</div>
+      <div>{{event.lots[0].name | uppercase}}</div>
+    </td>
     <td>
       <button class="btn btn-success"></button>
       <button class="btn btn-danger"></button>

@@ -40,7 +40,8 @@ export class EventsComponent implements OnInit {
   getEvents() {
     this.eventService.getEvents().subscribe(
     response => {
-      this.events = response;
+        this.events = response;
+        this.eventsFiltered = this.events;
     }, error => {
       console.log(error);
     }
