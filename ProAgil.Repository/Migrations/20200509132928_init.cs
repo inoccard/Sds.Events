@@ -12,14 +12,14 @@ namespace ProAgil.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Local = table.Column<string>(nullable: true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Local = table.Column<string>(type: "varchar(500)", nullable: true),
                     EventDate = table.Column<DateTime>(nullable: false),
-                    Theme = table.Column<string>(nullable: true),
+                    Theme = table.Column<string>(type: "varchar(500)", nullable: true),
                     PersonQtd = table.Column<int>(nullable: false),
-                    ImageURL = table.Column<string>(nullable: true),
-                    ContactPhone = table.Column<string>(nullable: true),
-                    contactEmail = table.Column<string>(nullable: true)
+                    ImageURL = table.Column<string>(type: "varchar(500)", nullable: true),
+                    ContactPhone = table.Column<string>(type: "varchar(500)", nullable: true),
+                    contactEmail = table.Column<string>(type: "varchar(500)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -31,7 +31,7 @@ namespace ProAgil.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
                     MiniCurriculum = table.Column<string>(nullable: true),
                     ImageUrl = table.Column<string>(nullable: true),
@@ -48,9 +48,9 @@ namespace ProAgil.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     InitDate = table.Column<DateTime>(nullable: true),
                     EndDate = table.Column<DateTime>(nullable: true),
                     Qty = table.Column<int>(nullable: false),
@@ -72,7 +72,7 @@ namespace ProAgil.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true),
                     EventId = table.Column<int>(nullable: true),

@@ -43,6 +43,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "CoreCompat.System.ComponentModel.DataAnnotations": {
+              "target": "Package",
+              "version": "[4.2.3-r7, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

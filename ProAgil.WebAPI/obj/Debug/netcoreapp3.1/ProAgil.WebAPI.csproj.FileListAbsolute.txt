@@ -85,3 +85,6 @@ C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proag
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Domain.pdb
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Repository.dll
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Repository.pdb
+C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\CoreCompat.System.ComponentModel.Attributes.dll
+C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\CoreCompat.System.ComponentModel.DataAnnotations.dll
+C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\CoreCompat.System.ComponentModel.Design.dll
