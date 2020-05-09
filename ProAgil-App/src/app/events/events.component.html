@@ -37,7 +37,7 @@
     <td>{{event.id}}</td>
     <td>{{event.theme | uppercase }}</td>
     <td>{{event.local}}</td>
-    <td>{{event.eventDate | date }}</td>
+    <td>{{event.eventDate | DateTimeFormat }}</td>
     <td>{{event.personQtd}}</td>
     <td>
       <div *ngIf="!event.lots.length">Sem Lote</div>
