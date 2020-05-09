@@ -1,3 +1,4 @@
+import { EventService } from './../services/event/event.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -21,7 +22,7 @@ export class EventsComponent implements OnInit {
   events: any = [];
   showImg = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private eventService: EventService) { }
   ngOnInit() {
     this.getEvents();
   }
@@ -37,7 +38,7 @@ export class EventsComponent implements OnInit {
     this.showImg = !this.showImg;
   }
   getEvents() {
-    this.http.get('http://localhost:5000/event').subscribe(
+    this.eventService.getEvents().subscribe(
     response => {
       this.events = response;
     }, error => {
