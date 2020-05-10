@@ -35,7 +35,7 @@ export class EventsComponent implements OnInit {
       (      event: { theme: string; }) => event.theme.toLocaleLowerCase().indexOf(filterBy) !== -1
     );
   }
-  //mostrar | ocultar imagem
+  // mostrar | ocultar imagem
   alterImg() {
     this.showImg = !this.showImg;
   }
