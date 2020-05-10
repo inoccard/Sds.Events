@@ -45,7 +45,7 @@
     </td>
     <td>
       <div class="btn-group">
-        <button class="btn btn-sm btn-primary" tooltip="Editar">
+        <button class="btn btn-sm btn-primary" (click)="openModal(modal)" tooltip="Editar">
           <i class="fa fa-edit"></i>
         </button>
         <button class="btn btn-sm btn-danger" tooltip="Excluir">
@@ -63,3 +63,16 @@
   </tr>
 </tfoot>
 </table>
+
+<!--Template Modal-->
+<ng-template #modal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button class="close pull-right" aria-hidden="close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal
+  </div>
+</ng-template>
