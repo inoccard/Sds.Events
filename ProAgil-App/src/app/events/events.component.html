@@ -12,7 +12,7 @@
     <tr>
       <th>
         <button class="btn btn-outline-light"
-        (click)="alterImg()">
+        (click)="alterImg()" tooltip="Ver | Ocultar">
         <i class="{{showImg ? 'fa fa-eye-slash' : 'fa fa-eye'}}"></i>
       </button>
     </th>
@@ -44,8 +44,14 @@
       <div>{{event.lots[0].name | uppercase}}</div>
     </td>
     <td>
-      <button class="btn btn-success"></button>
-      <button class="btn btn-danger"></button>
+      <div class="btn-group">
+        <button class="btn btn-sm btn-primary" tooltip="Editar">
+          <i class="fa fa-edit"></i>
+        </button>
+        <button class="btn btn-sm btn-danger" tooltip="Excluir">
+          <i class="fa fa-eraser"></i>
+        </button>
+      </div>
     </td>
   </tr>
 </tbody>
