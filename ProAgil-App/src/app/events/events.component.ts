@@ -1,6 +1,7 @@
 import { EventService } from './../services/event/event.service';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-events',
@@ -14,8 +15,10 @@ export class EventsComponent implements OnInit {
   // tslint:disable-next-line: variable-name
   _filterList: string;
   modalRef: BsModalRef;
+  registerForm: FormGroup;
   constructor(private eventService: EventService, private modalService: BsModalService) { }
   ngOnInit() {
+    this.validation();
     this.getEvents();
   }
   get filterList(): string {
@@ -49,5 +52,21 @@ export class EventsComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  validation() {
+    this.registerForm = new FormGroup({
+      theme: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]),
+      local: new FormControl('', Validators.required),
+      eventDate: new FormControl(),
+      personQtd: new FormControl('', [Validators.required, Validators.max(120000)]),
+      imageURL: new FormControl('', Validators.required),
+      contactPhone: new FormControl('', Validators.required),
+      contactEmail: new FormControl('', [Validators.required, Validators.email])
+    });
+  }
+  // Salvar alterações
+  saveEditions() {
+
   }
 }

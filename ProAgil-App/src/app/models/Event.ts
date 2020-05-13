@@ -4,8 +4,9 @@ import { SocialNetwork } from './SocialNetwork';
 
 export interface Event {
     id: number;
-    eventDate: Date;
     theme: string;
+    local: string;
+    eventDate: Date;
     personQtd: number;
     imageURL: string;
     contactPhone: string;

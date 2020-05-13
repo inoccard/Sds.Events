@@ -76,3 +76,56 @@
     This is a modal
   </div>
 </ng-template>
+
+<!--Formulário-->
+<form [formGroup]="registerForm">
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <input type="text" class="form-control"
+       [ngClass]="{'is-invalid': registerForm.get('theme').errors && registerForm.get('theme').touched}" 
+      formControlName="theme" placeholder="Tema">
+      <div *ngIf="registerForm.get('theme').hasError('required') && registerForm.get('theme').touched" class="invalid-feedback">Tema é obrigatório</div>
+      <div *ngIf="registerForm.get('theme').hasError('minlength') && registerForm.get('theme').touched" class="invalid-feedback">Mínimo 4 caracteres</div>
+      <div *ngIf="registerForm.get('theme').hasError('maxlength') && registerForm.get('theme').touched" class="invalid-feedback">Máximo 50 caracteres</div>
+    </div>
+  </div>  
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <input type="text" class="form-control is-invalid" formControlName="local" placeholder="Local">
+      <div class="invalid-feedback">Local é obrigatório</div>
+    </div>
+    <div class="form-group col-md-4">
+      <input type="datetime-local" class="form-control is-invalid" formControlName="eventDate" placeholder="Data e Hora">
+      <div class="invalid-feedback">Horário é obrigatório</div>
+    </div>
+  </div>  
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <input type="number" class="form-control is-invalid" formControlName="personQtd" placeholder="Quantidade de participantes">
+      <div class="invalid-feedback">Quantidade de participantes é obrigatório</div>
+    </div>
+    <div class="form-group col-md-9">
+      <input type="image" class="form-control is-invalid" formControlName="imageURL" placeholder="Imagem">
+      <div class="invalid-feedback">Imagem é obrigatório</div>
+    </div>
+  </div>  
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <input type="text" class="form-control is-invalid" formControlName="contactPhone" placeholder="Telefone">
+      <div class="invalid-feedback">Telefone é obrigatório</div>
+    </div>
+    <div class="form-group col-md-8">
+      <input type="email" class="form-control is-invalid" formControlName="contactEmail" placeholder="E-mail">
+      <div class="invalid-feedback">E-mail é obrigatório</div>
+    </div>
+  </div> 
+</form>
+<br>
+<button class="btn btn-secondary" (click)="openModal(modal)">
+  Fechar
+</button>
+<button class="btn btn-primary" (click)="saveEditions()">
+  Salvar Alterações
+</button>
+<br>
+<br>
