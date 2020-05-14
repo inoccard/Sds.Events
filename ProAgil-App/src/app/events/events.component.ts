@@ -56,10 +56,10 @@ export class EventsComponent implements OnInit {
 
   validation() {
     this.registerForm = new FormGroup({
-      theme: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]),
+      theme: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(50), Validators.pattern('[a-zA-Z]*')]),
       local: new FormControl('', Validators.required),
-      eventDate: new FormControl(),
-      personQtd: new FormControl('', [Validators.required, Validators.max(120000)]),
+      eventDate: new FormControl('', Validators.required),
+      personQtd: new FormControl('', [Validators.required, Validators.max(120000), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       imageURL: new FormControl('', Validators.required),
       contactPhone: new FormControl('', Validators.required),
       contactEmail: new FormControl('', [Validators.required, Validators.email])
