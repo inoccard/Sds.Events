@@ -1,7 +1,7 @@
 import { EventService } from './../services/event/event.service';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-events',
@@ -16,7 +16,7 @@ export class EventsComponent implements OnInit {
   _filterList: string;
   modalRef: BsModalRef;
   registerForm: FormGroup;
-  constructor(private eventService: EventService, private modalService: BsModalService) { }
+  constructor(private eventService: EventService, private modalService: BsModalService, private fb: FormBuilder) { }
   ngOnInit() {
     this.validation();
     this.getEvents();
@@ -55,14 +55,14 @@ export class EventsComponent implements OnInit {
   }
 
   validation() {
-    this.registerForm = new FormGroup({
-      theme: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(50), Validators.pattern('[a-zA-Z]*')]),
-      local: new FormControl('', Validators.required),
-      eventDate: new FormControl('', Validators.required),
-      personQtd: new FormControl('', [Validators.required, Validators.max(120000), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
-      imageURL: new FormControl('', Validators.required),
-      contactPhone: new FormControl('', Validators.required),
-      contactEmail: new FormControl('', [Validators.required, Validators.email])
+    this.registerForm = this.fb.group({
+      theme: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50), Validators.pattern('[a-zA-Z]*')]],
+      local: ['', Validators.required],
+      eventDate: ['', Validators.required],
+      personQtd: ['', [Validators.required, Validators.max(120000), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+      imageURL: ['', Validators.required],
+      contactPhone: ['', Validators.required],
+      contactEmail: ['', [Validators.required, Validators.email]]
     });
   }
   // Salvar alterações

@@ -141,7 +141,7 @@
 <button class="btn btn-secondary" (click)="openModal(modal)">
   Fechar
 </button>
-<button class="btn btn-primary" (click)="saveEditions()">
+<button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="saveEditions()">
   Salvar Alterações
 </button>
 <br>
