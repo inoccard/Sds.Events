@@ -1,7 +1,6 @@
 import { EventService } from './../services/event/event.service';
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-events',
@@ -11,12 +10,12 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class EventsComponent implements OnInit {
   eventsFiltered: any = [];
   events: any = [];
+  event: Event;
   showImg = false;
   // tslint:disable-next-line: variable-name
   _filterList: string;
-  modalRef: BsModalRef;
   registerForm: FormGroup;
-  constructor(private eventService: EventService, private modalService: BsModalService, private fb: FormBuilder) { }
+  constructor(private eventService: EventService, private fb: FormBuilder) { }
   ngOnInit() {
     this.validation();
     this.getEvents();
@@ -30,6 +29,7 @@ export class EventsComponent implements OnInit {
   }
   // Abrir modal
   openModal(template: any) {
+    this.registerForm.reset();
     template.show();
   }
   filterEvent(filterBy: string): any {
@@ -66,7 +66,19 @@ export class EventsComponent implements OnInit {
     });
   }
   // Salvar alterações
-  saveEditions() {
-
+  saveEditions(template: any) {
+    if (this.registerForm.valid) {
+      // copiar evento
+      this.event = Object.assign({}, this.registerForm.value);
+      this.eventService.saveEvent(this.event).subscribe(
+        (newEvent: Event) => {
+          console.log(newEvent);
+          template.hide();
+          this.getEvents();
+        }, error => {
+          console.log(error);
+        }
+      );
+    }
   }
 }
