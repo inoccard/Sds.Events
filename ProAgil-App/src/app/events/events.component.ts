@@ -29,8 +29,8 @@ export class EventsComponent implements OnInit {
     this.eventsFiltered = this._filterList ? this.filterEvent(this._filterList) : this.events;
   }
   // Abrir modal
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  openModal(template: any) {
+    template.show();
   }
   filterEvent(filterBy: string): any {
     filterBy = filterBy.toLocaleLowerCase();
