@@ -65,9 +65,9 @@ namespace ProAgil.WebAPI.Controllers {
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put (int Id, Event model) {
+        public async Task<IActionResult> Put (Event model) {
             try {
-                var _event = await context.GetEventAssyncById (Id, false);
+                var _event = await context.GetEventAssyncById (model.Id, false);
                 
                 if (_event == null) return NotFound ();
 

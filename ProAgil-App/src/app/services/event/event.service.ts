@@ -1,3 +1,4 @@
+import { Events } from './../../models/Events';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -15,13 +16,20 @@ export class EventService {
   getEvents() {
     return this.http.get(this.baseURL);
   }
-  getEventByTheme(theme: string): Observable<Event[]>{
-    return this.http.get<Event[]>(`${this.baseURL}/getByTheme/${theme}`);
+  getEventByTheme(theme: string): Observable<Events[]>{
+    return this.http.get<Events[]>(`${this.baseURL}/getByTheme/${theme}`);
   }
-  getEvent(id: number): Observable<Event>{
-    return this.http.get<Event>(`${this.baseURL}/get/${id}`);
+  getEvent(id: number): Observable<Events>{
+    return this.http.get<Events>(`${this.baseURL}/get/${id}`);
   }
-  saveEvent(event: Event){
-    return this.http.post(this.baseURL, event);
+  saveEvent(event: Events) {
+    if (!event.id || event.id === 0) {
+      return this.http.post(this.baseURL, event);
+    } else {
+      return this.http.put(this.baseURL, event);
+    }
+  }
+  deleteEvent(id: number) {
+    return this.http.delete(`${this.baseURL}/${id}`);
   }
 }

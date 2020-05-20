@@ -1,3 +1,4 @@
+import { Events } from './../models/Events';
 import { EventService } from './../services/event/event.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -10,7 +11,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 export class EventsComponent implements OnInit {
   eventsFiltered: any = [];
   events: any = [];
-  event: Event;
+  event: Events;
   showImg = false;
   // tslint:disable-next-line: variable-name
   _filterList: string;
@@ -31,6 +32,15 @@ export class EventsComponent implements OnInit {
   openModal(template: any) {
     this.registerForm.reset();
     template.show();
+  }
+
+  newEvent(template: any) {
+    this.openModal(template);
+  }
+  editEvent(template: any, event: Events) {
+    this.openModal(template);
+    this.event = event;
+    this.registerForm.patchValue(event);
   }
   filterEvent(filterBy: string): any {
     filterBy = filterBy.toLocaleLowerCase();
@@ -56,7 +66,7 @@ export class EventsComponent implements OnInit {
 
   validation() {
     this.registerForm = this.fb.group({
-      theme: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50), Validators.pattern('[a-zA-Z]*')]],
+      theme: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
       local: ['', Validators.required],
       eventDate: ['', Validators.required],
       personQtd: ['', [Validators.required, Validators.max(120000), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
@@ -65,20 +75,20 @@ export class EventsComponent implements OnInit {
       contactEmail: ['', [Validators.required, Validators.email]]
     });
   }
-  // Salvar alterações
+  // Salvar/editar evento
   saveEditions(template: any) {
     if (this.registerForm.valid) {
       // copiar evento
-      this.event = Object.assign({}, this.registerForm.value);
-      this.eventService.saveEvent(this.event).subscribe(
-        (newEvent: Event) => {
-          console.log(newEvent);
-          template.hide();
-          this.getEvents();
-        }, error => {
-          console.log(error);
-        }
-      );
+        this.event = Object.assign({id: this.event.id}, this.registerForm.value);
+        this.eventService.saveEvent(this.event).subscribe(
+          (newEvent: Events) => {
+            console.log(newEvent);
+            template.hide();
+            this.getEvents();
+          }, error => {
+            console.log(error);
+          }
+        );
     }
   }
 }

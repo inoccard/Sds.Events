@@ -8,7 +8,7 @@
     </div>
   </div>
   <div>
-    <button class="btn btn-outline-primary" (click)="openModal(template)">  
+    <button class="btn btn-outline-primary" (click)="newEvent(template)">  
       <i class="fa fa-plus-circle"></i>&nbsp;
       Novo Registro
     </button>
@@ -55,10 +55,10 @@
     </td>
     <td>
       <div class="btn-group">
-        <button class="btn btn-sm btn-primary" (click)="openModal(template)" tooltip="Editar">
+        <button class="btn btn-sm btn-primary" (click)="editEvent(template, event)" tooltip="Editar">
           <i class="fa fa-edit"></i>
         </button>
-        <button class="btn btn-sm btn-danger" tooltip="Excluir">
+        <button class="btn btn-sm btn-danger" (click)="editEvent(template, event)" tooltip="Excluir">
           <i class="fa fa-eraser"></i>
         </button>
       </div>
