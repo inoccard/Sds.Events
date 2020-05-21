@@ -68,7 +68,7 @@ namespace ProAgil.WebAPI.Controllers {
         public async Task<IActionResult> Put (Event model) {
             try {
                 var _event = await context.GetEventAssyncById (model.Id, false);
-                
+
                 if (_event == null) return NotFound ();
 
                 context.Update (model);
@@ -81,11 +81,11 @@ namespace ProAgil.WebAPI.Controllers {
             }
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete (int Id) {
+        [HttpDelete ("{id}")]
+        public async Task<IActionResult> Delete (int id) {
             try {
-                var _event = await context.GetEventAssyncById (Id, false);
-                
+                var _event = await context.GetEventAssyncById (id, false);
+
                 if (_event == null) return NotFound ();
 
                 context.Delete (_event);

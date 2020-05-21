@@ -2,6 +2,7 @@ import { Events } from './../models/Events';
 import { EventService } from './../services/event/event.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ModalDirective } from 'ngx-bootstrap/modal/public_api';
 
 @Component({
   selector: 'app-events',
@@ -16,6 +17,7 @@ export class EventsComponent implements OnInit {
   // tslint:disable-next-line: variable-name
   _filterList: string;
   registerForm: FormGroup;
+  bodyDeletarEvento: string;
   constructor(private eventService: EventService, private fb: FormBuilder) { }
   ngOnInit() {
     this.validation();
@@ -29,7 +31,7 @@ export class EventsComponent implements OnInit {
     this.eventsFiltered = this._filterList ? this.filterEvent(this._filterList) : this.events;
   }
   // Abrir modal
-  openModal(template: any) {
+  openModal(template: ModalDirective) {
     this.registerForm.reset();
     template.show();
   }
@@ -37,10 +39,27 @@ export class EventsComponent implements OnInit {
   newEvent(template: any) {
     this.openModal(template);
   }
-  editEvent(template: any, event: Events) {
+  editEvent(template: ModalDirective, event: Events) {
     this.openModal(template);
     this.event = event;
     this.registerForm.patchValue(event);
+  }
+
+  deleteEvent(confirm: ModalDirective, event: Events) {
+    this.openModal(confirm);
+    this.event = event;
+    this.bodyDeletarEvento = `Tem certeza que deseja excluir o Evento: ${event.theme}, Código: ${event.id}`;
+}
+
+  confirmDelete(confirm: ModalDirective) {
+    this.eventService.deleteEvent(this.event.id).subscribe(
+      () => {
+        confirm.hide();
+        this.getEvents();
+      }, error => {
+        console.log(error);
+      }
+    );
   }
   filterEvent(filterBy: string): any {
     filterBy = filterBy.toLocaleLowerCase();
@@ -76,19 +95,23 @@ export class EventsComponent implements OnInit {
     });
   }
   // Salvar/editar evento
-  saveEditions(template: any) {
+  saveEditions(template: ModalDirective) {
     if (this.registerForm.valid) {
       // copiar evento
-        this.event = Object.assign({id: this.event.id}, this.registerForm.value);
-        this.eventService.saveEvent(this.event).subscribe(
-          (newEvent: Events) => {
-            console.log(newEvent);
-            template.hide();
-            this.getEvents();
-          }, error => {
-            console.log(error);
-          }
-        );
+      if (!this.event){
+        this.event = Object.assign(this.registerForm.value);
+      }else {
+        this.event = Object.assign({ id: this.event.id }, this.registerForm.value);
+      }
+      this.eventService.saveEvent(this.event).subscribe(
+        (newEvent: Events) => {
+          console.log(newEvent);
+          template.hide();
+          this.getEvents();
+        }, error => {
+          console.log(error);
+        }
+      );
     }
   }
 }
