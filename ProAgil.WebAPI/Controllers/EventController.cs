@@ -23,7 +23,7 @@ namespace ProAgil.WebAPI.Controllers {
         public async Task<IActionResult> Get () {
             try {
                 var events = await context.GetEventsAssync (true);
-                var results = mapper.Map<IEnumerable<EventDto>>(events);
+                var results = mapper.Map<EventDto[]>(events);
                 return Ok (results);
             } catch (Exception e) {
                 return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
@@ -49,24 +49,26 @@ namespace ProAgil.WebAPI.Controllers {
         [HttpGet ("getbytheme/{id}")]
         public async Task<IActionResult> GetEventsByTheme (string theme) {
             try {
-                var _event = await context.GetEventsAssyncByTheme (theme, true);
-                return Ok (_event);
-            } catch (Exception) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, "Não é possível obtér o evento");
+                var _events = await context.GetEventsAssyncByTheme (theme, true);
+                var results = mapper.Map<EventDto[]>(_events);
+                return Ok (results);
+            } catch (Exception e) {
+                return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível obtér o evento: {e.Message}");
             }
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post (Event model) {
+        public async Task<IActionResult> Post (EventDto model) {
             try {
-                context.Add (model);
+                var _event = mapper.Map<Event>(model);
+                context.Add (_event);
                 if (await context.SaveChangeAssync ())
-                    return Created ($"/event/{model.Id}", model);
+                    return Created ($"/event/{_event.Id}", _event);
                 else
                     BadRequest ();
                 return Ok ();
-            } catch (Exception) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, "Não é possível criar o evento");
+            } catch (Exception e) {
+                return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível criar o evento: {e.Message}");
             }
         }
 

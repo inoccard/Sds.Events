@@ -20,7 +20,7 @@ namespace ProAgil.WebAPI.Helpers
             .ForMember(d => d.Speakers, opt => // destinatário
             {
                 opt.MapFrom(src => src.SpeakerEvents.Select(s => s.Spreaker).ToArray()); // origem
-            });
+            }).ReverseMap();
 
             /// <summary>
             /// Para palestrante, trabalha-se com Eventos |
@@ -33,11 +33,11 @@ namespace ProAgil.WebAPI.Helpers
             .ForMember(dest => dest.Events, opt => // destinatário
             {
                 opt.MapFrom(src => src.SpeakerEvents.Select(se => se.Event).ToArray()); // origem
-            });
+            }).ReverseMap();
             
-            CreateMap<Lot, LotDto>();
+            CreateMap<Lot, LotDto>().ReverseMap();
             
-            CreateMap<SocialNetWork, SocialNetworkDto>();
+            CreateMap<SocialNetWork, SocialNetworkDto>().ReverseMap();
         }
     }
 }
