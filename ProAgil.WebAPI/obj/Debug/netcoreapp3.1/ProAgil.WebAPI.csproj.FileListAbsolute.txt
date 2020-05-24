@@ -88,3 +88,4 @@ C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proag
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\CoreCompat.System.ComponentModel.Attributes.dll
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\CoreCompat.System.ComponentModel.DataAnnotations.dll
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\CoreCompat.System.ComponentModel.Design.dll
+C:\inoccard\vs.code\dontnet-angular\proagil.webapi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

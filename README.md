@@ -64,5 +64,9 @@
 ## Instalando Ngx Bootstrap
 * `npm install ngx-bootstrap --save`
 
+## Adicionando AutoMapper
+* `Ctrl+Shift+P`
+* `AutoMapper.Extensions.Microsoft.DependencyInjection`
+
 
 
