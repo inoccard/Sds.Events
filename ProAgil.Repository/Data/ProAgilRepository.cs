@@ -53,9 +53,10 @@ namespace ProAgil.Repository.Data {
 
         public async Task<Event[]> GetEventsAssyncByTheme (string theme, bool includeSpeaker = false) {
             IQueryable<Event> events = context.Events
-                .Include (e => e.Lots)
-                .Include (e => e.SocialNetworks);
+                .Include (e => e.Lots) // inclui os lotes
+                .Include (e => e.SocialNetworks); // e as redes sociais
 
+            // referência muitos para muitos (n:n)
             if (includeSpeaker) {
                 events = events.Include (se => se.SpeakerEvents)
                     .ThenInclude (s => s.Spreaker);
