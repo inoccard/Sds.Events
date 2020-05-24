@@ -1,26 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProAgil.Domain.Entities;
 using ProAgil.Repository.Data;
+using ProAgil.WebAPI.Dtos;
 
 namespace ProAgil.WebAPI.Controllers {
     [ApiController]
     [Route ("[controller]")]
     public class EventController : ControllerBase {
         private readonly IProAgilRepository context;
-        public EventController (IProAgilRepository context) {
+        private readonly IMapper mapper;
+        public EventController (IProAgilRepository context, IMapper mapper) {
             this.context = context;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get () {
             try {
                 var events = await context.GetEventsAssync (true);
-                return Ok (events);
-            } catch (Exception) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, "Não é possível obtér a lista de eventos");
+                var results = mapper.Map<IEnumerable<EventDto>>(events);
+                return Ok (results);
+            } catch (Exception e) {
+                return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
             }
         }
 
@@ -28,7 +34,8 @@ namespace ProAgil.WebAPI.Controllers {
         public async Task<IActionResult> Get (int id) {
             try {
                 var _event = await context.GetEventAssyncById (id, true);
-                return Ok (_event);
+                var result = mapper.Map<EventDto>(_event);
+                return Ok (result);
             } catch (System.Exception) {
                 return this.StatusCode (StatusCodes.Status500InternalServerError, "Não é possível obtér o evento");
             }
