@@ -31,7 +31,7 @@ namespace ProAgil.WebAPI.Controllers {
         }
 
         [HttpGet ("{id}")]
-        public async Task<IActionResult> Get (int id) {
+        public async Task<IActionResult> Get ([FromRoute] int id) {
             try {
                 var _event = await context.GetEventAssyncById (id, true);
                 var result = mapper.Map<EventDto>(_event);
@@ -58,12 +58,12 @@ namespace ProAgil.WebAPI.Controllers {
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post (EventDto model) {
+        public async Task<IActionResult> Post ([FromBody] EventDto model) {
             try {
                 var _event = mapper.Map<Event>(model);
                 context.Add (_event);
                 if (await context.SaveChangeAssync ())
-                    return Created ($"/event/{_event.Id}", _event);
+                    return Created ($"/event/{_event.Id}", mapper.Map<EventDto>(_event));
                 else
                     BadRequest ();
                 return Ok ();
@@ -72,20 +72,25 @@ namespace ProAgil.WebAPI.Controllers {
             }
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Put (Event model) {
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put ([FromRoute] int id, [FromBody] EventDto model) {
             try {
-                var _event = await context.GetEventAssyncById (model.Id, false);
+                if (id != model.Id)
+                     return BadRequest ();
 
-                if (_event == null) return NotFound ();
+                var _event = await context.GetEventAssyncById (id, false);
 
-                context.Update (model);
+                if (_event is null) return NotFound ();
+
+                mapper.Map(model, _event);
+
+                context.Update (_event);
                 if (await context.SaveChangeAssync ())
-                    return Created ($"/event/{model.Id}", model);
+                    return Created ($"/event/{_event.Id}",  mapper.Map<EventDto>(_event));
                 else
                     return BadRequest ();
-            } catch (Exception) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, "Não é possível alterar o evento");
+            } catch (Exception e) {
+                return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível alterar o evento {e.Message}");
             }
         }
 
@@ -94,7 +99,7 @@ namespace ProAgil.WebAPI.Controllers {
             try {
                 var _event = await context.GetEventAssyncById (id, false);
 
-                if (_event == null) return NotFound ();
+                if (_event is null) return NotFound ();
 
                 context.Delete (_event);
                 if (await context.SaveChangeAssync ())
