@@ -95,7 +95,7 @@ namespace ProAgil.WebAPI.Controllers {
         }
 
         [HttpDelete ("{id}")]
-        public async Task<IActionResult> Delete (int id) {
+        public async Task<IActionResult> Delete ([FromRoute] int id) {
             try {
                 var _event = await context.GetEventAssyncById (id, false);
 
