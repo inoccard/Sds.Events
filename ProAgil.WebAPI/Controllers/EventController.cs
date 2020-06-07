@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
@@ -58,7 +57,7 @@ namespace ProAgil.WebAPI.Controllers {
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post ([FromBody] EventDto model) {
+        public async Task<IActionResult> Post (EventDto model) {
             try {
                 var _event = mapper.Map<Event>(model);
                 context.Add (_event);
@@ -73,7 +72,7 @@ namespace ProAgil.WebAPI.Controllers {
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put ([FromRoute] int id, [FromBody] EventDto model) {
+        public async Task<IActionResult> Put (int id, EventDto model) {
             try {
                 if (id != model.Id)
                      return BadRequest ();

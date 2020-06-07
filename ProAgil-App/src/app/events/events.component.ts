@@ -3,6 +3,7 @@ import { EventService } from './../services/event/event.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal/public_api';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-events',
@@ -18,7 +19,7 @@ export class EventsComponent implements OnInit {
   _filterList: string;
   registerForm: FormGroup;
   bodyDeletarEvento: string;
-  constructor(private eventService: EventService, private fb: FormBuilder) { }
+  constructor(private eventService: EventService, private fb: FormBuilder, private toastr: ToastrService) { }
   ngOnInit() {
     this.validation();
     this.getEvents();
@@ -56,8 +57,10 @@ export class EventsComponent implements OnInit {
       () => {
         confirm.hide();
         this.getEvents();
+        this.toastr.success(`Evento ${this.event.theme} exluído com sucesso`, 'Exluir');
       }, error => {
         console.log(error);
+        this.toastr.error(`Não é possível excluir evento ${this.event.theme}: ${error}`, 'Exluir');
       }
     );
   }
@@ -108,8 +111,10 @@ export class EventsComponent implements OnInit {
           console.log(newEvent);
           template.hide();
           this.getEvents();
+          this.toastr.success(`Evento ${this.event.theme} salvo com sucesso`, 'Salvar');
         }, error => {
           console.log(error);
+          this.toastr.error(`Não foi possível salvar evento ${this.event.theme}: ${error}`, 'Salvar');
         }
       );
     }

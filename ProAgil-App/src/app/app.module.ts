@@ -8,7 +8,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-
+import { ToastrModule } from 'ngx-toastr';
 /** SERVICES */
 import { EventService } from './services/event/event.service';
 
@@ -36,7 +36,12 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       BrowserAnimationsModule,
       TooltipModule.forRoot(), // forRoot() para utilizar em toda estrutura do projeto
       ModalModule.forRoot(),
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      ToastrModule.forRoot({
+         timeOut: 10000,
+         positionClass: 'toast-bottom-right',
+         preventDuplicates: true
+      })
    ],
    providers: [EventService],
    bootstrap: [

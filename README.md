@@ -89,3 +89,7 @@
 
 * `Ctrl+Shift+P`
 * `AutoMapper.Extensions.Microsoft.DependencyInjection`
+
+## Instalando NGx Toastr
+
+* `npm i ngx-toastr`
