@@ -30,7 +30,7 @@ namespace ProAgil.WebAPI.Controllers {
         }
 
         [HttpGet ("{id}")]
-        public async Task<IActionResult> Get ([FromRoute] int id) {
+        public async Task<IActionResult> Get (int id) {
             try {
                 var _event = await context.GetEventAssyncById (id, true);
                 var result = mapper.Map<EventDto>(_event);

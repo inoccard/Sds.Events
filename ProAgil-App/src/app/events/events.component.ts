@@ -38,6 +38,7 @@ export class EventsComponent implements OnInit {
   }
 
   newEvent(template: any) {
+    this.event = null;
     this.openModal(template);
   }
   editEvent(template: ModalDirective, event: Events) {

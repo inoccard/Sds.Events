@@ -26,7 +26,7 @@ export class EventService {
     if (!event.id || event.id === 0) {
       return this.http.post(this.baseURL, event);
     } else {
-      return this.http.put(this.baseURL, event);
+      return this.http.put(`${this.baseURL}/${event.id}`, event);
     }
   }
   deleteEvent(id: number) {
