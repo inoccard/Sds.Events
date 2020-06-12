@@ -21,6 +21,7 @@ import { NavComponent } from './nav/nav.component';
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { SpeakersComponent } from './speakers/speakers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
    declarations: [
@@ -29,7 +30,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       NavComponent,
       DateTimeFormatPipe,
       SpeakersComponent,
-      DashboardComponent
+      DashboardComponent,
+      ContactsComponent
    ],
    imports: [
       BrowserModule,
