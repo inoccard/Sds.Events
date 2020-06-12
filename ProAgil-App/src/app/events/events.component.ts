@@ -45,9 +45,9 @@ export class EventsComponent implements OnInit {
   }
   editEvent(template: ModalDirective, event: Events) {
     this.openModal(template);
-    this.event = event;
+    this.event = Object.assign({}, event);
     this.event.imageURL = '';
-    this.registerForm.patchValue(event);
+    this.registerForm.patchValue(this.event);
   }
 
   deleteEvent(confirm: ModalDirective, event: Events) {
@@ -126,9 +126,10 @@ export class EventsComponent implements OnInit {
   }
 
   splitImage(){
-    this.eventService.postUpload(this.file).subscribe(); // upload de imagem
     const fileName = this.event.imageURL.split('\\', 3);
     this.event.imageURL = fileName[2];
+
+    this.eventService.postUpload(this.file, fileName[2]).subscribe(); // upload de imagem
   }
 
   onFileChange(event: any) {
