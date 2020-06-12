@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToastrModule } from 'ngx-toastr';
+
 /** SERVICES */
 import { EventService } from './services/event/event.service';
 
@@ -19,10 +20,12 @@ import { NavComponent } from './nav/nav.component';
 import { SpeakersComponent } from './speakers/speakers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ErrorComponent } from './error/error.component';
+import { TitleComponent } from './shared/title/title.component';
 
 /** PIPES */
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
-import { ErrorComponent } from './error/error.component';
+
 
 @NgModule({
    declarations: [
@@ -33,7 +36,8 @@ import { ErrorComponent } from './error/error.component';
       DashboardComponent,
       ContactsComponent,
       DateTimeFormatPipe,
-      ErrorComponent
+      ErrorComponent,
+      TitleComponent,
    ],
    imports: [
       BrowserModule,
