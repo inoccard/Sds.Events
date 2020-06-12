@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Net.Http.Headers;
+using System.IO;
+using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
@@ -9,25 +11,63 @@ using ProAgil.WebAPI.Dtos;
 
 namespace ProAgil.WebAPI.Controllers {
     [ApiController]
-    [Route ("[controller]")]
-    public class EventController : ControllerBase {
+    [Route("[controller]")]
+    public class EventController : ControllerBase
+    {
         private readonly IProAgilRepository context;
         private readonly IMapper mapper;
-        public EventController (IProAgilRepository context, IMapper mapper) {
+        public EventController(IProAgilRepository context, IMapper mapper)
+        {
             this.context = context;
             this.mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get () {
-            try {
-                var events = await context.GetEventsAssync (true);
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                var events = await context.GetEventsAssync(true);
                 var results = mapper.Map<EventDto[]>(events);
-                return Ok (results);
-            } catch (Exception e) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
+                return Ok(results);
+            }
+            catch (Exception e)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
             }
         }
+
+        [HttpPost("upload")]
+        public async Task<IActionResult> upload()
+        {
+            try
+            {
+                // pega o arquivo
+                var file = Request.Form.Files[0];
+                // pega o diretório onde a aplicação quer armazenar
+                var folferName = Path.Combine("Resources","images");
+                // Combina o diretório da aplicação + o onde a aplicação quer armazenar os arquivos
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(),folferName);
+
+                if(file.Length > 0){
+                    var filename = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
+                    var fullPath = Path.Combine(pathToSave, filename.Replace("\"", " ").Trim());
+
+                    using(var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        // copia file parao stream
+                        file.CopyTo(stream);
+                    }
+                }
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
+            }
+            return BadRequest("Erro ao fazer upload");
+        }
+
 
         [HttpGet ("{id}")]
         public async Task<IActionResult> Get (int id) {
