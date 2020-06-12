@@ -22,6 +22,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 
 /** PIPES */
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
    declarations: [
@@ -31,7 +32,8 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       SpeakersComponent,
       DashboardComponent,
       ContactsComponent,
-      DateTimeFormatPipe
+      DateTimeFormatPipe,
+      ErrorComponent
    ],
    imports: [
       BrowserModule,
