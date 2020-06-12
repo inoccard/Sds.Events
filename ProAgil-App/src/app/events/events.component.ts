@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EventsComponent implements OnInit {
   title = 'Eventos';
+  file: File;
   eventsFiltered: any = [];
   events: any = [];
   event: Events;
@@ -45,6 +46,7 @@ export class EventsComponent implements OnInit {
   editEvent(template: ModalDirective, event: Events) {
     this.openModal(template);
     this.event = event;
+    this.event.imageURL = '';
     this.registerForm.patchValue(event);
   }
 
@@ -105,12 +107,13 @@ export class EventsComponent implements OnInit {
       // copiar evento
       if (!this.event){
         this.event = Object.assign(this.registerForm.value);
+        this.splitImage();
       }else {
         this.event = Object.assign({ id: this.event.id }, this.registerForm.value);
+        this.splitImage();
       }
       this.eventService.saveEvent(this.event).subscribe(
         (newEvent: Events) => {
-          console.log(newEvent);
           template.hide();
           this.getEvents();
           this.toastr.success(`Evento ${this.event.theme} salvo com sucesso`, 'Salvar');
@@ -122,7 +125,17 @@ export class EventsComponent implements OnInit {
     }
   }
 
-  onFileChange(event) {
-    console.log(event);
+  splitImage(){
+    this.eventService.postUpload(this.file).subscribe(); // upload de imagem
+    const fileName = this.event.imageURL.split('\\', 3);
+    this.event.imageURL = fileName[2];
+  }
+
+  onFileChange(event: any) {
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      this.file = event.target.files;
+      console.log(event);
+    }
   }
 }
