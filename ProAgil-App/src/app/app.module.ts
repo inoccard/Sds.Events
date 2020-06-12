@@ -19,13 +19,17 @@ import { NavComponent } from './nav/nav.component';
 
 /** PIPES */
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
+import { SpeakersComponent } from './speakers/speakers.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       EventsComponent,
       NavComponent,
-      DateTimeFormatPipe
+      DateTimeFormatPipe,
+      SpeakersComponent,
+      DashboardComponent
    ],
    imports: [
       BrowserModule,

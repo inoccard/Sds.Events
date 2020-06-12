@@ -82,7 +82,7 @@ export class EventsComponent implements OnInit {
         this.events = response;
         this.eventsFiltered = this.events;
       }, error => {
-        console.log(error);
+        this.toastr.error(`Erro ao obter eventos: ${error}`);
       }
     );
   }
