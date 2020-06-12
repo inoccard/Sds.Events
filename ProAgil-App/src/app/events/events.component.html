@@ -38,7 +38,7 @@
   <tr *ngFor="let event of eventsFiltered">
     <td>
       <img *ngIf="showImg"
-      src="http://localhost:5000/img/{{event.imageURL}}"
+      src="http://localhost:5000/resources/images/{{event.imageURL}}"
       alt="Imagem"
       [style.width.px]="50"
       [style.margin.px]="2">
@@ -124,9 +124,16 @@
               <div *ngIf="registerForm.get('personQtd').hasError('max') && registerForm.get('personQtd').touched" class="invalid-feedback">Quantidade deve ser menor que 120000</div>
             </div>
             <div class="form-group col-md-9">
-              <input type="text" class="form-control"
-              [ngClass]="{'is-invalid': registerForm.get('imageURL').errors && registerForm.get('imageURL').touched}"
-              formControlName="imageURL" placeholder="Imagem">
+             <table>
+               <tr>
+                 <td>
+                    <button class="btn btn-success" (click)="file.click()">Enviar imagem</button>
+                    <input type="file" #file class="form-control"
+                      [ngClass]="{'is-invalid': registerForm.get('imageURL').errors && registerForm.get('imageURL').touched}" (change)="onFileChange($event)"
+                      formControlName="imageURL" placeholder="Imagem" style="display: none;">
+                 </td>
+               </tr>
+             </table>
               <div *ngIf="registerForm.get('imageURL').hasError('required') && registerForm.get('imageURL').touched" class="invalid-feedback">Imagem é obrigatório</div>
             </div>
           </div>  

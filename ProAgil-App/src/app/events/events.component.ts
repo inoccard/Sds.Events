@@ -121,4 +121,8 @@ export class EventsComponent implements OnInit {
       );
     }
   }
+
+  onFileChange(event) {
+    console.log(event);
+  }
 }

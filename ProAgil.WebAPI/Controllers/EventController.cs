@@ -38,38 +38,41 @@ namespace ProAgil.WebAPI.Controllers {
         }
 
         [HttpPost("upload")]
-        public async Task<IActionResult> upload()
+        public IActionResult upload()
         {
             try
             {
                 // pega o arquivo
                 var file = Request.Form.Files[0];
                 // pega o diretório onde a aplicação quer armazenar
-                var folferName = Path.Combine("Resources","images");
+                var folferName = Path.Combine("Resources","Images");
                 // Combina o diretório da aplicação + o onde a aplicação quer armazenar os arquivos
-                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(),folferName);
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folferName);
 
-                if(file.Length > 0){
+                if (file.Length > 0)
+                {
                     var filename = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
                     var fullPath = Path.Combine(pathToSave, filename.Replace("\"", " ").Trim());
 
-                    using(var stream = new FileStream(fullPath, FileMode.Create))
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
                     {
                         // copia file parao stream
                         file.CopyTo(stream);
                     }
+
+                    return Ok();
                 }
-                return Ok();
+                return BadRequest("Erro ao fazer upload");
             }
+            
             catch (Exception e)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
             }
-            return BadRequest("Erro ao fazer upload");
         }
 
 
-        [HttpGet ("{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get (int id) {
             try {
                 var _event = await context.GetEventAssyncById (id, true);
