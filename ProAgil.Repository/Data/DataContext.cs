@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using ProAgil.Domain.Entities;
 
 namespace ProAgil.Repository.Data {
-    public class DataContext : DbContext {
+    public class DataContext : IdentityDbContext {
         /*public DataContext(DbContextOptions<DbContext> options) : base(options)
         {
             
