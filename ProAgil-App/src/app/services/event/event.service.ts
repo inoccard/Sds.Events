@@ -35,7 +35,6 @@ export class EventService {
 
   /**
    * upload de imagens
-   * @param file
    */
   postUpload(file: File, name: string) {
     const fileToUpload = file[0] as File;
