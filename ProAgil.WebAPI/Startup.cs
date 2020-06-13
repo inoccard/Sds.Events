@@ -27,7 +27,7 @@ namespace ProAgil.WebAPI {
             /// <param name="("DefaultConnection""></param>
             /// <typeparam name="DataContext"></typeparam>
             /// <returns></returns>
-            services.AddDbContext<DataContext> (d => d.UseSqlServer (Configuration.GetConnectionString ("DefaultConnection")));
+            services.AddDbContext<Repository.Data.DbContext> (d => d.UseSqlServer (Configuration.GetConnectionString ("DefaultConnection")));
             /// <summary>
             /// Injeção de Dependência do ProAgilRepository
             /// </summary>
