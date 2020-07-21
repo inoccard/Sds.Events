@@ -5,8 +5,8 @@ using ProAgil.Domain.Entities;
 
 namespace ProAgil.Repository.Data {
     public class ProAgilRepository : IProAgilRepository {
-        private readonly DbContext context;
-        public ProAgilRepository (DbContext context) {
+        private readonly ProAgilContext context;
+        public ProAgilRepository (ProAgilContext context) {
             this.context = context;
         }
 

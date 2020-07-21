@@ -8,7 +8,7 @@ using ProAgil.Repository.Data;
 
 namespace ProAgil.Repository.Migrations
 {
-    [DbContext(typeof(Data.DbContext))]
+    [DbContext(typeof(Data.ProAgilContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

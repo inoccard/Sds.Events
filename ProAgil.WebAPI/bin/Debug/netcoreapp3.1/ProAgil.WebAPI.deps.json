@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Proagil.WebAPI/1.0.0": {
+      "ProAgil.WebAPI/1.0.0": {
         "dependencies": {
           "AutoMapper": "9.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
@@ -305,10 +305,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "Proagil.WebAPI.dll": {}
+          "ProAgil.WebAPI.dll": {}
         },
         "compile": {
-          "Proagil.WebAPI.dll": {}
+          "ProAgil.WebAPI.dll": {}
         }
       },
       "AutoMapper/9.0.0": {
@@ -3441,7 +3441,7 @@
     }
   },
   "libraries": {
-    "Proagil.WebAPI/1.0.0": {
+    "ProAgil.WebAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
