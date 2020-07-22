@@ -14,16 +14,8 @@ using ProAgil.Domain.Entities;
 /// </summary>
 namespace ProAgil.Repository.Data
 {
-    public class ProAgilContext : IdentityDbContext<User, Role, int, 
-                                IdentityUserClaim<int>, UserRole, 
-                                IdentityUserLogin<int>, IdentityRoleClaim<int>, 
-                                IdentityUserToken<int>>
+    public class ProAgilContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
-        /*public DataContext(DbContextOptions<DbContext> options) : base(options)
-        {
-            
-        }*/
-
         public ProAgilContext (DbContextOptions<ProAgilContext> options) : base (options) { }
 
         public DbSet<Event> Events { get; set; }

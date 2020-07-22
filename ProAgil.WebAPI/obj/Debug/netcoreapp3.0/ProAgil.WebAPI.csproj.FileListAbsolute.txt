@@ -86,3 +86,4 @@ C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\obj\Debug\netcoreapp3.0\ProAg
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\obj\Debug\netcoreapp3.0\ProAgil.WebAPI.csproj.CopyComplete
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\obj\Debug\netcoreapp3.0\ProAgil.WebAPI.dll
 C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\obj\Debug\netcoreapp3.0\ProAgil.WebAPI.pdb
+C:\inoccard\vs.code\dontnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
