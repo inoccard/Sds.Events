@@ -1,6 +1,7 @@
 using System.IO;
+using System.Text;
 using AutoMapper;
-using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,10 +13,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using ProAgil.Domain.Identity;
 using ProAgil.Repository.Data;
 
-namespace ProAgil.WebAPI {
+namespace ProAgil.WebAPI
+{
     public class Startup {
         public Startup (IConfiguration configuration) {
             Configuration = configuration;
@@ -63,7 +66,21 @@ namespace ProAgil.WebAPI {
             builder.AddRoleManager<Role> (); // gerenciador dos papeis
             builder.AddSignInManager<SignInManager<User>> ();
 
-//            services.AddAuthentication (Jwt.AuthenticationScheme);
+            // JWT Config
+            services.AddAuthentication (JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                {
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        // assinatura da chave do emissor
+                        ValidateIssuerSigningKey = true,
+                        // config da chave da API
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+
+                    };
+                });
 
             // Determina qual determinado controller será chamado, e adicionando uma política
             services.AddMvc (options => {
