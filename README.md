@@ -96,7 +96,7 @@
 
 ## Nova Migrations com IdentityContext
 
-* `Entrar no projeto repository`
-* `Remover a migrations antiga, depois:`
+* `Entre no projeto repository`
+* `Remova a migrations antiga, depois:`
 * `dotnet ef --startup-project ../ProAgil.WebAPI migrations add init`
 * `dotnet ef --startup-project ../ProAgil.WebAPI database update`
