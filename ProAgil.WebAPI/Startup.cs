@@ -1,14 +1,18 @@
 using System.IO;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using ProAgil.Domain.Identity;
 using ProAgil.Repository.Data;
 
 namespace ProAgil.WebAPI {
@@ -36,8 +40,38 @@ namespace ProAgil.WebAPI {
             /// <returns></returns>
             services.AddScoped <IProAgilRepository, ProAgilRepository>();
 
+            // todos os controller terão que passar por uma autenticação
+            // quem vai consumir a API precisa estar autenticado e autorizado
+            IdentityBuilder builder = services.AddIdentityCore<User>(options =>
+               {
+                   options.Password.RequireDigit = false; // sem caracteres especiais
+                   options.Password.RequireNonAlphanumeric = false;
+                   options.Password.RequireLowercase = false;
+                   options.Password.RequireUppercase = false;
+                   options.Password.RequiredLength = 4;
+               }
+            );
+
+            builder = new IdentityBuilder(builder.UserType, typeof(Role), builder.Services);
+            // EntityFramework levará em consideração sempre o contexto
+            builder.AddEntityFrameworkStores<ProAgilContext>();
+            builder.AddRoleValidator<Role>();
+            builder.AddRoleManager<Role>(); // gerenciador dos papeis
+            builder.AddSignInManager<SignInManager<User>>();
+
+            // Determina qual determinado controller será chamado, e adicionado uma política
+            services.AddMvc( options =>
+            {
+                // toda vez que um controller for chamado, deverá respeitar esta política
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser() // requer que o usuário esteja autenticado
+                .Build();
+                options.Filters.Add(new AuthorizeFilter(policy)); // filtra todas as chamadas do conteoller
+
+            })
+            .SetCompatibilityVersion (CompatibilityVersion.Version_3_0);
+
             services.AddAutoMapper();
-            services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_3_0);
             services.AddCors ();
             //services.AddControllers();
         }
