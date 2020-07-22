@@ -83,6 +83,7 @@ namespace ProAgil.WebAPI
                 });
 
             // Determina qual determinado controller será chamado, e adicionando uma política
+            // Não é mais necessário colocar autenticação no controller
             services.AddMvc (options => {
                     // toda vez que um controller for chamado, deverá respeitar esta política
                     var policy = new AuthorizationPolicyBuilder ()
