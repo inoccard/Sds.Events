@@ -42,6 +42,7 @@ namespace ProAgil.WebAPI.Helpers
             CreateMap<SocialNetWork, SocialNetworkDto>().ReverseMap();
 
             CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<User, UserLoginDto>().ReverseMap();
         }
     }
 }
