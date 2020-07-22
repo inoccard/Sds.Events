@@ -93,3 +93,10 @@
 ## Instalando NGx Toastr
 
 * `npm i ngx-toastr`
+
+## Nova Migrations com IdentityContext
+
+* `Entrar no projeto repository`
+* `Remover a migrations antiga, depois:`
+* `dotnet ef --startup-project ../ProAgil.WebAPI migrations add init`
+* `dotnet ef --startup-project ../ProAgil.WebAPI database update`
