@@ -32,14 +32,14 @@ namespace ProAgil.Repository.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<UserRole>(userRole =>
             {
-                userRole.HasKey(ur => new { ur.RoleId, ur.UserId });
-
                 // RelationShip Many To Many
+                userRole.HasKey(ur => new { ur.RoleId, ur.UserId });
+                // um papel que tem muitos usuários e o relacionamento é obrigatório
                 userRole.HasOne(ur => ur.Role)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.RoleId)
                 .IsRequired();
-
+                // um usuário com muitos papéis e o relacionamento é obrigatório
                 userRole.HasOne(ur => ur.User)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.UserId)
