@@ -5,3 +5,4 @@ C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proa
 C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.AssemblyInfo.cs
 C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.dll
 C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.pdb
+C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.csprojAssemblyReference.cache
