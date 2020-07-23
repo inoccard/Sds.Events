@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using AutoMapper.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Proagil.WebAPI.Dtos;
 using ProAgil.Domain.Identity;
 
@@ -38,7 +42,15 @@ namespace Proagil.WebAPI.Controllers {
             return Ok (userDto);
         }
 
+        /// <summary>
+        /// Login
+        /// Não pode retornar BadRequest
+        /// Não necessita de autenticação [AllowAnonymous]
+        /// </summary>
+        /// <param name="userLogin"></param>
+        /// <returns></returns>
         [HttpGet ("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login (UserLoginDto userLogin) {
             try {
                 var user = await _userManager.FindByNameAsync (userLogin.UserName);
@@ -60,12 +72,6 @@ namespace Proagil.WebAPI.Controllers {
             } catch (Exception e) {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Não foi fazer login: {e.Message}");
             }
-        }
-
-        private async Task<string> GenerateJwToken(User appUser)
-        {
-
-            return "";
         }
 
         /// <summary>
@@ -90,5 +96,42 @@ namespace Proagil.WebAPI.Controllers {
                 return StatusCode (StatusCodes.Status500InternalServerError, $"Não foi possível criar usuário: {e.Message}");
             }
         }
+
+        #region private Methods
+        /// <summary>
+        /// Generate token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        private async Task<string> GenerateJwToken(User user)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.UserName)
+            };
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            foreach (var role in roles)
+                claims.Add(new Claim(ClaimTypes.Role, role));
+
+            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_config.GetSection("AppSettings:Token").Value));
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.Now.AddDays(1),
+                SigningCredentials = creds
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            return tokenHandler.WriteToken(token);
+        }
+        #endregion
     }
 }
