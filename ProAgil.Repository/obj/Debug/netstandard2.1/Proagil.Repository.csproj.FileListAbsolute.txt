@@ -9,3 +9,14 @@ C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\
 C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.csproj.CopyComplete
 C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.dll
 C:\inoccard\vs.code\dontnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.pdb
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proagil.Repository.deps.json
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proagil.Repository.dll
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proagil.Repository.pdb
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proagil.Domain.dll
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proagil.Domain.pdb
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.csprojAssemblyReference.cache
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.AssemblyInfoInputs.cache
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.AssemblyInfo.cs
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.csproj.CopyComplete
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.dll
+C:\inoccard\vs.code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.pdb
