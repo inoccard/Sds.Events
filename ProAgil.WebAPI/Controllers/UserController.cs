@@ -38,7 +38,7 @@ namespace Proagil.WebAPI.Controllers {
         /// <param name="userDto"></param>
         /// <returns></returns>
         [HttpGet ("user")]
-        public async Task<IActionResult> Get (UserDto userDto) {
+        public IActionResult Get (UserDto userDto) {
             return Ok (userDto);
         }
 
