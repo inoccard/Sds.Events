@@ -56,12 +56,12 @@ namespace ProAgil.WebAPI
             IdentityBuilder builder = services.AddIdentity<User, Role>(options =>
             {
                 options.Password.RequireDigit = false; // sem caracteres especiais
-                    options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 4;
             })
-               .AddEntityFrameworkStores<ProAgilContext>(); // EntityFramework levará em consideração sempre o contexto
+                .AddEntityFrameworkStores<ProAgilContext>(); // EntityFramework levará em consideração sempre o contexto
 
             /// <summary>
             /// instancia o IdentityBuilder com o tipo de usuário, tippo de papel e o serviço criado acima
@@ -79,53 +79,57 @@ namespace ProAgil.WebAPI
                 {
                     opt.TokenValidationParameters = new TokenValidationParameters
                     {
-                            // assinatura da chave do emissor
-                            ValidateIssuerSigningKey = true,
-                            // config da chave da API
-                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                        // assinatura da chave do emissor
+                        ValidateIssuerSigningKey = true,
+                        // config da chave da API
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
                         ValidateIssuer = false,
                         ValidateAudience = false
 
                     };
                 });
-
+            services.AddAuthorization();
             // Determina qual determinado controller será chamado, e adicionando uma política
             // Não é mais necessário colocar autenticação no controller
             services.AddMvc(options =>
             {
-                    // toda vez que um controller for chamado, deverá respeitar esta política
-                    var policy = new AuthorizationPolicyBuilder()
+                // toda vez que um controller for chamado, deverá respeitar esta política
+                var policy = new AuthorizationPolicyBuilder()
                     .RequireAuthenticatedUser() // requer que o usuário esteja autenticado
                     .Build();
-                options.Filters.Add(new AuthorizeFilter(policy)); // filtra todas as chamadas do controller
+                options
+                    .Filters.Add(new AuthorizeFilter(policy)); // filtra todas as chamadas do controller
 
-                })
+            })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddAutoMapper();
             services.AddCors();
-            //services.AddControllers();
+            services.AddControllers(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
+            else
+                app.UseHsts();
 
+            app.UseAuthentication();
+            app.UseMvc();
+
+            //app.UseHttpsRedirection();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
                 RequestPath = new PathString("/Resources")
             });
-            app.UseRouting();
 
-            //app.UseAuthorization ();
+            app.UseRouting();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

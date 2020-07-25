@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.WebAPI\\Proagil.WebAPI.csproj",
+  "FilePath": "c:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14361,7 +14361,7 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "Proagil.WebAPI",
+  "RootNamespace": "ProAgil.WebAPI",
   "Documents": [],
   "SerializationFormat": "0.2"
 }
