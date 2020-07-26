@@ -36,7 +36,7 @@ namespace ProAgil.WebAPI
             /// <summary>
             /// Injeção de Dependêncica
             /// </summary>
-            /// <param name="("DefaultConnection""></param>
+            /// <param name="("DefaultConnection")"></param>
             /// <typeparam name="ProAgilContext"></typeparam>
             /// <returns></returns>
             services.AddDbContext<ProAgilContext>(d => d.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -88,7 +88,7 @@ namespace ProAgil.WebAPI
 
                     };
                 });
-            services.AddAuthorization();
+            //services.AddAuthorization();
             // Determina qual determinado controller será chamado, e adicionando uma política
             // Não é mais necessário colocar autenticação no controller
             services.AddMvc(options =>
@@ -113,8 +113,8 @@ namespace ProAgil.WebAPI
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
-            else
-                app.UseHsts();
+           // else
+             //   app.UseHsts();
 
             app.UseAuthentication();
             app.UseMvc();
@@ -129,7 +129,7 @@ namespace ProAgil.WebAPI
             });
 
             app.UseRouting();
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

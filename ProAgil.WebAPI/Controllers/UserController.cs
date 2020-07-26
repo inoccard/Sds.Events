@@ -40,7 +40,8 @@ namespace Proagil.WebAPI.Controllers
         /// </summary>
         /// <param name="userDto"></param>
         /// <returns></returns>
-        [HttpGet("GetUser")]
+        [HttpGet("get-user")]
+        //[AllowAnonymous]
         public async Task<IActionResult> GetUser()
         {
             try
