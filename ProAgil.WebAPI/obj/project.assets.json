@@ -8776,25 +8776,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\inoce\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
       "projectName": "ProAgil.WebAPI",
-      "projectPath": "C:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
-      "outputPath": "C:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\obj\\",
+      "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\inoce\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\proagil.webapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\inocencio.cardoso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\inoce\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -8808,11 +8806,11 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
-              "projectPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj"
+            "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
+              "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj"
             },
-            "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj": {
-              "projectPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj"
+            "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj": {
+              "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj"
             }
           }
         }
@@ -8886,7 +8884,7 @@
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.0.2, 3.0.2]"
+            "version": "[3.0.3, 3.0.3]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
@@ -8905,7 +8903,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
