@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {}
+    "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {}
   },
   "projects": {
-    "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
+    "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
         "projectName": "Proagil.Domain",
-        "projectPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
-        "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
-        "outputPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\obj\\",
+        "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
+        "packagesPath": "C:\\Users\\inoce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\inocencio.cardoso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\inoce\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -67,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
