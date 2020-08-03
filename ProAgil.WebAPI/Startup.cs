@@ -88,7 +88,7 @@ namespace ProAgil.WebAPI
 
                     };
                 });
-            //services.AddAuthorization();
+            services.AddAuthorization();
             // Determina qual determinado controller será chamado, e adicionando uma política
             // Não é mais necessário colocar autenticação no controller
             services.AddMvc(options =>
@@ -128,8 +128,9 @@ namespace ProAgil.WebAPI
                 RequestPath = new PathString("/Resources")
             });
 
+            app.UseCors();
             app.UseRouting();
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.WebAPI\\Proagil.WebAPI.csproj": {}
+    "C:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj": {}
   },
   "projects": {
     "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
@@ -154,14 +154,14 @@
         }
       }
     },
-    "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.WebAPI\\Proagil.WebAPI.csproj": {
+    "C:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.WebAPI\\Proagil.WebAPI.csproj",
-        "projectName": "Proagil.WebAPI",
-        "projectPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.WebAPI\\Proagil.WebAPI.csproj",
+        "projectUniqueName": "C:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
+        "projectName": "ProAgil.WebAPI",
+        "projectPath": "C:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
         "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
-        "outputPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.WebAPI\\obj\\",
+        "outputPath": "C:\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
