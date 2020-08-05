@@ -48,6 +48,7 @@ namespace Proagil.WebAPI.Controllers
             {
                 var user = await _userManager.FindByNameAsync("inoccard");
                 var userToReturn = _mapper.Map<UserDto>(user);
+                userToReturn.PasswordHash = null;
                 return Ok(userToReturn);
             }
             catch (Exception e)

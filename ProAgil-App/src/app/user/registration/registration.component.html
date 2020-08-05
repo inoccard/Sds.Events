@@ -29,6 +29,9 @@
           class="invalid-feedback">
           email é obrigatório.
         </div>
+        <div *ngIf="registerForm.get('email').hasError('email') && 
+        registerForm.get('email').touched" 
+        class="invalid-feedback">Deve ser um e-amil válido</div>
       </div>
       <div class="form-group">
         <label for="">Usuario:</label>
@@ -82,7 +85,7 @@
       </div>
       <div class="form-row">
         <div class="form-group col-md-8 offset-md-2">
-          <button class="btn btn-lg btn-success btn-block" (click)="Register()">Registar</button>
+          <button class="btn btn-lg btn-success btn-block" [disabled]="!registerForm.valid" (click)="Register()">Registar</button>
         </div>
       </div>
     </form>

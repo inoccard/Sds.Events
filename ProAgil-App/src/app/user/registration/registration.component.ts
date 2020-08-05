@@ -20,17 +20,26 @@ export class RegistrationComponent implements OnInit {
   validation() {
     this.registerForm = this.fb.group({
       fullName: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       userName: ['', Validators.required],
       passwords: this.fb.group({
-        password: ['', Validators.required, Validators.minLength(4)],
+        password: ['', [Validators.required, Validators.minLength(4)]],
         confirmPassword: ['', Validators.required],
-      }),
-      
+      }, { validator: this.comparePassword }),
     });
   }
 
+  comparePassword(fb: FormGroup) {
+    const confirmPasswordCtrl = fb.get('confirmPassword');
+    if (confirmPasswordCtrl.errors == null || 'mismatch' in confirmPasswordCtrl.errors) {
+      if (fb.get('password').value !== confirmPasswordCtrl.value) {
+        confirmPasswordCtrl.setErrors({ mismatch: true });
+      }else{
+        confirmPasswordCtrl.setErrors(null)
+      }
+    }
+  }
+
   Register() {
-    
   }
 }
