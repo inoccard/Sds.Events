@@ -100,3 +100,6 @@
 * `Remova a migrations antiga, depois:`
 * `dotnet ef --startup-project ../ProAgil.WebAPI migrations add init`
 * `dotnet ef --startup-project ../ProAgil.WebAPI database update`
+
+## JWT no lado do cliente [ANGULAR]
+ * `npm i @auth0/angular-jwt`
