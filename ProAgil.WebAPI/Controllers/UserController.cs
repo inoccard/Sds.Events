@@ -110,8 +110,10 @@ namespace Proagil.WebAPI.Controllers
                 var result = await _userManager.CreateAsync(user, user.PasswordHash);
                 var userToResult = _mapper.Map<UserDto>(user);
 
-                if (result.Succeeded)
+                if (result.Succeeded){
+                    //userToResult.PasswordHash = null;
                     return Created("user", userToResult);
+                }
 
                 return BadRequest(result.Errors);
             }

@@ -25,7 +25,7 @@ export class AuthService {
           this.decodedToken = this.jwtHelper.decodeToken(user.token);
         }
       })
-    )
+    );
   }
 
   register(model: any) {

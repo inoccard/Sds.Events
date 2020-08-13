@@ -128,7 +128,7 @@ namespace ProAgil.WebAPI
                 RequestPath = new PathString("/Resources")
             });
 
-            app.UseCors();
+            //app.UseCors();
             app.UseRouting();
             app.UseAuthorization();
 
