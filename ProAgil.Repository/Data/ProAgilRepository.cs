@@ -109,6 +109,36 @@ namespace ProAgil.Repository.Data {
 
             return await speakers.AsNoTracking().ToArrayAsync ();
         }
+
+        Task<Event[]> IProAgilRepository.GetEventsAssyncByTheme(string theme, bool includeSpeaker)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<Event[]> IProAgilRepository.GetEventsAssync(bool includeSpeaker)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<Event> IProAgilRepository.GetEventAssyncById(int Id, bool includeSpeaker)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<Speaker[]> IProAgilRepository.GetSpeakersAssync(bool includeEvents)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<Speaker> IProAgilRepository.GetSpeakersAssyncById(int Id, bool includeEvents)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<Speaker[]> IProAgilRepository.GetSpeakersAssyncByName(string name, bool includeEvents)
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
     }
 }
