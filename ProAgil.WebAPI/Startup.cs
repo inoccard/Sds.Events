@@ -129,7 +129,7 @@ namespace ProAgil.WebAPI
 
             app.UseMvc();
 
-            //app.UseCors();
+            app.UseCors();
             app.UseRouting();
             //app.UseAuthorization();
 
