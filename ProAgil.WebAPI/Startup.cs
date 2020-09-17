@@ -113,11 +113,10 @@ namespace ProAgil.WebAPI
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
-           // else
-             //   app.UseHsts();
+           else
+                app.UseHsts();
 
             app.UseAuthentication();
-            app.UseMvc();
 
             //app.UseHttpsRedirection();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
@@ -128,9 +127,11 @@ namespace ProAgil.WebAPI
                 RequestPath = new PathString("/Resources")
             });
 
+            app.UseMvc();
+
             //app.UseCors();
             app.UseRouting();
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

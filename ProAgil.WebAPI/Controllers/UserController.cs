@@ -78,6 +78,7 @@ namespace Proagil.WebAPI.Controllers
                     var appUser = await _userManager.Users.FirstOrDefaultAsync(u => u.NormalizedUserName == userLogin.UserName.ToUpper());
 
                     var userToReturn = _mapper.Map<UserLoginDto>(appUser);
+                    userToReturn.PasswordHash = null;
                     return Ok(new
                     {
                         token = GenerateJwToken(appUser).Result,
