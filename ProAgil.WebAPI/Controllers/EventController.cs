@@ -9,7 +9,8 @@ using ProAgil.Domain.Entities;
 using ProAgil.Repository.Data;
 using ProAgil.WebAPI.Dtos;
 
-namespace ProAgil.WebAPI.Controllers {
+namespace ProAgil.WebAPI.Controllers 
+{
     [ApiController]
     [Route("[controller]")]
     public class EventController : ControllerBase

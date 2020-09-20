@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth/auth.guard';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { LoginComponent } from './user/login/login.component';
 import { UserComponent } from './user/user.component';
@@ -19,10 +20,10 @@ const routes: Routes = [
     ] // filhos
   },
 
-  { path: 'events', component: EventsComponent },
-  { path: 'speakers', component: SpeakersComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'contacts', component: ContactsComponent},
+  { path: 'events', component: EventsComponent, canActivate: [AuthGuard] },
+  { path: 'speakers', component: SpeakersComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'contacts', component: ContactsComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '', pathMatch: 'full' },  // principal
   { path: '**', component: ErrorComponent }, // se o usuário digitar rotas inexistentes
 ];

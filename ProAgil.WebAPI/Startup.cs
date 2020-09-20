@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Text;
 using AutoMapper;
@@ -88,7 +87,7 @@ namespace ProAgil.WebAPI
 
                     };
                 });
-            services.AddAuthorization();
+            //services.AddAuthorization();
             // Determina qual determinado controller será chamado, e adicionando uma política
             // Não é mais necessário colocar autenticação no controller
             services.AddMvc(options =>

@@ -103,3 +103,6 @@
 
 ## JWT no lado do cliente [ANGULAR]
  * `npm i @auth0/angular-jwt`
+
+## Gerar Guardião
+* `ng g g auth/auth`

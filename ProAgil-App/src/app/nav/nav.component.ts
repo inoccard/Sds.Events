@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private authService: AuthService, public router: Router, public fb: FormBuilder, private toastr: ToastrService) { }
+  constructor(public authService: AuthService, public router: Router, public fb: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -19,8 +19,11 @@ export class NavComponent implements OnInit {
   loggedIn() {
     return this.authService.loggedIn();
   }
+  entrar() {
+    this.router.navigate(['/user/login']);
+  }
 
-    logOut() {
+  logOut() {
       localStorage.removeItem('token');
       this.toastr.show('Log Out');
       this.router.navigate(['/user/login']);
