@@ -10,14 +10,12 @@ export class EventService {
 
   events: any = [];
   baseURL = 'http://localhost:5000/event';
-  tokenHeader: HttpHeaders;
 
   constructor(private http: HttpClient) {
-    this.tokenHeader = new HttpHeaders({ Authorization: `Bearer ${localStorage.getItem('token')}` });
     this.getEvents();
   }
   getEvents() {
-    return this.http.get(this.baseURL, { headers: this.tokenHeader });
+    return this.http.get(this.baseURL);
   }
   getEventByTheme(theme: string): Observable<Events[]>{
     return this.http.get<Events[]>(`${this.baseURL}/getByTheme/${theme}`);
@@ -27,9 +25,9 @@ export class EventService {
   }
   saveEvent(event: Events) {
     if (!event.id || event.id === 0) {
-      return this.http.post(this.baseURL, event, { headers: this.tokenHeader });
+      return this.http.post(this.baseURL, event);
     } else {
-      return this.http.put(`${this.baseURL}/${event.id}`, event, { headers: this.tokenHeader });
+      return this.http.put(`${this.baseURL}/${event.id}`, event);
     }
   }
   deleteEvent(id: number) {
@@ -43,6 +41,6 @@ export class EventService {
     const fileToUpload = file[0] as File;
     const formData = new FormData();
     formData.append('file', fileToUpload, name);
-    return this.http.post(`${this.baseURL}/upload`, formData, { headers: this.tokenHeader });
+    return this.http.post(`${this.baseURL}/upload`, formData);
   }
 }
