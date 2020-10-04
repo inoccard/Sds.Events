@@ -1,4 +1,3 @@
-import { AuthInterceptor } from './auth/interceptor/auth.interceptor';
 /** MODULES */
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 /** SERVICES */
 import { EventService } from './services/event/event.service';
+import { AuthInterceptor } from './auth/interceptor/auth.interceptor';
 
 /** COMPONENTS */
 import { AppComponent } from './app.component';
@@ -23,12 +23,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ErrorComponent } from './error/error.component';
 import { TitleComponent } from './shared/title/title.component';
-
-/** PIPES */
-import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+
+/** PIPES */
+import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
+
 
 
 @NgModule({
@@ -57,7 +58,7 @@ import { RegistrationComponent } from './user/registration/registration.componen
       ModalModule.forRoot(),
       BsDropdownModule.forRoot(),
       ToastrModule.forRoot({
-         timeOut: 10000,
+         timeOut: 7000,
          positionClass: 'toast-bottom-right',
          preventDuplicates: true
       })

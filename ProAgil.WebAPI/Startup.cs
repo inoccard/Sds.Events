@@ -73,9 +73,13 @@ namespace ProAgil.WebAPI
             builder.AddSignInManager<SignInManager<User>>();
 
             // JWT Config
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication(x =>
+               {x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+               x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+               })
                 .AddJwtBearer(opt =>
                 {
+                    opt.RequireHttpsMetadata = false;
                     opt.TokenValidationParameters = new TokenValidationParameters
                     {
                         // assinatura da chave do emissor
@@ -83,8 +87,8 @@ namespace ProAgil.WebAPI
                         // config da chave da API
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
                         ValidateIssuer = false,
-                        ValidateAudience = false
-
+                        ValidateAudience = false,
+                        SaveSigninToken = true
                     };
                 });
             //services.AddAuthorization();
@@ -115,8 +119,6 @@ namespace ProAgil.WebAPI
            else
                 app.UseHsts();
 
-            app.UseAuthentication();
-
             //app.UseHttpsRedirection();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseStaticFiles();
@@ -128,9 +130,15 @@ namespace ProAgil.WebAPI
 
             app.UseMvc();
 
-            app.UseCors();
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseRouting();
-            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

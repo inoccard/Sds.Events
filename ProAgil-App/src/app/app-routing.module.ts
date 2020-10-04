@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'contacts', component: ContactsComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '', pathMatch: 'full' },  // principal
-  { path: '**', component: ErrorComponent }, // se o usuário digitar rotas inexistentes
+  { path: '**', component: ErrorComponent }, // rota curinga: se o usuário digitar rotas inexistentes. sempre fica por último
 ];
 
 @NgModule({
