@@ -21,6 +21,7 @@ export class EventsComponent implements OnInit {
   _filterList: string;
   registerForm: FormGroup;
   bodyDeletarEvento: string;
+
   constructor(private eventService: EventService, private fb: FormBuilder, private toastr: ToastrService) { }
   ngOnInit() {
     this.validation();

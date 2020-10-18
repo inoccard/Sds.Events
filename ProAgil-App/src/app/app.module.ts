@@ -9,6 +9,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToastrModule } from 'ngx-toastr';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { NgxMaskModule } from 'ngx-mask';
 
 /** SERVICES */
 import { EventService } from './services/event/event.service';
@@ -26,6 +28,7 @@ import { TitleComponent } from './shared/title/title.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { EventEditComponent } from './events/event-edit/event-edit.component';
 
 /** PIPES */
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
@@ -46,6 +49,7 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       UserComponent,
       LoginComponent,
       RegistrationComponent,
+      EventEditComponent,
    ],
    imports: [
       BrowserModule,
@@ -57,6 +61,8 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       TooltipModule.forRoot(), // forRoot() para utilizar em toda estrutura do projeto
       ModalModule.forRoot(),
       BsDropdownModule.forRoot(),
+      TabsModule.forRoot(),
+      NgxMaskModule.forRoot(),
       ToastrModule.forRoot({
          timeOut: 7000,
          positionClass: 'toast-bottom-right',
