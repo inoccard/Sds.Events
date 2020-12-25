@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rHWi4zTMmKdscZHdXQXvJOwKXcR775CENh+amp9f9UQVnw8Z3V3Uhog+jJ34AyFuVNfl0CiQxlVYF5J6/t+8dA==",
+  "dgSpecHash": "4y4ZMQrPFQsl9dAAlDBVUfaYEfh0iImtjtZVYFjos3F8lM8SnwLA1Oi6ayw6SUnYPcSBv4dqM1AfcrMw5jQpug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj",
+  "projectFilePath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\inoce\\.nuget\\packages\\corecompat.system.componentmodel.attributes\\4.2.3-rg\\corecompat.system.componentmodel.attributes.4.2.3-rg.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\corecompat.system.componentmodel.dataannotations\\4.2.3-r7\\corecompat.system.componentmodel.dataannotations.4.2.3-r7.nupkg.sha512",
@@ -58,9 +58,9 @@
     "C:\\Users\\inoce\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
-    "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system.io.compression\\4.1.0\\runtime.native.system.io.compression.4.1.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\runtime.native.system.io.compression\\4.1.0\\runtime.native.system.io.compression.4.1.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system.net.http\\4.0.1\\runtime.native.system.net.http.4.0.1.nupkg.sha512",
-    "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system.security.cryptography\\4.0.0\\runtime.native.system.security.cryptography.4.0.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\runtime.native.system.security.cryptography\\4.0.0\\runtime.native.system.security.cryptography.4.0.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

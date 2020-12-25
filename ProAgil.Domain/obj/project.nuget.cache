@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EA+Rk6iSvkS88D1eYyhUrryYG2/NYWI8V1BA3waiLn+cRat9ZxuBwkqrtn+VpeMjSxYbuOfhYk9hSGEIVVo1+w==",
+  "dgSpecHash": "784JuFJc+7lTAWjykik0O/0QaUMWSPDZ79TUdugfyQqUyyRgJKixEz9a8tGeVRZl+hLrsDp5pe4AHyKzYfDLfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\inoce\\OneDrive\\Documentos\\Codes\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
+  "projectFilePath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\inoce\\.nuget\\packages\\corecompat.system.componentmodel.attributes\\4.2.3-rg\\corecompat.system.componentmodel.attributes.4.2.3-rg.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\corecompat.system.componentmodel.dataannotations\\4.2.3-r7\\corecompat.system.componentmodel.dataannotations.4.2.3-r7.nupkg.sha512",
@@ -53,9 +53,9 @@
     "C:\\Users\\inoce\\.nuget\\packages\\netstandard.library\\1.6.0\\netstandard.library.1.6.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
-    "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system.io.compression\\4.1.0\\runtime.native.system.io.compression.4.1.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\runtime.native.system.io.compression\\4.1.0\\runtime.native.system.io.compression.4.1.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system.net.http\\4.0.1\\runtime.native.system.net.http.4.0.1.nupkg.sha512",
-    "C:\\Users\\inoce\\.nuget\\packages\\runtime.native.system.security.cryptography\\4.0.0\\runtime.native.system.security.cryptography.4.0.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\runtime.native.system.security.cryptography\\4.0.0\\runtime.native.system.security.cryptography.4.0.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
