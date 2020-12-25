@@ -9,10 +9,10 @@ import {
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/internal/operators/tap';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (localStorage.getItem('token') != null) {
@@ -23,13 +23,15 @@ export class AuthInterceptor implements HttpInterceptor {
         tap(
           succ => { },
           error => {
+            // se for não autorizado, redireciona para tela de login
             if (error.status === 401) {
-              this.router.navigateByUrl('/user/login');
+              this.router.navigateByUrl('user/login');
             }
           }
         )
       );
     }
-    return next.handle(request);
+    else
+      return next.handle(request);
   }
 }
