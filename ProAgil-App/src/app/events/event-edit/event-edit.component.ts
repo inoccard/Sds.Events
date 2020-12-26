@@ -13,9 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 export class EventEditComponent implements OnInit {
 
   title = 'Editar Evento';
-  event: Events;
-  imageURL: 'assets/img/upload_image.jpg';
+  event: Events = new Events();
+  imageURL = 'assets/img/upload_image.jpg';
   registerForm: FormGroup;
+  fileNameToUpdate: string;
 
   constructor(
     private eventService: EventService,
@@ -42,14 +43,18 @@ export class EventEditComponent implements OnInit {
     });
   }
 
+  /** carrega evento, seu lotes e redes sociais */
   getEvent() {
-    this.event = new Events();
     const id = +this.router.snapshot.paramMap.get('id'); // o sinal de + converte para number
     this.eventService.getEvent(id)
       .subscribe(
         (event: Events) => {
           this.event = Object.assign({}, event);
-          //console.log(this.event); // depois remover
+          this.fileNameToUpdate = event.imageURL.toString();
+          
+          this.imageURL = `http://localhost:5000/resources/images/${this.event.imageURL}`;
+          this.event.imageURL = '';
+          this.registerForm.patchValue(this.event);
         }
       );
   }

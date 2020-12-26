@@ -14,15 +14,19 @@ export class EventService {
   constructor(private http: HttpClient) {
     this.getEvents();
   }
+  
   getEvents() {
     return this.http.get(this.baseURL);
   }
+
   getEventByTheme(theme: string): Observable<Events[]>{
     return this.http.get<Events[]>(`${this.baseURL}get-by-theme/${theme}`);
   }
+
   getEvent(id: number): Observable<Events>{
     return this.http.get<Events>(`${this.baseURL}event/${id}`);
   }
+
   saveEvent(event: Events) {
     if (!event.id || event.id === 0) {
       return this.http.post(this.baseURL, event);
@@ -30,6 +34,7 @@ export class EventService {
       return this.http.put(`${this.baseURL}${event.id}`, event);
     }
   }
+
   deleteEvent(id: number) {
     return this.http.delete(`${this.baseURL}${id}`);
   }
