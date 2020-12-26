@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 
@@ -14,16 +13,8 @@ using ProAgil.Domain.Entities;
 /// </summary>
 namespace ProAgil.Repository.Data
 {
-    public class ProAgilContext : IdentityDbContext<User, Role, int, 
-                                IdentityUserClaim<int>, UserRole, 
-                                IdentityUserLogin<int>, IdentityRoleClaim<int>, 
-                                IdentityUserToken<int>>
+    public class ProAgilContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
-        /*public DataContext(DbContextOptions<DbContext> options) : base(options)
-        {
-            
-        }*/
-
         public ProAgilContext (DbContextOptions<ProAgilContext> options) : base (options) { }
 
         public DbSet<Event> Events { get; set; }
@@ -40,14 +31,14 @@ namespace ProAgil.Repository.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<UserRole>(userRole =>
             {
-                userRole.HasKey(ur => new { ur.RoleId, ur.UserId });
-
                 // RelationShip Many To Many
+                userRole.HasKey(ur => new { ur.RoleId, ur.UserId });
+                // um papel que tem muitos usuários e o relacionamento é obrigatório
                 userRole.HasOne(ur => ur.Role)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.RoleId)
                 .IsRequired();
-
+                // um usuário com muitos papéis e o relacionamento é obrigatório
                 userRole.HasOne(ur => ur.User)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.UserId)

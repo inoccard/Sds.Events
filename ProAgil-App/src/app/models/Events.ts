@@ -2,7 +2,7 @@ import { SpeakerEvent } from './SpeakerEvent';
 import { Lot } from './Lot';
 import { SocialNetwork } from './SocialNetwork';
 
-export interface Events {
+export class Events {
     id: number;
     theme: string;
     local: string;

@@ -1,6 +1,6 @@
 import { SocialNetwork } from './SocialNetwork';
 import { SpeakerEvent } from './SpeakerEvent';
-export interface Speaker {
+export class Speaker {
     id: number;
     name: string;
     miniCurriculum: string;

@@ -1,2 +1,2 @@
-export interface SpeakerEvent {
+export class SpeakerEvent {
 }

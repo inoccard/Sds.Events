@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Web\\ProAgil.Web.csproj": {}
+    "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj": {}
   },
   "projects": {
-    "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Web\\ProAgil.Web.csproj": {
+    "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Web\\ProAgil.Web.csproj",
+        "projectUniqueName": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj",
         "projectName": "ProAgil.Web",
-        "projectPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Web\\ProAgil.Web.csproj",
+        "projectPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj",
         "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
-        "outputPath": "C:\\inoccard\\vs.code\\dontnet-angular\\ProAgil.Web\\obj\\",
+        "outputPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

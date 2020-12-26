@@ -6,12 +6,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToastrModule } from 'ngx-toastr';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { NgxMaskModule } from 'ngx-mask';
 
 /** SERVICES */
 import { EventService } from './services/event/event.service';
+import { AuthInterceptor } from './auth/interceptor/auth.interceptor';
 
 /** COMPONENTS */
 import { AppComponent } from './app.component';
@@ -22,9 +25,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ErrorComponent } from './error/error.component';
 import { TitleComponent } from './shared/title/title.component';
+import { UserComponent } from './user/user.component';
+import { LoginComponent } from './user/login/login.component';
+import { RegistrationComponent } from './user/registration/registration.component';
+import { EventEditComponent } from './events/event-edit/event-edit.component';
 
 /** PIPES */
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
+
 
 
 @NgModule({
@@ -38,6 +46,10 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       DateTimeFormatPipe,
       ErrorComponent,
       TitleComponent,
+      UserComponent,
+      LoginComponent,
+      RegistrationComponent,
+      EventEditComponent,
    ],
    imports: [
       BrowserModule,
@@ -49,13 +61,22 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       TooltipModule.forRoot(), // forRoot() para utilizar em toda estrutura do projeto
       ModalModule.forRoot(),
       BsDropdownModule.forRoot(),
+      TabsModule.forRoot(),
+      NgxMaskModule.forRoot(),
       ToastrModule.forRoot({
-         timeOut: 10000,
+         timeOut: 7000,
          positionClass: 'toast-bottom-right',
          preventDuplicates: true
       })
    ],
-   providers: [EventService],
+   providers: [
+      EventService,
+      {
+         provide: HTTP_INTERCEPTORS,
+         useClass: AuthInterceptor,
+         multi: true
+      }
+   ],
    bootstrap: [
       AppComponent
    ]

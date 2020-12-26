@@ -96,7 +96,16 @@
 
 ## Nova Migrations com IdentityContext
 
-* `Entrar no projeto repository`
-* `Remover a migrations antiga, depois:`
+* `Entre no projeto repository`
+* `Remova a migrations antiga, depois:`
 * `dotnet ef --startup-project ../ProAgil.WebAPI migrations add init`
 * `dotnet ef --startup-project ../ProAgil.WebAPI database update`
+
+## JWT no lado do cliente [ANGULAR]
+ * `npm i @auth0/angular-jwt`
+
+## Gerar Guardião
+* `ng g g auth/auth`
+
+## Máscara
+* `npm i ngx-mask`

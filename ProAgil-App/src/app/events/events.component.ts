@@ -21,6 +21,7 @@ export class EventsComponent implements OnInit {
   _filterList: string;
   registerForm: FormGroup;
   bodyDeletarEvento: string;
+
   constructor(private eventService: EventService, private fb: FormBuilder, private toastr: ToastrService) { }
   ngOnInit() {
     this.validation();
@@ -43,6 +44,7 @@ export class EventsComponent implements OnInit {
     this.event = null;
     this.openModal(template);
   }
+
   editEvent(template: ModalDirective, event: Events) {
     this.openModal(template);
     this.event = Object.assign({}, event);
@@ -54,7 +56,7 @@ export class EventsComponent implements OnInit {
     this.openModal(confirm);
     this.event = event;
     this.bodyDeletarEvento = `Tem certeza que deseja excluir o Evento: ${event.theme}, Código: ${event.id}`;
-}
+  }
 
   confirmDelete(confirm: ModalDirective) {
     this.eventService.deleteEvent(this.event.id).subscribe(
@@ -71,7 +73,7 @@ export class EventsComponent implements OnInit {
   filterEvent(filterBy: string): any {
     filterBy = filterBy.toLocaleLowerCase();
     return this.events.filter(
-      (      event: { theme: string; }) => event.theme.toLocaleLowerCase().indexOf(filterBy) !== -1
+      (event: { theme: string; }) => event.theme.toLocaleLowerCase().indexOf(filterBy) !== -1
     );
   }
   // mostrar | ocultar imagem
@@ -96,7 +98,7 @@ export class EventsComponent implements OnInit {
       local: ['', Validators.required],
       eventDate: ['', Validators.required],
       personQtd: ['', [Validators.required, Validators.max(120000), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
-      imageURL: ['', Validators.required],
+      // imageURL: ['', Validators.required],
       contactPhone: ['', Validators.required],
       contactEmail: ['', [Validators.required, Validators.email]]
     });
@@ -105,10 +107,10 @@ export class EventsComponent implements OnInit {
   saveEditions(template: ModalDirective) {
     if (this.registerForm.valid) {
       // copiar evento
-      if (!this.event){
+      if (!this.event) {
         this.event = Object.assign(this.registerForm.value);
         this.splitImage();
-      }else {
+      } else {
         this.event = Object.assign({ id: this.event.id }, this.registerForm.value);
         this.splitImage();
       }
@@ -125,15 +127,16 @@ export class EventsComponent implements OnInit {
     }
   }
 
-  splitImage(){
-    const fileName = this.event.imageURL.split('\\', 3);
-    this.event.imageURL = fileName[2];
+  splitImage() {
+    if(this.event.imageURL){
+      const fileName = this.event.imageURL.split('\\', 3);
+      this.event.imageURL = fileName[2];
 
-    this.eventService.postUpload(this.file, fileName[2]).subscribe(); // upload de imagem
+      this.eventService.postUpload(this.file, fileName[2]).subscribe(); // upload de imagem
+    }
   }
 
   onFileChange(event: any) {
-    const reader = new FileReader();
     if (event.target.files && event.target.files.length) {
       this.file = event.target.files;
       console.log(event);

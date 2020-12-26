@@ -245,6 +245,9 @@ namespace ProAgil.Repository.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<string>("FullName")
+                        .HasColumnType("NVARCHAR(150)");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
@@ -267,9 +270,6 @@ namespace ProAgil.Repository.Migrations
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
-
-                    b.Property<string>("fulName")
-                        .HasColumnType("NVARCHAR(150)");
 
                     b.HasKey("Id");
 
