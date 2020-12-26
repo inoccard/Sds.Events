@@ -63,9 +63,9 @@
 
             <div class="form-group col-md-4">
               <label>Telefone</label>
-              <input type="text" mask="(000) 0000-0000" class="form-control" [(ngModel)]="event.contactPhone" [ngClass]="{'is-invalid': registerForm.get('contactPhone').errors 
+              <input type="text" mask="(00) 00000-0000" class="form-control" [(ngModel)]="event.contactPhone" [ngClass]="{'is-invalid': registerForm.get('contactPhone').errors 
             && registerForm.get('contactPhone').touched}" formControlName="contactPhone"
-                placeholder="(000) 90000-0000">
+                placeholder="(00) 00000-0000">
               <div *ngIf="registerForm.get('contactPhone').hasError('required')
             && registerForm.get('contactPhone').touched" class="invalid-feedback">
                 Telefone é obrigatório.
@@ -101,19 +101,19 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label>Quantidade</label>
-                    <input type="text" class="form-control" formControlName="qty" placeholder="000">
+                    <input type="number" class="form-control" formControlName="qty" placeholder="000">
                   </div>
                   <div class="form-group col-md-4">
                     <label>Preço</label>
-                    <input type="text" formControlName="price" placeholder="R$ 0,00">
+                    <input type="text" class="form-control" formControlName="price" placeholder="R$ 0,00">
                   </div>
                   <div class="form-group col-md-4">
                     <label>Data Início</label>
-                    <input type="text" class="form-control" formControlName="startDate" placeholder="01/01/2019">
+                    <input type="date" class="form-control" formControlName="startDate" placeholder="01/01/2019">
                   </div>
                   <div class="form-group col-md-4">
                     <label>Data Fim</label>
-                    <input type="text" class="form-control" formControlName="endDate" placeholder="01/01/2019">
+                    <input type="date" class="form-control" formControlName="endDate" placeholder="01/01/2019">
                   </div>
 
                 </div>
@@ -160,23 +160,22 @@
       </tabset>
       <div class="row">
         <div class="col-md-12 d-flex justify-content-end">
-          <!-- {{registerForm.value | json}} -->
           <button [disabled]="!registerForm.valid" class="btn btn-success my-2">Salvar Alterações</button>
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="form-row">
+      <!-- <div class="form-row">
         <div class="form-group col-md-9">
-          <input type="file" #file (change)="onFileChange(event)" class="form-control is-invalid"
-            formControlName="imagemURL" placeholder="" style="display: none">
+          <input type="file" #file (change)="onFileChange($event.target.files)" class="form-control is-invalid"
+            formControlName="imageURL" placeholder="" style="display: none">
         </div>
-      </div>
+      </div> -->
       <div class="card profile-card-2">
-        <div class="card-img-block">
-          <img [src]="event.imageURL" class="img-fluid" (click)="file.click()" style="cursor: pointer; width: 350px;"
+        <!-- <div class="card-img-block">
+          <img [src]="imageURL" class="img-fluid" (click)="file.click()" style="cursor: pointer; width: 150px;"
             alt="Card image cap" />
-        </div>
+        </div> -->
         <div class="card-body pt-3">
           <h4>{{event.theme}}</h4>
           <p class="card-text">
@@ -187,9 +186,9 @@
           <hr>
           <p class="card-text">
             <b>Contatos</b><br>
-            <small class="text-muted">Telefone: {{event.contactPhone | mask: '(000) 00000-0000'}}</small>
+            <small class="text-muted">Telefone: {{event.contactPhone | mask: '(00) 00000-0000'}}</small>
             <br>
-            <small class="text-muted">e-mail: {{event.contactEmail}}</small>
+            <small class="text-muted">e-mail: {{event.contactEmail }}</small>
           </p>
           <p class="card-text">
             Capacidade:

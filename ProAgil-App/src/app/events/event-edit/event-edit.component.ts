@@ -14,6 +14,7 @@ export class EventEditComponent implements OnInit {
 
   title = 'Editar Evento';
   event: Events;
+  imageURL: 'assets/img/upload_image.jpg';
   registerForm: FormGroup;
 
   constructor(
@@ -35,7 +36,7 @@ export class EventEditComponent implements OnInit {
       personQtd: ['', [Validators.required, Validators.max(120000), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
       contactPhone: ['', Validators.required],
       contactEmail: ['', [Validators.required, Validators.email]],
-      imagemURL: [''],
+      imageURL: [''],
       lots: this.fb.group({
         name: ['', Validators.required],
         qty: ['', Validators.required],
@@ -49,6 +50,7 @@ export class EventEditComponent implements OnInit {
       })
     });
   }
+
   getEvent() {
     this.event = new Events();
     const id = +this.router.snapshot.paramMap.get('id'); // o sinal de + converte para number
@@ -61,6 +63,10 @@ export class EventEditComponent implements OnInit {
       );
   }
 
-  onFileChange(data: any) { }
-
+  onFileChange(file: FileList) { 
+    const reader = new FileReader();
+    reader.onload = (event: any) => this.imageURL = event.target.result;
+    
+    reader.readAsDataURL(file[0]);
+  }
 }
