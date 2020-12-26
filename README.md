@@ -106,3 +106,6 @@
 
 ## Gerar Guardião
 * `ng g g auth/auth`
+
+## Máscara
+* `npm i ngx-mask`

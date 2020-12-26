@@ -77,6 +77,7 @@ namespace ProAgil.WebAPI.Controllers
 
 
         [HttpGet("event/{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> Get (int id) {
             try {
                 var _event = await context.GetEventAssyncById (id, true);
@@ -144,6 +145,7 @@ namespace ProAgil.WebAPI.Controllers
         }
 
         [HttpDelete ("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> DeleteEvent ([FromRoute] int id) {
             try {
                 var _event = await context.GetEventAssyncById (id, false);
