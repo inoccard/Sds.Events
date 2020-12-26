@@ -1,4 +1,4 @@
-export interface Lot {
+export class Lot {
     id: number;
     name: string;
     initDate: Date;

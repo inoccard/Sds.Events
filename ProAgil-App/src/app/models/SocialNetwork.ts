@@ -1,5 +1,4 @@
-import { Speaker } from './Speaker';
-export interface SocialNetwork {
+export class SocialNetwork {
     id: number;
     name: string;
     url: string;
