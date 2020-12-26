@@ -64,8 +64,7 @@
             <div class="form-group col-md-4">
               <label>Telefone</label>
               <input type="text" mask="(00) 00000-0000" class="form-control" [(ngModel)]="event.contactPhone" [ngClass]="{'is-invalid': registerForm.get('contactPhone').errors 
-            && registerForm.get('contactPhone').touched}" formControlName="contactPhone"
-                placeholder="(00) 00000-0000">
+            && registerForm.get('contactPhone').touched}" formControlName="contactPhone" placeholder="(00) 00000-0000">
               <div *ngIf="registerForm.get('contactPhone').hasError('required')
             && registerForm.get('contactPhone').touched" class="invalid-feedback">
                 Telefone é obrigatório.
@@ -88,11 +87,11 @@
         </tab>
         <tab heading="Lotes">
           <div>
-            <div>
-              <fieldset formGroupName="lots" class="form-group">
+            <div formArrayName="lots" *ngFor="let lot of lots.controls; let i=index">
+              <fieldset [formGroupName]="i" class="form-group">
                 <legend class="d-flex justify-content-between capitalize">
                   {{'Lotes'}}
-                  <button class="btn btn-sm btn-warning mb-1">remove</button>
+                  <button class="btn btn-sm btn-warning mb-1" (click)="removeLot(i)">remove</button>
                 </legend>
                 <div class="row">
                   <div class="form-group col-md-4">
@@ -115,47 +114,48 @@
                     <label>Data Fim</label>
                     <input type="date" class="form-control" formControlName="endDate" placeholder="01/01/2019">
                   </div>
-
                 </div>
               </fieldset>
             </div>
-            <button class="btn btn-outline-primary">
+            <button class="btn btn-outline-primary" (click)="addLot()">
               Adicionar Lote
             </button>
           </div>
         </tab>
         <tab heading="Redes Sociais">
           <div>
-            <fieldset formGroupName="networks" class="form-group">
-              <legend class="d-flex justify-content-between capitalize">
-                <button class="btn btn-sm btn-warning mb-1">remove</button>
-              </legend>
-              <div class="row">
-                <div class="form-group col-md-4">
-                  <label>Nome</label>
-                  <select class="form-control" formControlName="name">
-                    <option value="">Selecione</option>
-                    <option value="fab fa-youtube">Youtube</option>
-                    <option value="fab fa-instagram">Instagram</option>
-                    <option value="fab fa-facebook">Facebook</option>
-                    <option value="fab fa-twitter">Twitter</option>
-                    <option value="fab fa-google">Google</option>
-                    <option value="fab fa-linkedin">Linkedin</option>
-                    <option value="fab fa-pinterest">Pinterest</option>
-                    <option value="fab fa-whatsapp">Whatsapp</option>
-                    <option value="fab fa-telegram">Telegram</option>
-                    <option value="fab fa-skype">Skype</option>
-                    <option value="fab fa-vimeo">Vimeo</option>
-                  </select>
+            <div formArrayName="networks" *ngFor="let network of networks.controls; let i=index">
+              <fieldset [formGroupName]="i" class="form-group">
+                <legend class="d-flex justify-content-between capitalize">
+                  <button class="btn btn-sm btn-warning mb-1" (click)="removeSocialNetWork(i)">remove</button>
+                </legend>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label>Nome</label>
+                    <select class="form-control" formControlName="name">
+                      <option value="">Selecione</option>
+                      <option value="fab fa-youtube">Youtube</option>
+                      <option value="fab fa-instagram">Instagram</option>
+                      <option value="fab fa-facebook">Facebook</option>
+                      <option value="fab fa-twitter">Twitter</option>
+                      <option value="fab fa-google">Google</option>
+                      <option value="fab fa-linkedin">Linkedin</option>
+                      <option value="fab fa-pinterest">Pinterest</option>
+                      <option value="fab fa-whatsapp">Whatsapp</option>
+                      <option value="fab fa-telegram">Telegram</option>
+                      <option value="fab fa-skype">Skype</option>
+                      <option value="fab fa-vimeo">Vimeo</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Link</label>
+                    <input type="text" formControlName="url" class="form-control" placeholder="URL">
+                  </div>
                 </div>
-                <div class="form-group col-md-4">
-                  <label>Link</label>
-                  <input type="text" formControlName="url" class="form-control" placeholder="URL">
-                </div>
-              </div>
-            </fieldset>
+              </fieldset>
+            </div>
+            <button class="btn btn-outline-primary" (click)="addSocialNetWork()">Adicionar Rede Social</button>
           </div>
-          <button class="btn btn-outline-primary">Adicionar Rede Social</button>
         </tab>
       </tabset>
       <div class="row">

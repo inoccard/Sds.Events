@@ -1,6 +1,6 @@
 import { Events } from './../../models/Events';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { EventService } from 'src/app/services/event/event.service';
 import { ActivatedRoute } from '@angular/router';
@@ -37,17 +37,8 @@ export class EventEditComponent implements OnInit {
       contactPhone: ['', Validators.required],
       contactEmail: ['', [Validators.required, Validators.email]],
       imageURL: [''],
-      lots: this.fb.group({
-        name: ['', Validators.required],
-        qty: ['', Validators.required],
-        price: ['', Validators.required],
-        startDate: [''],
-        endDate: [''],
-      }),
-      networks: this.fb.group({
-        name: ['', Validators.required],
-        url: ['', Validators.required],
-      })
+      lots: this.fb.array([this.createLot()]),
+      networks: this.fb.array([this.createSocialNetWork()])
     });
   }
 
@@ -63,10 +54,58 @@ export class EventEditComponent implements OnInit {
       );
   }
 
-  onFileChange(file: FileList) { 
+  /** adiciona vários lotes */
+  createLot(): FormGroup {
+    return this.fb.group({
+      name: ['', Validators.required],
+      qty: ['', Validators.required],
+      price: ['', Validators.required],
+      startDate: [''],
+      endDate: [''],
+    });
+  }
+
+  /** adiciona várias redes sociais */
+  createSocialNetWork(): FormGroup {
+    return this.fb.group({
+      name: ['', Validators.required],
+      url: ['', Validators.required],
+    });
+  }
+
+  /** retorna lotes */
+  get lots(): FormArray {
+    return <FormArray>this.registerForm.get('lots');
+  }
+
+  /** retorna redes sociais */
+  get networks(): FormArray {
+    return <FormArray>this.registerForm.get('networks');
+  }
+
+  /**Adiciona um lote */
+  addLot() {
+    this.lots.push(this.createLot());
+  }
+
+  /**Adiciona uma rede social */
+  addSocialNetWork() {
+    this.networks.push(this.createSocialNetWork());
+  }
+
+  /**Exlui um lote */
+  removeLot(id: number) {
+    this.lots.removeAt(id);
+  }
+
+  /**Exlui uma rede social */
+  removeSocialNetWork(id: number) {
+    this.networks.removeAt(id);
+  }
+
+  onFileChange(file: FileList) {
     const reader = new FileReader();
     reader.onload = (event: any) => this.imageURL = event.target.result;
-    
     reader.readAsDataURL(file[0]);
   }
 }
