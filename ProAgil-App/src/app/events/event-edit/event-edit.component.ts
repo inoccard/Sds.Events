@@ -1,3 +1,5 @@
+import { SocialNetwork } from './../../models/SocialNetwork';
+import { Lot } from './../../models/Lot';
 import { Events } from './../../models/Events';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -17,6 +19,7 @@ export class EventEditComponent implements OnInit {
   imageURL = 'assets/img/upload_image.jpg';
   registerForm: FormGroup;
   fileNameToUpdate: string;
+  currentDate: any;
 
   constructor(
     private eventService: EventService,
@@ -38,8 +41,8 @@ export class EventEditComponent implements OnInit {
       contactPhone: ['', Validators.required],
       contactEmail: ['', [Validators.required, Validators.email]],
       imageURL: [''],
-      lots: this.fb.array([this.createLot()]),
-      networks: this.fb.array([this.createSocialNetWork()])
+      lots: this.fb.array([]),
+      networks: this.fb.array([])
     });
   }
 
@@ -52,29 +55,39 @@ export class EventEditComponent implements OnInit {
           this.event = Object.assign({}, event);
           this.fileNameToUpdate = event.imageURL.toString();
           
-          this.imageURL = `http://localhost:5000/resources/images/${this.event.imageURL}`;
+          this.imageURL = `http://localhost:5000/resources/images/${this.event.imageURL}?_ts=${this.currentDate}`;
           this.event.imageURL = '';
           this.registerForm.patchValue(this.event);
+
+          this.event.lots.forEach(lot => {
+            this.lots.push(this.createLot(lot));
+          });
+
+          this.event.socialNetWorks.forEach(snw => {
+            this.networks.push(this.createSocialNetWork(snw));
+          });
         }
       );
   }
 
-  /** adiciona vários lotes */
-  createLot(): FormGroup {
+  /** adiciona lote */
+  createLot(lot: any): FormGroup {
     return this.fb.group({
-      name: ['', Validators.required],
-      qty: ['', Validators.required],
-      price: ['', Validators.required],
-      startDate: [''],
-      endDate: [''],
+      id: [lot.id],
+      name: [lot.name, Validators.required],
+      qty: [lot.qty, Validators.required],
+      price: [lot.price, Validators.required],
+      startDate: [lot.startDate],
+      endDate: [lot.endDate],
     });
   }
 
-  /** adiciona várias redes sociais */
-  createSocialNetWork(): FormGroup {
+  /** adiciona rede social */
+  createSocialNetWork(socialNetwork: any): FormGroup {
     return this.fb.group({
-      name: ['', Validators.required],
-      url: ['', Validators.required],
+      id: [socialNetwork.id],
+      name: [socialNetwork.name, Validators.required],
+      url: [socialNetwork.url, Validators.required],
     });
   }
 
@@ -90,12 +103,12 @@ export class EventEditComponent implements OnInit {
 
   /**Adiciona um lote */
   addLot() {
-    this.lots.push(this.createLot());
+    this.lots.push(this.createLot({ id: 0 }));
   }
 
   /**Adiciona uma rede social */
   addSocialNetWork() {
-    this.networks.push(this.createSocialNetWork());
+    this.networks.push(this.createSocialNetWork({ id: 0 }));
   }
 
   /**Exlui um lote */

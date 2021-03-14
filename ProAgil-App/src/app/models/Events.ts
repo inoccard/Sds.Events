@@ -3,6 +3,9 @@ import { Lot } from './Lot';
 import { SocialNetwork } from './SocialNetwork';
 
 export class Events {
+    constructor() {
+    }
+    
     id: number;
     theme: string;
     local: string;
