@@ -26,6 +26,7 @@ namespace ProAgil.WebAPI.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        //[Authorize]
         public async Task<IActionResult> Get()
         {
             try

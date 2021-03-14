@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj": {}
+    "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj": {}
   },
   "projects": {
-    "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj": {
+    "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj",
+        "projectUniqueName": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj",
         "projectName": "ProAgil.Web",
-        "projectPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj",
-        "packagesPath": "C:\\Users\\inocencio.cardoso\\.nuget\\packages\\",
-        "outputPath": "C:\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\obj\\",
+        "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\ProAgil.Web.csproj",
+        "packagesPath": "C:\\Users\\inoce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\inocencio.cardoso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\inoce\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -31,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -60,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

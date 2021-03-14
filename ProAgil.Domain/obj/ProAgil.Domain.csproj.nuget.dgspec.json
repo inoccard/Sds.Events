@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {}
+    "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
+    "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
+        "projectUniqueName": "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
         "projectName": "Proagil.Domain",
-        "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
+        "projectPath": "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
         "packagesPath": "C:\\Users\\inoce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\obj\\",
+        "outputPath": "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

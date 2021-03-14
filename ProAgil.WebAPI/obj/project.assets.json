@@ -8723,11 +8723,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
+      "projectUniqueName": "C:\\inoccard\\code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
       "projectName": "ProAgil.WebAPI",
-      "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
+      "projectPath": "C:\\inoccard\\code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
       "packagesPath": "C:\\Users\\inoce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\proagil.webapi\\obj\\",
+      "outputPath": "C:\\inoccard\\code\\dotnet-angular\\proagil.webapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -8748,11 +8748,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
-              "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj"
+            "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj": {
+              "projectPath": "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj"
             },
-            "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj": {
-              "projectPath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj"
+            "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj": {
+              "projectPath": "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Repository\\Proagil.Repository.csproj"
             }
           }
         }

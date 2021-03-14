@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "784JuFJc+7lTAWjykik0O/0QaUMWSPDZ79TUdugfyQqUyyRgJKixEz9a8tGeVRZl+hLrsDp5pe4AHyKzYfDLfQ==",
+  "dgSpecHash": "nrJm2aOO85fQ1u3ENjP2nHY0WDESI54A03jig8XS6DR87dd5R2SatLgp30gaKgsTBAsR64k7UyJQywzkwZFVcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\inoce\\OneDrive\\Documentos\\inoccard\\vs.code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
+  "projectFilePath": "C:\\inoccard\\code\\dotnet-angular\\ProAgil.Domain\\Proagil.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\inoce\\.nuget\\packages\\corecompat.system.componentmodel.attributes\\4.2.3-rg\\corecompat.system.componentmodel.attributes.4.2.3-rg.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\corecompat.system.componentmodel.dataannotations\\4.2.3-r7\\corecompat.system.componentmodel.dataannotations.4.2.3-r7.nupkg.sha512",
