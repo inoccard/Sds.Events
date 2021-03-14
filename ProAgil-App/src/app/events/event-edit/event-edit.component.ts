@@ -1,5 +1,3 @@
-import { SocialNetwork } from './../../models/SocialNetwork';
-import { Lot } from './../../models/Lot';
 import { Events } from './../../models/Events';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -34,6 +32,7 @@ export class EventEditComponent implements OnInit {
 
   validation() {
     this.registerForm = this.fb.group({
+      id: [],
       theme: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
       local: ['', Validators.required],
       eventDate: ['', Validators.required],
@@ -53,9 +52,12 @@ export class EventEditComponent implements OnInit {
       .subscribe(
         (event: Events) => {
           this.event = Object.assign({}, event);
-          this.fileNameToUpdate = event.imageURL.toString();
-          
-          this.imageURL = `http://localhost:5000/resources/images/${this.event.imageURL}?_ts=${this.currentDate}`;
+
+          if(this.event.imageURL){
+            this.fileNameToUpdate = this.event.imageURL.toString();
+            this.imageURL = `http://localhost:5000/resources/images/${this.event.imageURL}?_ts=${this.currentDate}`;
+          }
+
           this.event.imageURL = '';
           this.registerForm.patchValue(this.event);
 
@@ -63,7 +65,7 @@ export class EventEditComponent implements OnInit {
             this.lots.push(this.createLot(lot));
           });
 
-          this.event.socialNetWorks.forEach(snw => {
+          this.event.socialNetworks.forEach(snw => {
             this.networks.push(this.createSocialNetWork(snw));
           });
         }

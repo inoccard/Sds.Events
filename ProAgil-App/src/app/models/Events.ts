@@ -15,6 +15,6 @@ export class Events {
     contactPhone: string;
     contactEmail: string;
     lots: Lot[];
-    socialNetWorks: SocialNetwork[];
+    socialNetworks: SocialNetwork[];
     speakerEvents: SpeakerEvent[];
 }
