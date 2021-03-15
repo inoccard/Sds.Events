@@ -11,6 +11,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxMaskModule } from 'ngx-mask';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 /** SERVICES */
 import { EventService } from './services/event/event.service';
@@ -63,6 +64,7 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
       NgxMaskModule.forRoot(),
+      CurrencyMaskModule,
       ToastrModule.forRoot({
          timeOut: 7000,
          positionClass: 'toast-bottom-right',

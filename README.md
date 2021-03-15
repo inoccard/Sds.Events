@@ -109,3 +109,6 @@
 
 ## Máscara
 * `npm i ngx-mask`
+
+## Máscara R$ (Dinheiro) Reais
+* `npm i ngx-currency`
