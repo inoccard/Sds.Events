@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N9P0b6MHtH+vj3gdbNli42KTOnBTeE/eGyqyUDHOF04zOcm+pIgF3AZ7L4XEOvJ1lHg/FBV3BmU/TEzSNK9nIA==",
+  "dgSpecHash": "UahYIIEGngdOIx7Okg9OoBxRn8s2Q8EykCJelRyazdnXHcfWEPFQWrsr6FOxzKN1mbGw1PN96eq409hPzpNwKA==",
   "success": true,
-  "projectFilePath": "C:\\inoccard\\code\\dotnet-angular\\proagil.webapi\\ProAgil.WebAPI.csproj",
+  "projectFilePath": "C:\\inoccard\\code\\dotnet-angular\\ProAgil.WebAPI\\Proagil.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\inoce\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\inoce\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",

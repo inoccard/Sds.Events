@@ -27,11 +27,14 @@ export class EventService {
     return this.http.get<Events>(`${this.baseURL}event/${id}`);
   }
 
-  saveEvent(event: Events) {
+  saveEvent(event: any) {
+    var lots = Object.assign({}, event.lots);
+    event.lots = null;
+    
     if (!event.id || event.id === 0) {
       return this.http.post(this.baseURL, event);
     } else {
-      return this.http.put(`${this.baseURL}${event.id}`, event);
+      return this.http.put(`${this.baseURL}${event.id}`, event, lots);
     }
   }
 
@@ -42,7 +45,7 @@ export class EventService {
   /**
    * upload de imagens
    */
-  postUpload(file: File, name: string) {
+  postUpload(file: FileList, name: string) {
     const fileToUpload = file[0] as File;
     const formData = new FormData();
     formData.append('file', fileToUpload, name);

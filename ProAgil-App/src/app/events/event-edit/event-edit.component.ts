@@ -18,6 +18,7 @@ export class EventEditComponent implements OnInit {
   registerForm: FormGroup;
   fileNameToUpdate: string;
   currentDate: any;
+  file: FileList;
 
   constructor(
     private eventService: EventService,
@@ -126,6 +127,42 @@ export class EventEditComponent implements OnInit {
   onFileChange(file: FileList) {
     const reader = new FileReader();
     reader.onload = (event: any) => this.imageURL = event.target.result;
+    this.file = file;
     reader.readAsDataURL(file[0]);
+  }
+
+  Save() {
+    if (this.registerForm.valid) {
+      // copiar evento
+      if (!this.event) {
+        this.event = Object.assign(this.registerForm.value);
+      } else {
+        this.event = Object.assign({ id: this.event.id }, this.registerForm.value);
+      }
+      this.event.imageURL = this.fileNameToUpdate;
+      
+      this.splitImage();
+
+      this.eventService.saveEvent(this.event).subscribe(
+        (newEvent: Events) => {
+          this.toastr.success(`Evento ${this.event.theme} salvo com sucesso`, 'Salvar');
+        }, error => {
+          console.log(error);
+          this.toastr.error(`Não foi possível salvar evento ${this.event.theme}: ${error}`, 'Salvar');
+        }
+      );
+    }
+  }
+
+  splitImage() {
+    if(this.registerForm.get('imageURL').value !== ''){
+
+      this.eventService.postUpload(this.file, this.registerForm.get('imageURL').value).subscribe(
+        () => {
+          this.currentDate = new Date().getMilliseconds().toString();
+          this.imageURL =  `http://localhost:5000/resources/images/${this.event.imageURL}_ts=${this.currentDate}`;
+        }
+      ); // upload de imagem
+    }
   }
 }

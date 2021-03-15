@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EventsComponent implements OnInit {
   title = 'Eventos';
-  file: File;
+  file: FileList;
   eventsFiltered: any = [];
   events: any = [];
   event: Events;
@@ -109,11 +109,11 @@ export class EventsComponent implements OnInit {
       // copiar evento
       if (!this.event) {
         this.event = Object.assign(this.registerForm.value);
-        this.splitImage();
       } else {
         this.event = Object.assign({ id: this.event.id }, this.registerForm.value);
-        this.splitImage();
       }
+      this.splitImage();
+
       this.eventService.saveEvent(this.event).subscribe(
         (newEvent: Events) => {
           template.hide();
