@@ -107,7 +107,9 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label>Preço</label>
-                    <input type="number" class="form-control" [ngClass]="{'is-invalid': lots.get(i+'.price').errors && lots.get(i+'.price').touched}" formControlName="price" placeholder="R$ 0,00">
+                    <input type="text" class="form-control" 
+                    currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
+                    [ngClass]="{'is-invalid': lots.get(i+'.price').errors && lots.get(i+'.price').touched}" formControlName="price" placeholder="R$ 0,00">
                   </div>
                   <div class="form-group col-md-4">
                     <label>Data Início</label>
@@ -154,9 +156,9 @@
                       <option value="fab fa-vimeo">Vimeo</option>
                     </select>
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-8">
                     <label>Link</label>
-                    <input type="text" [ngClass]="{'is-invalid': socialNetworks.get(i+'.url').errors && socialNetworks.get(i+'.url').touched}"
+                    <input type="text" prefix="http://" mask="" [ngClass]="{'is-invalid': socialNetworks.get(i+'.url').errors && socialNetworks.get(i+'.url').touched}"
                     formControlName="url" class="form-control" placeholder="URL">
                   </div>
                 </div>
@@ -205,8 +207,10 @@
           </p>
           <div class="row">
             <div class="icon-block col-md-8 iconesSociais">
-              <a class="mr-3" target="_blank">
-                <i class="fab fa-youtube"></i>
+              <a class="mr-3" href="{{socialNetworks.get(l+'.url').value}}" 
+                  *ngFor="let social of socialNetworks.controls; let l=index"
+                  target="_blank">
+                <i class="{{socialNetworks.get(l+'.name').value}}"></i>
               </a>
             </div>
             <div class="col-md-4 d-flex justify-content-center">

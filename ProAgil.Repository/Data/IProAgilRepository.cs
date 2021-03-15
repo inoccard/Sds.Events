@@ -20,6 +20,13 @@ namespace ProAgil.Repository.Data {
         /// <typeparam name="T"></typeparam>
         void Delete<T> (T entity) where T : class;
 
+        /// <summary>
+        /// Excluir vários objetos
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        void DeleteRange<T> (T[] entity) where T : class;
+
         Task<bool> SaveChangeAssync ();
 
         /// <summary>

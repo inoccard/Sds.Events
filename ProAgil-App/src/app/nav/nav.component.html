@@ -23,7 +23,7 @@
       <li class="nav-item dropdown" dropdown>
         <a dropdownToggle class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
-          {{authService.decodedToken?.unique_name}}
+          {{showUserName()}}
         </a>
         <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" style="cursor: pointer;">Perfil</a>
