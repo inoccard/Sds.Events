@@ -27,14 +27,11 @@ export class EventService {
     return this.http.get<Events>(`${this.baseURL}event/${id}`);
   }
 
-  saveEvent(event: any) {
-    var lots = Object.assign({}, event.lots);
-    event.lots = null;
-    
+  saveEvent(event: Events) {
     if (!event.id || event.id === 0) {
       return this.http.post(this.baseURL, event);
     } else {
-      return this.http.put(`${this.baseURL}${event.id}`, event, lots);
+      return this.http.put(`${this.baseURL}${event.id}`, event);
     }
   }
 

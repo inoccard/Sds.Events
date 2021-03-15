@@ -1,3 +1,5 @@
+import { SocialNetwork } from './../../models/SocialNetwork';
+import { Lot } from './../../models/Lot';
 import { Events } from './../../models/Events';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -42,7 +44,7 @@ export class EventEditComponent implements OnInit {
       contactEmail: ['', [Validators.required, Validators.email]],
       imageURL: [''],
       lots: this.fb.array([]),
-      networks: this.fb.array([])
+      socialNetworks : this.fb.array([])
     });
   }
 
@@ -67,28 +69,28 @@ export class EventEditComponent implements OnInit {
           });
 
           this.event.socialNetworks.forEach(snw => {
-            this.networks.push(this.createSocialNetWork(snw));
+            this.socialNetworks.push(this.createSocialNetWork(snw));
           });
         }
       );
   }
 
   /** adiciona lote */
-  createLot(lot: any): FormGroup {
+  createLot(lot: Lot): FormGroup {
     return this.fb.group({
-      id: [lot.id],
+      id: [lot.id ?? 0],
       name: [lot.name, Validators.required],
       qty: [lot.qty, Validators.required],
       price: [lot.price, Validators.required],
-      startDate: [lot.startDate],
+      initDate: [lot.initDate],
       endDate: [lot.endDate],
     });
   }
 
   /** adiciona rede social */
-  createSocialNetWork(socialNetwork: any): FormGroup {
+  createSocialNetWork(socialNetwork: SocialNetwork): FormGroup {
     return this.fb.group({
-      id: [socialNetwork.id],
+      id: [socialNetwork.id ?? 0],
       name: [socialNetwork.name, Validators.required],
       url: [socialNetwork.url, Validators.required],
     });
@@ -96,22 +98,24 @@ export class EventEditComponent implements OnInit {
 
   /** retorna lotes */
   get lots(): FormArray {
-    return <FormArray>this.registerForm.get('lots');
+    let lots = <FormArray>this.registerForm.get('lots');
+    return lots;
   }
 
   /** retorna redes sociais */
-  get networks(): FormArray {
-    return <FormArray>this.registerForm.get('networks');
+  get socialNetworks(): FormArray {
+    let socialNetworks = <FormArray>this.registerForm.get('socialNetworks');
+    return socialNetworks;
   }
 
   /**Adiciona um lote */
   addLot() {
-    this.lots.push(this.createLot({ id: 0 }));
+    this.lots.push(this.createLot(new Lot()));
   }
 
   /**Adiciona uma rede social */
   addSocialNetWork() {
-    this.networks.push(this.createSocialNetWork({ id: 0 }));
+    this.socialNetworks.push(this.createSocialNetWork(new SocialNetwork()));
   }
 
   /**Exlui um lote */
@@ -121,7 +125,7 @@ export class EventEditComponent implements OnInit {
 
   /**Exlui uma rede social */
   removeSocialNetWork(id: number) {
-    this.networks.removeAt(id);
+    this.socialNetworks.removeAt(id);
   }
 
   onFileChange(file: FileList) {

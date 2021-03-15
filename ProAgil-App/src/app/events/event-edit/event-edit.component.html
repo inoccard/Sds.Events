@@ -107,15 +107,15 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label>Preço</label>
-                    <input type="text" class="form-control" [ngClass]="{'is-invalid': lots.get(i+'.price').errors && lots.get(i+'.price').touched}" formControlName="price" placeholder="R$ 0,00">
+                    <input type="number" class="form-control" [ngClass]="{'is-invalid': lots.get(i+'.price').errors && lots.get(i+'.price').touched}" formControlName="price" placeholder="R$ 0,00">
                   </div>
                   <div class="form-group col-md-4">
                     <label>Data Início</label>
-                    <input type="date" class="form-control" formControlName="startDate" placeholder="01/01/2019">
+                    <input type="datetime-local" class="form-control" formControlName="initDate" placeholder="01/01/2019">
                   </div>
                   <div class="form-group col-md-4">
                     <label>Data Fim</label>
-                    <input type="date" class="form-control" formControlName="endDate" placeholder="01/01/2019">
+                    <input type="datetime-local" class="form-control" formControlName="endDate" placeholder="01/01/2019">
                   </div>
                 </div>
               </fieldset>
@@ -127,19 +127,19 @@
         </tab>
         <tab heading="Redes Sociais">
           <div>
-            <div formArrayName="networks" *ngFor="let network of networks.controls; let i=index">
+            <div formArrayName="socialNetworks" *ngFor="let network of socialNetworks.controls; let i=index">
               <fieldset [formGroupName]="i" class="form-group">
                 <legend class="d-flex justify-content-between capitalize">
-                    {{ networks.get(i+'.name').value == '' ?
+                    {{ socialNetworks.get(i+'.name').value == '' ?
                     'Redes Sociais' :
-                    networks.get(i+'.name').value?.replace('fab fa-', '')
+                    socialNetworks.get(i+'.name').value?.replace('fab fa-', '')
                     }}
                   <button class="btn btn-sm btn-warning mb-1" (click)="removeSocialNetWork(i)">remove</button>
                 </legend>
                 <div class="row">
                   <div class="form-group col-md-4">
                     <label>Nome</label>
-                    <select class="form-control" [ngClass]="{'is-invalid': networks.get(i+'.name').errors && networks.get(i+'.name').touched}" formControlName="name">
+                    <select class="form-control" [ngClass]="{'is-invalid': socialNetworks.get(i+'.name').errors && socialNetworks.get(i+'.name').touched}" formControlName="name">
                       <option value="">Selecione</option>
                       <option value="fab fa-youtube">Youtube</option>
                       <option value="fab fa-instagram">Instagram</option>
@@ -156,7 +156,7 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label>Link</label>
-                    <input type="text" [ngClass]="{'is-invalid': networks.get(i+'.url').errors && networks.get(i+'.url').touched}"
+                    <input type="text" [ngClass]="{'is-invalid': socialNetworks.get(i+'.url').errors && socialNetworks.get(i+'.url').touched}"
                     formControlName="url" class="form-control" placeholder="URL">
                   </div>
                 </div>
