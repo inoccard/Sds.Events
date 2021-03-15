@@ -26,6 +26,7 @@ namespace ProAgil.WebAPI.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        //[Authorize]
         public async Task<IActionResult> Get()
         {
             try
@@ -123,7 +124,7 @@ namespace ProAgil.WebAPI.Controllers
 
         [HttpPut("{id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> UpdateEvent (int id, EventDto model) {
+        public async Task<IActionResult> UpdateEvent (int id, [FromBody] EventDto model) {
             try {
                 if (id != model.Id)
                      return BadRequest ();

@@ -80,6 +80,7 @@ namespace ProAgil.WebAPI
                 .AddJwtBearer(opt =>
                 {
                     opt.RequireHttpsMetadata = false;
+                    opt.SaveToken = true;
                     opt.TokenValidationParameters = new TokenValidationParameters
                     {
                         // assinatura da chave do emissor
@@ -130,6 +131,8 @@ namespace ProAgil.WebAPI
 
             app.UseMvc();
 
+            app.UseRouting();
+
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
@@ -137,8 +140,6 @@ namespace ProAgil.WebAPI
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
