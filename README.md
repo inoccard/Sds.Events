@@ -112,3 +112,11 @@
 
 ## Máscara R$ (Dinheiro) Reais
 * `npm i ngx-currency`
+
+## Bootswatch
+* `npm i bootswatch`
+
+## Antes de fazer Deployment, Instalar:
+* `npm install source-map-explorer --save-dev`
+## Deployment
+* `ng build --prod --source-map`
