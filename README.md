@@ -112,3 +112,6 @@
 
 ## Máscara R$ (Dinheiro) Reais
 * `npm i ngx-currency`
+
+## Bootswatch
+* `npm i bootswatch`
