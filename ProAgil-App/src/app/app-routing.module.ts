@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { EventEditComponent } from './events/event-edit/event-edit.component';
 import { AuthGuard } from './auth/auth.guard';
 import { RegistrationComponent } from './user/registration/registration.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'speakers', component: SpeakersComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'contacts', component: ContactsComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent },
   { path: '', redirectTo: '', pathMatch: 'full' },  // principal
   { path: '**', component: ErrorComponent }, // rota curinga: se o usuário digitar rotas inexistentes. sempre fica por último
 ];

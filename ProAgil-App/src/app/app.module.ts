@@ -33,6 +33,7 @@ import { EventEditComponent } from './events/event-edit/event-edit.component';
 
 /** PIPES */
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -51,6 +52,7 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       LoginComponent,
       RegistrationComponent,
       EventEditComponent,
+      HomeComponent,
    ],
    imports: [
       BrowserModule,
