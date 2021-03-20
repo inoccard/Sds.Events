@@ -123,3 +123,6 @@
 
 ## Carregamento de tela
 * `npm i ngx-spinner --save`
+
+## Atualizar versões do projeto
+* `ng update @angular/core @angular/cli`
