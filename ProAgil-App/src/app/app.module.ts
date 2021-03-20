@@ -5,13 +5,14 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxMaskModule } from 'ngx-mask';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 /** SERVICES */
 import { EventService } from './services/event/event.service';
@@ -71,7 +72,8 @@ import { HomeComponent } from './home/home.component';
          timeOut: 7000,
          positionClass: 'toast-bottom-right',
          preventDuplicates: true
-      })
+      }),
+      NgxSpinnerModule
    ],
    providers: [
       EventService,
@@ -83,6 +85,7 @@ import { HomeComponent } from './home/home.component';
    ],
    bootstrap: [
       AppComponent
-   ]
+   ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

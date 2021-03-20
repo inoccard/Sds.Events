@@ -120,3 +120,6 @@
 * `npm install source-map-explorer --save-dev`
 ## Deployment
 * `ng build --prod --source-map`
+
+## Carregamento de tela
+* `npm i ngx-spinner --save`
