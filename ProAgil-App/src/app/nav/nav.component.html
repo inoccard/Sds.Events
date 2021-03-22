@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" *ngIf="showMenu()">
   <div class="container">
     <a class="navbar-brand" routerLink="">SD Eventos</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div *ngIf="loggedIn()" class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div *ngIf="loggedIn()" class="collapse navbar-collapse"
+    [collapse]="isCollapsed" [isAnimated]="true" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="events">Eventos</a>

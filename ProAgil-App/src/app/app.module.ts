@@ -13,6 +13,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxMaskModule } from 'ngx-mask';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 /** SERVICES */
 import { EventService } from './services/event/event.service';
@@ -73,7 +74,8 @@ import { HomeComponent } from './home/home.component';
          positionClass: 'toast-bottom-right',
          preventDuplicates: true
       }),
-      NgxSpinnerModule
+      NgxSpinnerModule,
+      CollapseModule.forRoot()
    ],
    providers: [
       EventService,
