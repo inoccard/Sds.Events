@@ -23,7 +23,12 @@ export class EventsComponent implements OnInit {
   registerForm: FormGroup;
   bodyDeletarEvento: string;
 
-  constructor(private eventService: EventService, private fb: FormBuilder, private toastr: ToastrService, private  spinner: NgxSpinnerService) { }
+  constructor(
+    private eventService: EventService, 
+    private fb: FormBuilder, 
+    private toastr: ToastrService, 
+    private  spinner: NgxSpinnerService) { }
+    
   ngOnInit() {
     this.spinner.show();
 
