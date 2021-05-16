@@ -169,7 +169,11 @@
         </tab>
       </tabset>
       <div class="row">
-        <div class="col-md-12 d-flex justify-content-end">
+        <div class="col-sm d-flex">
+          <button class="btn btn-primary my-2" [routerLink]="['/events']">Voltar</button>
+        </div>
+
+        <div class="col-sm d-flex justify-content-end">
           <button [disabled]="!registerForm.valid" class="btn btn-success my-2"
           (click)="Save()">Salvar Alterações</button>
         </div>

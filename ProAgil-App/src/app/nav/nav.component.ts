@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavComponent implements OnInit {
 
+  isCollapsed = true;
   constructor(public authService: AuthService, public router: Router, public fb: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit() {
