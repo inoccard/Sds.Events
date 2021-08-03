@@ -16,6 +16,7 @@ namespace ProAgil.WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class EventController : ControllerBase
     {
         private readonly IProAgilRepository context;
@@ -77,7 +78,6 @@ namespace ProAgil.WebAPI.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
             }
         }
-
 
         [HttpGet("event/{id}")]
         [AllowAnonymous]

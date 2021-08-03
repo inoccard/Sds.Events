@@ -37,8 +37,11 @@ export class LoginComponent implements OnInit {
         },
         error: (error: any) => {
           this.toastr.error(`Falha ao fazer login: ${error}`);
+          this.spinner.hide();
         },
-        complete: () => this.spinner.hide()
+        complete: () => {
+          this.spinner.hide();
+        }
       });
   }
 
