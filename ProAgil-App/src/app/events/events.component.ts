@@ -114,7 +114,7 @@ export class EventsComponent implements OnInit {
   // Salvar/editar evento
   saveEditions(template: ModalDirective) {
     if (this.registerForm.valid) {
-      // copiar evento
+      // copiar evento   
       if (!this.event) {
         this.event = Object.assign(this.registerForm.value);
       } else {
