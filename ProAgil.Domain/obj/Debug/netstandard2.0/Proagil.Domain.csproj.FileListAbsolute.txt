@@ -1,8 +1,0 @@
-C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\bin\Debug\netstandard2.0\Proagil.Domain.deps.json
-C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\bin\Debug\netstandard2.0\Proagil.Domain.dll
-C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\bin\Debug\netstandard2.0\Proagil.Domain.pdb
-C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.0\Proagil.Domain.csprojAssemblyReference.cache
-C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.0\Proagil.Domain.AssemblyInfoInputs.cache
-C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.0\Proagil.Domain.AssemblyInfo.cs
-C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.0\Proagil.Domain.dll
-C:\inoccard\vs.code\dontnet-angular\ProAgil.Domain\obj\Debug\netstandard2.0\Proagil.Domain.pdb
