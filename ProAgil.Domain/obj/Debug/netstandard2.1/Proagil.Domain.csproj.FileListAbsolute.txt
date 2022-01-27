@@ -31,5 +31,8 @@ C:\inoccard\code\dotnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.
 C:\inoccard\code\dotnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.csproj.CoreCompileInputs.cache
 C:\inoccard\code\dotnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.dll
 C:\inoccard\code\dotnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.pdb
+<<<<<<< HEAD
 C:\inoccard\code\dotnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.csproj.AssemblyReference.cache
 C:\inoccard\code\dotnet-angular\ProAgil.Domain\obj\Debug\netstandard2.1\Proagil.Domain.GeneratedMSBuildEditorConfig.editorconfig
+=======
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008

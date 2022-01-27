@@ -11,9 +11,14 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavComponent implements OnInit {
 
+  isCollapsed = true;
   constructor(public authService: AuthService, public router: Router, public fb: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit() {
+  }
+
+  showMenu () {
+    return this.router.url !== '/user/login';
   }
 
   loggedIn() {
@@ -29,4 +34,7 @@ export class NavComponent implements OnInit {
       this.router.navigate(['/user/login']);
   }
 
+  showUserName() {
+    return localStorage.getItem('username');
+  }
 }

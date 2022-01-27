@@ -109,3 +109,20 @@
 
 ## Máscara
 * `npm i ngx-mask`
+
+## Máscara R$ (Dinheiro) Reais
+* `npm i ngx-currency`
+
+## Bootswatch
+* `npm i bootswatch`
+
+## Antes de fazer Deployment, Instalar:
+* `npm install source-map-explorer --save-dev`
+## Deployment
+* `ng build --prod --source-map`
+
+## Carregamento de tela
+* `npm i ngx-spinner --save`
+
+## Atualizar versões do projeto
+* `ng update @angular/core @angular/cli`

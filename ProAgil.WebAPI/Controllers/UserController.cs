@@ -86,7 +86,7 @@ namespace Proagil.WebAPI.Controllers
                     });
                 }
 
-                return Unauthorized();
+                return Unauthorized("Não foi possível fazer login");
             }
             catch (Exception e)
             {

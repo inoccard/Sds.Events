@@ -37,6 +37,9 @@ C:\inoccard\code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proa
 C:\inoccard\code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proagil.Repository.pdb
 C:\inoccard\code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proagil.Domain.dll
 C:\inoccard\code\dotnet-angular\ProAgil.Repository\bin\Debug\netstandard2.1\Proagil.Domain.pdb
+<<<<<<< HEAD
+=======
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
 C:\inoccard\code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.AssemblyInfoInputs.cache
 C:\inoccard\code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.AssemblyInfo.cs
 C:\inoccard\code\dotnet-angular\ProAgil.Repository\obj\Debug\netstandard2.1\Proagil.Repository.csproj.CoreCompileInputs.cache

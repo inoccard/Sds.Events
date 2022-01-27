@@ -12,7 +12,11 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
+<<<<<<< HEAD
         "HashCode": -1680485199,
+=======
+        "HashCode": 296257416,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeRouteView",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -79,7 +83,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -239215835,
+=======
+        "HashCode": 1428045917,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeRouteView",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -186,7 +194,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1426543046,
+=======
+        "HashCode": 1902210227,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeRouteView.NotAuthorized",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -217,7 +229,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 308161965,
+=======
+        "HashCode": -237432616,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeRouteView.NotAuthorized",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -249,7 +265,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1325747493,
+=======
+        "HashCode": -960952990,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeView",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -345,7 +365,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1585470014,
+=======
+        "HashCode": -449018957,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeView",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -442,7 +466,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 988221316,
+=======
+        "HashCode": 1377579716,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeView.Authorized",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -473,7 +501,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1673292037,
+=======
+        "HashCode": -131120497,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeView.Authorized",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -544,7 +576,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1983425438,
+=======
+        "HashCode": -1385703636,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeView.ChildContent",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -575,7 +611,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 582878815,
+=======
+        "HashCode": -1099871644,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeView.ChildContent",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -607,7 +647,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1793112107,
+=======
+        "HashCode": 1369674063,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeView.NotAuthorized",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -638,7 +682,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1033551651,
+=======
+        "HashCode": -591208274,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Authorization.AuthorizeView.NotAuthorized",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -670,7 +718,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1336844961,
+=======
+        "HashCode": -263528993,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -698,7 +750,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -540155129,
+=======
+        "HashCode": -1249481895,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState",
         "AssemblyName": "Microsoft.AspNetCore.Components.Authorization",
@@ -766,7 +822,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 624402547,
+=======
+        "HashCode": -779271695,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.CascadingValue<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -835,7 +895,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -316774914,
+=======
+        "HashCode": 595432940,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.CascadingValue<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -944,7 +1008,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 536679193,
+=======
+        "HashCode": 331318880,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.LayoutView",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -982,7 +1050,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -2015153527,
+=======
+        "HashCode": 684408022,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.LayoutView",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -1060,7 +1132,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -131131392,
+=======
+        "HashCode": -1892484515,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.RouteView",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -1097,7 +1173,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 200054059,
+=======
+        "HashCode": -1691295564,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.RouteView",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -1135,7 +1215,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -493884657,
+=======
+        "HashCode": 750285824,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Routing.Router",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -1202,7 +1286,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 2110695415,
+=======
+        "HashCode": 1654626511,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Routing.Router",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -1270,7 +1358,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 477010062,
+=======
+        "HashCode": -120305740,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Routing.Router.Found",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -1301,7 +1393,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1834393210,
+=======
+        "HashCode": 1116679501,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Routing.Router.Found",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -1407,7 +1503,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -302799227,
+=======
+        "HashCode": -197377092,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.EditForm",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -1503,7 +1603,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1725724825,
+=======
+        "HashCode": -1248720068,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.EditForm",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -1600,7 +1704,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1425395868,
+=======
+        "HashCode": -348518958,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Forms.EditForm.ChildContent",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -1631,7 +1739,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 784153619,
+=======
+        "HashCode": 2122407101,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.ChildContent",
         "Name": "Microsoft.AspNetCore.Components.Forms.EditForm.ChildContent",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -1663,7 +1775,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 341514961,
+=======
+        "HashCode": 60270921,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputCheckbox",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -1719,7 +1835,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1112941139,
+=======
+        "HashCode": -323551022,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputCheckbox",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -1776,7 +1896,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1031239817,
+=======
+        "HashCode": 2093936156,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputDate<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -1856,7 +1980,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1994079686,
+=======
+        "HashCode": 337948680,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputDate<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -1937,7 +2065,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1146491092,
+=======
+        "HashCode": -1090574150,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputNumber<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2017,7 +2149,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -86565195,
+=======
+        "HashCode": -1974458515,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputNumber<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2098,7 +2234,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -762945504,
+=======
+        "HashCode": -1812204296,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputSelect<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2179,7 +2319,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1710745849,
+=======
+        "HashCode": -611742660,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputSelect<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2300,7 +2444,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1144413091,
+=======
+        "HashCode": -1762583743,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputText",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2356,7 +2504,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1368342721,
+=======
+        "HashCode": 1675787525,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputText",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2413,7 +2565,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1111073816,
+=======
+        "HashCode": -733810047,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputTextArea",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2469,7 +2625,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -603998122,
+=======
+        "HashCode": 1369550955,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputTextArea",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2526,7 +2686,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1397561445,
+=======
+        "HashCode": -1156053731,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.ValidationMessage<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2576,7 +2740,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -183000960,
+=======
+        "HashCode": -542618787,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.ValidationMessage<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2627,7 +2795,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 242798680,
+=======
+        "HashCode": 386264776,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.ValidationSummary",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2664,7 +2836,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1954031836,
+=======
+        "HashCode": 1818013833,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.ValidationSummary",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2702,7 +2878,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -113796794,
+=======
+        "HashCode": 727981038,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Routing.NavLink",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2759,7 +2939,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1066662000,
+=======
+        "HashCode": 1726906935,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Routing.NavLink",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -2856,7 +3040,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1391952131,
+=======
+        "HashCode": 2096604883,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onabort",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -2937,7 +3125,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1623512693,
+=======
+        "HashCode": -1268581396,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onactivate",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3018,7 +3210,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1714354502,
+=======
+        "HashCode": -531286912,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onbeforeactivate",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3099,7 +3295,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -502713351,
+=======
+        "HashCode": -916028719,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onbeforecopy",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3180,7 +3380,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -955657122,
+=======
+        "HashCode": -2019710808,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onbeforecut",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3261,7 +3465,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 775998936,
+=======
+        "HashCode": 493449357,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onbeforedeactivate",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3342,7 +3550,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1907747834,
+=======
+        "HashCode": 1916289858,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onbeforepaste",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3423,7 +3635,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1655639245,
+=======
+        "HashCode": -1906934303,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onblur",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3504,7 +3720,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -337109147,
+=======
+        "HashCode": 1229892990,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "oncanplay",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3585,7 +3805,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1137904826,
+=======
+        "HashCode": -566717280,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "oncanplaythrough",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3666,7 +3890,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -821980582,
+=======
+        "HashCode": 329958118,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onchange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3747,7 +3975,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 787426028,
+=======
+        "HashCode": 1577864461,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onclick",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3828,7 +4060,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 442055878,
+=======
+        "HashCode": 276755996,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "oncontextmenu",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3909,7 +4145,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -411851640,
+=======
+        "HashCode": -1416029348,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "oncopy",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -3990,7 +4230,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -868689525,
+=======
+        "HashCode": 1688858174,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "oncuechange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4071,7 +4315,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1392332545,
+=======
+        "HashCode": -1141633098,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "oncut",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4152,7 +4400,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1313643291,
+=======
+        "HashCode": -2083373395,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondblclick",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4233,7 +4485,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 2102367221,
+=======
+        "HashCode": -1434817424,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondeactivate",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4314,7 +4570,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1472062986,
+=======
+        "HashCode": -2054727477,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondrag",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4395,7 +4655,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 210482135,
+=======
+        "HashCode": 1256530774,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondragend",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4476,7 +4740,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1450766640,
+=======
+        "HashCode": -1130964808,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondragenter",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4557,7 +4825,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1747362364,
+=======
+        "HashCode": 1105972874,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondragleave",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4638,7 +4910,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 169165660,
+=======
+        "HashCode": -316230670,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondragover",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4719,7 +4995,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -745044341,
+=======
+        "HashCode": -1281600349,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondragstart",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4800,7 +5080,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1139402182,
+=======
+        "HashCode": -1047169608,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondrop",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4881,7 +5165,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1004520427,
+=======
+        "HashCode": 1117239422,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ondurationchange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -4962,7 +5250,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1620358731,
+=======
+        "HashCode": 828691271,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onemptied",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5043,7 +5335,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1987822902,
+=======
+        "HashCode": -832737363,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onended",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5124,7 +5420,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1604151266,
+=======
+        "HashCode": 1306867062,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onerror",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5205,7 +5505,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 186592043,
+=======
+        "HashCode": 1269493078,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onfocus",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5286,7 +5590,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1121151949,
+=======
+        "HashCode": 633952232,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onfocusin",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5367,7 +5675,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1979636908,
+=======
+        "HashCode": -659658379,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onfocusout",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5448,7 +5760,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1485114574,
+=======
+        "HashCode": 1048451717,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onfullscreenchange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5529,7 +5845,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -2003801423,
+=======
+        "HashCode": -1280136143,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onfullscreenerror",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5610,7 +5930,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 304086471,
+=======
+        "HashCode": -976536074,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ongotpointercapture",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5691,7 +6015,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1295922993,
+=======
+        "HashCode": 226223455,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "oninput",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5772,7 +6100,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 240224611,
+=======
+        "HashCode": 1959485271,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "oninvalid",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5853,7 +6185,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 976705603,
+=======
+        "HashCode": -932774612,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onkeydown",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -5934,7 +6270,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1388389237,
+=======
+        "HashCode": 1960531843,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onkeypress",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6015,7 +6355,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 593278123,
+=======
+        "HashCode": -1617729840,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onkeyup",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6096,7 +6440,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -324657617,
+=======
+        "HashCode": -1305826180,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onload",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6177,7 +6525,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -384664444,
+=======
+        "HashCode": -530405416,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onloadeddata",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6258,7 +6610,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 410701632,
+=======
+        "HashCode": 1335642663,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onloadedmetadata",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6339,7 +6695,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -173838871,
+=======
+        "HashCode": 1270306704,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onloadend",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6420,7 +6780,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -2076119368,
+=======
+        "HashCode": 1414017480,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onloadstart",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6501,7 +6865,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 862188923,
+=======
+        "HashCode": -871666394,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onlostpointercapture",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6582,7 +6950,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1588424014,
+=======
+        "HashCode": -2137581690,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onmousedown",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6663,7 +7035,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1446718439,
+=======
+        "HashCode": -2054169611,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onmousemove",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6744,7 +7120,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -892848959,
+=======
+        "HashCode": 1003651999,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onmouseout",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6825,7 +7205,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1905724443,
+=======
+        "HashCode": -2112059291,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onmouseover",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6906,7 +7290,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 868747197,
+=======
+        "HashCode": 777766705,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onmouseup",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -6987,7 +7375,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1878369800,
+=======
+        "HashCode": 656964599,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onmousewheel",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7068,7 +7460,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 578549584,
+=======
+        "HashCode": -1033718873,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpaste",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7149,7 +7545,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -472682042,
+=======
+        "HashCode": 2021217873,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpause",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7230,7 +7630,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1774201348,
+=======
+        "HashCode": -1949760621,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onplay",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7311,7 +7715,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -2007368528,
+=======
+        "HashCode": -366012364,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onplaying",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7392,7 +7800,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 431891662,
+=======
+        "HashCode": -1700840632,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointercancel",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7473,7 +7885,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1435287063,
+=======
+        "HashCode": -470349598,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointerdown",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7554,7 +7970,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 2047867003,
+=======
+        "HashCode": -1628539207,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointerenter",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7635,7 +8055,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1669894437,
+=======
+        "HashCode": -1104468659,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointerleave",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7716,7 +8140,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1911062033,
+=======
+        "HashCode": -1767015007,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointerlockchange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7797,7 +8225,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1391094284,
+=======
+        "HashCode": -981534050,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointerlockerror",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7878,7 +8310,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 105655141,
+=======
+        "HashCode": 1622113080,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointermove",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -7959,7 +8395,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -54689486,
+=======
+        "HashCode": 417045337,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointerout",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8040,7 +8480,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1805960553,
+=======
+        "HashCode": 1978639067,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointerover",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8121,7 +8565,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1284792013,
+=======
+        "HashCode": 780156701,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onpointerup",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8202,7 +8650,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -341682906,
+=======
+        "HashCode": -515987865,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onprogress",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8283,7 +8735,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1184999635,
+=======
+        "HashCode": -1545974673,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onratechange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8364,7 +8820,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1058189993,
+=======
+        "HashCode": 745176542,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onreadystatechange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8445,7 +8905,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1961592489,
+=======
+        "HashCode": 349332202,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onreset",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8526,7 +8990,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 85037801,
+=======
+        "HashCode": 898826096,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onscroll",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8607,7 +9075,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 764619040,
+=======
+        "HashCode": -1321943223,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onseeked",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8688,7 +9160,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 859214160,
+=======
+        "HashCode": 1173293868,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onseeking",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8769,7 +9245,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1723223064,
+=======
+        "HashCode": 1647107526,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onselect",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8850,7 +9330,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1490632599,
+=======
+        "HashCode": -1661866979,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onselectionchange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -8931,7 +9415,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -335010394,
+=======
+        "HashCode": 1013580446,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onselectstart",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9012,7 +9500,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1801158310,
+=======
+        "HashCode": 818921821,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onstalled",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9093,7 +9585,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -353765892,
+=======
+        "HashCode": 1286452629,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onstop",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9174,7 +9670,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 906527888,
+=======
+        "HashCode": -1238648107,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onsubmit",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9255,7 +9755,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1950188589,
+=======
+        "HashCode": -887256393,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onsuspend",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9336,7 +9840,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -734285010,
+=======
+        "HashCode": -273269688,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ontimeout",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9417,7 +9925,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -216696633,
+=======
+        "HashCode": -630414860,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ontimeupdate",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9498,7 +10010,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -537730330,
+=======
+        "HashCode": 634857495,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ontouchcancel",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9579,7 +10095,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 2104360724,
+=======
+        "HashCode": 1520472367,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ontouchend",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9660,7 +10180,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1364108548,
+=======
+        "HashCode": 2000801051,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ontouchenter",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9741,7 +10265,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1526526883,
+=======
+        "HashCode": -1780743329,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ontouchleave",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9822,7 +10350,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1358171059,
+=======
+        "HashCode": -606094034,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ontouchmove",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9903,7 +10435,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 974592162,
+=======
+        "HashCode": -13179508,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "ontouchstart",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -9984,7 +10520,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1890949290,
+=======
+        "HashCode": 144531112,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onvolumechange",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -10065,7 +10605,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1544053299,
+=======
+        "HashCode": 146098519,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onwaiting",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -10146,7 +10690,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1902757884,
+=======
+        "HashCode": 351764287,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.EventHandler",
         "Name": "onwheel",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -10227,7 +10775,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1183855237,
+=======
+        "HashCode": 1350094190,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Splat",
         "Name": "Attributes",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -10581,7 +11133,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1562544902,
+=======
+        "HashCode": -1407463857,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -10778,7 +11334,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 866265943,
+=======
+        "HashCode": -1635712285,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.CacheTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -10905,7 +11465,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1273340427,
+=======
+        "HashCode": 149319211,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.ComponentTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -10960,7 +11524,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1307018899,
+=======
+        "HashCode": -384692075,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.DistributedCacheTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -11092,7 +11660,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 2058539171,
+=======
+        "HashCode": 758294732,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.EnvironmentTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -11138,7 +11710,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 726454547,
+=======
+        "HashCode": -886259259,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -11555,7 +12131,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1116643155,
+=======
+        "HashCode": 616913422,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -11657,7 +12237,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -631265581,
+=======
+        "HashCode": -1976483338,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.ImageTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -11703,7 +12287,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 101784419,
+=======
+        "HashCode": 956186392,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -11773,7 +12361,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1485244122,
+=======
+        "HashCode": 2070792935,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.LabelTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -11806,7 +12398,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1929601038,
+=======
+        "HashCode": -235768398,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.LinkTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -12002,7 +12598,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1253548802,
+=======
+        "HashCode": -1161674847,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -12030,7 +12630,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 679524551,
+=======
+        "HashCode": -1782391071,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -12111,7 +12715,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1623190486,
+=======
+        "HashCode": 1510780003,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.ScriptTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -12264,7 +12872,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1013644952,
+=======
+        "HashCode": 1382549104,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -12323,7 +12935,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 906726600,
+=======
+        "HashCode": 1490874892,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -12365,7 +12981,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -2082634604,
+=======
+        "HashCode": 1447650283,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -12398,7 +13018,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -887397812,
+=======
+        "HashCode": -2138081554,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.Mvc.TagHelpers",
@@ -12432,7 +13056,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 141407075,
+=======
+        "HashCode": -653984039,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -12501,7 +13129,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 590119871,
+=======
+        "HashCode": -1565904239,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -12579,7 +13211,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1579814920,
+=======
+        "HashCode": 213859950,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -12657,7 +13293,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -168823864,
+=======
+        "HashCode": -177487820,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -12741,7 +13381,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1032959981,
+=======
+        "HashCode": -2145000762,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind_value",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -12825,7 +13469,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1617849760,
+=======
+        "HashCode": -1495510905,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -12909,7 +13557,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1301266069,
+=======
+        "HashCode": -1873532414,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind_value",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -12993,7 +13645,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 272177428,
+=======
+        "HashCode": 441927306,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13077,7 +13733,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1191265366,
+=======
+        "HashCode": 887859932,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind_value",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13161,7 +13821,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1494465513,
+=======
+        "HashCode": 1389677126,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13245,7 +13909,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1603119386,
+=======
+        "HashCode": -1841074919,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind_value",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13329,7 +13997,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1632586745,
+=======
+        "HashCode": 65881479,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13413,7 +14085,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -424622683,
+=======
+        "HashCode": -615436426,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13497,7 +14173,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1475182035,
+=======
+        "HashCode": 1067897412,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind_value",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13581,7 +14261,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -676580572,
+=======
+        "HashCode": 385643403,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13665,7 +14349,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1432910606,
+=======
+        "HashCode": -1854279085,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind_value",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13743,7 +14431,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1135165520,
+=======
+        "HashCode": 558206875,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -13821,7 +14513,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1962586894,
+=======
+        "HashCode": -2061527813,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputCheckbox",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -13862,7 +14558,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1399675068,
+=======
+        "HashCode": -138343814,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputCheckbox",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -13904,7 +14604,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1097895423,
+=======
+        "HashCode": 1075676339,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputDate<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -13945,7 +14649,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1762180549,
+=======
+        "HashCode": -2085542277,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputDate<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -13987,7 +14695,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 503994948,
+=======
+        "HashCode": 463890419,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputNumber<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -14028,7 +14740,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1867010193,
+=======
+        "HashCode": 1031991212,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputNumber<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -14070,7 +14786,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1900299773,
+=======
+        "HashCode": 584116105,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputSelect<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -14111,7 +14831,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 150911277,
+=======
+        "HashCode": -763154659,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputSelect<TValue>",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -14153,7 +14877,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -1172267626,
+=======
+        "HashCode": -266938172,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputText",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -14194,7 +14922,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 2043668605,
+=======
+        "HashCode": 479878995,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputText",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -14236,7 +14968,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 736565861,
+=======
+        "HashCode": -671221044,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputTextArea",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -14277,7 +15013,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1916311747,
+=======
+        "HashCode": 606456591,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Bind",
         "Name": "Microsoft.AspNetCore.Components.Forms.InputTextArea",
         "AssemblyName": "Microsoft.AspNetCore.Components.Web",
@@ -14319,7 +15059,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -285528496,
+=======
+        "HashCode": -888750358,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Ref",
         "Name": "Ref",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -14358,7 +15102,11 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": -406693614,
+=======
+        "HashCode": 913855665,
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
         "Kind": "Components.Key",
         "Name": "Key",
         "AssemblyName": "Microsoft.AspNetCore.Components",

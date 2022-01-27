@@ -3,6 +3,9 @@ import { Lot } from './Lot';
 import { SocialNetwork } from './SocialNetwork';
 
 export class Events {
+    constructor() {
+    }
+    
     id: number;
     theme: string;
     local: string;
@@ -12,6 +15,6 @@ export class Events {
     contactPhone: string;
     contactEmail: string;
     lots: Lot[];
-    socialNetWorks: SocialNetwork[];
+    socialNetworks: SocialNetwork[];
     speakerEvents: SpeakerEvent[];
 }

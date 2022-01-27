@@ -1,4 +1,6 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Headers;
 using System.IO;
 using System;
 using System.Threading.Tasks;
@@ -10,7 +12,7 @@ using ProAgil.Repository.Data;
 using ProAgil.WebAPI.Dtos;
 using Microsoft.AspNetCore.Authorization;
 
-namespace ProAgil.WebAPI.Controllers 
+namespace ProAgil.WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -26,6 +28,7 @@ namespace ProAgil.WebAPI.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        //[Authorize]
         public async Task<IActionResult> Get()
         {
             try
@@ -49,7 +52,7 @@ namespace ProAgil.WebAPI.Controllers
                 // pega o arquivo
                 var file = Request.Form.Files[0];
                 // pega o diretório onde a aplicação quer armazenar
-                var folferName = Path.Combine("Resources","Images");
+                var folferName = Path.Combine("Resources", "Images");
                 // Combina o diretório da aplicação + o onde a aplicação quer armazenar os arquivos
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folferName);
 
@@ -68,7 +71,7 @@ namespace ProAgil.WebAPI.Controllers
                 }
                 return BadRequest("Erro ao fazer upload");
             }
-            
+
             catch (Exception e)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
@@ -78,13 +81,17 @@ namespace ProAgil.WebAPI.Controllers
 
         [HttpGet("event/{id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> Get (int id) {
-            try {
-                var _event = await context.GetEventAssyncById (id, true);
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                var _event = await context.GetEventAssyncById(id, true);
                 var result = mapper.Map<EventDto>(_event);
-                return Ok (result);
-            } catch (System.Exception) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, "Não é possível obtér o evento");
+                return Ok(result);
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Não é possível obtér o evento");
             }
         }
 
@@ -93,72 +100,105 @@ namespace ProAgil.WebAPI.Controllers
         /// </summary>
         /// <param name="theme"></param>
         /// <returns></returns>
-        [HttpGet ("get-by-theme")]
+        [HttpGet("get-by-theme")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetEventsByTheme ([FromQuery] string theme) {
-            try {
-                var _events = await context.GetEventsAssyncByTheme (theme, true);
+        public async Task<IActionResult> GetEventsByTheme([FromQuery] string theme)
+        {
+            try
+            {
+                var _events = await context.GetEventsAssyncByTheme(theme, true);
                 var results = mapper.Map<EventDto[]>(_events);
-                return Ok (results);
-            } catch (Exception e) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível obtér o evento: {e.Message}");
+                return Ok(results);
+            }
+            catch (Exception e)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér o evento: {e.Message}");
             }
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> CreateEvent (EventDto model) {
-            try {
+        public async Task<IActionResult> CreateEvent(EventDto model)
+        {
+            try
+            {
                 var _event = mapper.Map<Event>(model);
-                context.Add (_event);
-                if (await context.SaveChangeAssync ())
-                    return Created ($"/event/{_event.Id}", mapper.Map<EventDto>(_event));
+                context.Add(_event);
+                if (await context.SaveChangeAssync())
+                    return Created($"/event/{_event.Id}", mapper.Map<EventDto>(_event));
                 else
-                    BadRequest ();
-                return Ok ();
-            } catch (Exception e) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível criar o evento: {e.Message}");
+                    BadRequest();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível criar o evento: {e.Message}");
             }
         }
 
         [HttpPut("{id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> UpdateEvent (int id, EventDto model) {
-            try {
+        public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventDto model)
+        {
+            try
+            {
                 if (id != model.Id)
-                     return BadRequest ();
+                    return BadRequest();
 
-                var _event = await context.GetEventAssyncById (id, false);
+                var lotIds = new List<int>();
+                var socialIds = new List<int>();
 
-                if (_event is null) return NotFound ();
+                if (model.Lots != null && model.Lots.Count > 0)
+                    lotIds.AddRange(model.Lots.Select(lot => lot.Id));
+
+                if (model.SocialNetworks != null && model.SocialNetworks.Count > 0)
+                    socialIds.AddRange(model.SocialNetworks.Select(social => social.Id));
+
+                var _event = await context.GetEventAssyncById(id, false);
+
+                if (_event is null) return NotFound();
+
+                var lots = _event.Lots.Where(lot => !lotIds.Contains(lot.Id)).ToArray();
+
+                if (lots.Length > 0) context.DeleteRange(lots);
+
+                var socialNetworks = _event.SocialNetworks.Where(social => !socialIds.Contains(social.Id)).ToArray();
+
+                if (socialNetworks.Length > 0) context.DeleteRange(socialNetworks);
 
                 mapper.Map(model, _event);
 
-                context.Update (_event);
-                if (await context.SaveChangeAssync ())
-                    return Created ($"/event/{_event.Id}",  mapper.Map<EventDto>(_event));
+                context.Update(_event);
+                if (await context.SaveChangeAssync())
+                    return Created($"/event/{_event.Id}", mapper.Map<EventDto>(_event));
                 else
-                    return BadRequest ();
-            } catch (Exception e) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, $"Não é possível alterar o evento {e.Message}");
+                    return BadRequest();
+            }
+            catch (Exception e)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível alterar o evento {e.Message}");
             }
         }
 
-        [HttpDelete ("{id}")]
+        [HttpDelete("{id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> DeleteEvent ([FromRoute] int id) {
-            try {
-                var _event = await context.GetEventAssyncById (id, false);
+        public async Task<IActionResult> DeleteEvent([FromRoute] int id)
+        {
+            try
+            {
+                var _event = await context.GetEventAssyncById(id, false);
 
-                if (_event is null) return NotFound ();
+                if (_event is null) return NotFound();
 
-                context.Delete (_event);
-                if (await context.SaveChangeAssync ())
-                    return Ok ();
+                context.Delete(_event);
+                if (await context.SaveChangeAssync())
+                    return Ok();
                 else
-                    return BadRequest ();
-            } catch (Exception) {
-                return this.StatusCode (StatusCodes.Status500InternalServerError, "Não é possível alterar o evento");
+                    return BadRequest();
+            }
+            catch (Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Não é possível alterar o evento");
             }
         }
     }

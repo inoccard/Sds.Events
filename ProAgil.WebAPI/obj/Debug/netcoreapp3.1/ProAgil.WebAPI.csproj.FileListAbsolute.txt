@@ -227,6 +227,10 @@ C:\inoccard\code\dotnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.D
 C:\inoccard\code\dotnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Repository.dll
 C:\inoccard\code\dotnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Domain.pdb
 C:\inoccard\code\dotnet-angular\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Proagil.Repository.pdb
+<<<<<<< HEAD
+=======
+C:\inoccard\code\dotnet-angular\ProAgil.WebAPI\obj\Debug\netcoreapp3.1\Proagil.WebAPI.csprojAssemblyReference.cache
+>>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
 C:\inoccard\code\dotnet-angular\ProAgil.WebAPI\obj\Debug\netcoreapp3.1\Proagil.WebAPI.AssemblyInfoInputs.cache
 C:\inoccard\code\dotnet-angular\ProAgil.WebAPI\obj\Debug\netcoreapp3.1\Proagil.WebAPI.AssemblyInfo.cs
 C:\inoccard\code\dotnet-angular\ProAgil.WebAPI\obj\Debug\netcoreapp3.1\Proagil.WebAPI.csproj.CoreCompileInputs.cache

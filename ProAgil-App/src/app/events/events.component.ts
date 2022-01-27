@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal/public_api';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-events',
@@ -12,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EventsComponent implements OnInit {
   title = 'Eventos';
-  file: File;
+  file: FileList;
   eventsFiltered: any = [];
   events: any = [];
   event: Events;
@@ -22,8 +23,15 @@ export class EventsComponent implements OnInit {
   registerForm: FormGroup;
   bodyDeletarEvento: string;
 
-  constructor(private eventService: EventService, private fb: FormBuilder, private toastr: ToastrService) { }
+  constructor(
+    private eventService: EventService, 
+    private fb: FormBuilder, 
+    private toastr: ToastrService, 
+    private  spinner: NgxSpinnerService) { }
+    
   ngOnInit() {
+    this.spinner.show();
+
     this.validation();
     this.getEvents();
   }
@@ -82,14 +90,14 @@ export class EventsComponent implements OnInit {
   }
   // Obter eventos
   getEvents() {
-    this.eventService.getEvents().subscribe(
-      response => {
-        this.events = response;
+    this.eventService.getEvents().subscribe({
+      next: (events: Events[]) => {
+        this.events = events;
         this.eventsFiltered = this.events;
-      }, error => {
+      }, error: (error: any) => {
         this.toastr.error(`Erro ao obter eventos: ${error}`);
-      }
-    );
+      }, complete: () => this.spinner.hide()
+    });
   }
 
   validation() {
@@ -109,11 +117,11 @@ export class EventsComponent implements OnInit {
       // copiar evento
       if (!this.event) {
         this.event = Object.assign(this.registerForm.value);
-        this.splitImage();
       } else {
         this.event = Object.assign({ id: this.event.id }, this.registerForm.value);
-        this.splitImage();
       }
+      this.splitImage();
+
       this.eventService.saveEvent(this.event).subscribe(
         (newEvent: Events) => {
           template.hide();

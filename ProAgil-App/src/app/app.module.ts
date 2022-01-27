@@ -5,12 +5,15 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxMaskModule } from 'ngx-mask';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 /** SERVICES */
 import { EventService } from './services/event/event.service';
@@ -32,6 +35,7 @@ import { EventEditComponent } from './events/event-edit/event-edit.component';
 
 /** PIPES */
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -50,6 +54,7 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       LoginComponent,
       RegistrationComponent,
       EventEditComponent,
+      HomeComponent,
    ],
    imports: [
       BrowserModule,
@@ -63,11 +68,14 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
       NgxMaskModule.forRoot(),
+      CurrencyMaskModule,
       ToastrModule.forRoot({
          timeOut: 7000,
          positionClass: 'toast-bottom-right',
          preventDuplicates: true
-      })
+      }),
+      NgxSpinnerModule,
+      CollapseModule.forRoot()
    ],
    providers: [
       EventService,
@@ -79,6 +87,7 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
    ],
    bootstrap: [
       AppComponent
-   ]
+   ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
