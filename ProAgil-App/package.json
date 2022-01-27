@@ -11,7 +11,6 @@
   },
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@angular/animations": "^9.1.12",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "^9.1.12",
@@ -25,7 +24,6 @@
     "@auth0/angular-jwt": "^5.0.1",
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bootstrap": "^4.5.2",
-=======
     "@angular/animations": "^9.1.13",
     "@angular/common": "^9.1.13",
     "@angular/compiler": "^9.1.13",
@@ -39,7 +37,6 @@
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",
     "ng2-currency-mask": "^9.0.2",
->>>>>>> d39d8b195df1992b151399890380f08fdb6a2008
     "ngx-bootstrap": "^5.6.2",
     "ngx-mask": "^10.0.4",
     "ngx-spinner": "^10.0.1",
