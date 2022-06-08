@@ -33,12 +33,15 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: () =>{
           this.router.navigate(['/dashboard']);
-          this.toastr.success('Você está logado');
+          this.toastr.success('Você está logado', 'Bem-vindo');
         },
         error: (error: any) => {
           this.toastr.error(`Falha ao fazer login: ${error}`);
+          this.spinner.hide();
         },
-        complete: () => this.spinner.hide()
+        complete: () => {
+          this.spinner.hide();
+        }
       });
   }
 
