@@ -5,18 +5,19 @@
 *.suo
 *.user
 *.vs
+/.vs/*
+
+
 /ProAgil.Domain/bin
 /ProAgil.MVC/bin
 /ProAgil.Repository/bin
 /ProAgil.Web/bin
-/ProAgil.WebAPI/bin
 /ProAgil.WebAPI/bin
 
 /ProAgil.Domain/obj
 /ProAgil.MVC/obj
 /ProAgil.Repository/obj
 /ProAgil.Web/obj
-/ProAgil.WebAPI/obj
 /ProAgil.WebAPI/obj
 
 /ProAgil-App/node_modules
