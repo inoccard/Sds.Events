@@ -78,7 +78,7 @@ namespace ProAgil.Repository.Data {
                     .ThenInclude (s => s.Event);
             }
 
-            speakers = speakers.OrderBy (e => e.Name);
+            speakers = speakers.OrderBy (e => e.User.FullName);
 
             return await speakers.AsNoTracking().ToArrayAsync ();
         }
@@ -92,7 +92,7 @@ namespace ProAgil.Repository.Data {
                     .ThenInclude (s => s.Event);
             }
 
-            speakers = speakers.Where(e => e.Id == Id).OrderBy (e => e.Name);
+            speakers = speakers.Where(e => e.Id == Id).OrderBy (e => e.User.FullName);
 
             return await speakers.AsNoTracking().FirstOrDefaultAsync ();
         }
@@ -107,7 +107,7 @@ namespace ProAgil.Repository.Data {
                     .ThenInclude (s => s.Event);
             }
 
-            speakers = speakers.Where (e => e.Name.ToLower().Contains(name));
+            speakers = speakers.Where (e => e.User.FullName.ToLower().Contains(name));
 
             return await speakers.AsNoTracking().ToArrayAsync ();
         }
