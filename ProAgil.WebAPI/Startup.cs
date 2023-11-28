@@ -1,4 +1,6 @@
+using System;
 using System.IO;
+using System.Security.Claims;
 using System.Text;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -63,7 +65,7 @@ namespace ProAgil.WebAPI
                 .AddEntityFrameworkStores<ProAgilContext>(); // EntityFramework levará em consideração sempre o contexto
 
             /// <summary>
-            /// instancia o IdentityBuilder com o tipo de usuário, tippo de papel e o serviço criado acima
+            /// instancia o IdentityBuilder com o tipo de usuário, tipo de papel e o serviço criado acima
             /// </summary>
             /// <returns></returns>
             builder = new IdentityBuilder(builder.UserType, typeof(Role), builder.Services);
@@ -73,9 +75,11 @@ namespace ProAgil.WebAPI
             builder.AddSignInManager<SignInManager<User>>();
 
             // JWT Config
+            //services.AddAuthorization();
             services.AddAuthentication(x =>
-               {x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-               x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+               {
+                   x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                   x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                })
                 .AddJwtBearer(opt =>
                 {
@@ -91,8 +95,17 @@ namespace ProAgil.WebAPI
                         ValidateAudience = false,
                         SaveSigninToken = true
                     };
-                });
-            //services.AddAuthorization();
+                })
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "";
+                    options.ApiName = "";
+                    options.ApiSecret = "";
+                    options.CacheDuration = TimeSpan.FromMinutes(99);
+                    options.EnableCaching = true;
+                    options.RoleClaimType = ClaimTypes.Role;
+            });
+
             // Determina qual determinado controller será chamado, e adicionando uma política
             // Não é mais necessário colocar autenticação no controller
             services.AddMvc(options =>
@@ -117,7 +130,7 @@ namespace ProAgil.WebAPI
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
-           else
+            else
                 app.UseHsts();
 
             //app.UseHttpsRedirection();
