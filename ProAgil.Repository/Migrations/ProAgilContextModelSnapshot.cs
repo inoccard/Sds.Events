@@ -186,6 +186,8 @@ namespace ProAgil.Repository.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Speakers");
                 });
 

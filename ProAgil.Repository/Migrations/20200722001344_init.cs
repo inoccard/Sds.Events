@@ -77,6 +77,7 @@ namespace ProAgil.Repository.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     MiniCurriculum = table.Column<string>(nullable: true),
+                    UserId = table.Column<int>(nullable: true),
                     ImageUrl = table.Column<string>(nullable: true),
                     ContactCell = table.Column<string>(nullable: true),
                     ContactEmail = table.Column<string>(nullable: true)

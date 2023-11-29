@@ -15,22 +15,20 @@ using Microsoft.AspNetCore.Authorization;
 namespace ProAgil.WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    [Authorize]
+    [Route("api/v{version:apiVersion}/event")]
     public class EventController : ControllerBase
     {
         private readonly IProAgilRepository context;
         private readonly IMapper mapper;
+
         public EventController(IProAgilRepository context, IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-        //[Authorize]
-        public async Task<IActionResult> Get()
+        [HttpGet("get-events")]
+        public async Task<IActionResult> GetEvents()
         {
             try
             {
@@ -45,7 +43,6 @@ namespace ProAgil.WebAPI.Controllers
         }
 
         [HttpPost("upload")]
-        [AllowAnonymous]
         public IActionResult Upload()
         {
             try
@@ -72,16 +69,14 @@ namespace ProAgil.WebAPI.Controllers
                 }
                 return BadRequest("Erro ao fazer upload");
             }
-
             catch (Exception e)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
             }
         }
 
-        [HttpGet("event/{id}")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("get-event{id}")]
+        public async Task<IActionResult> GetEvent(int id)
         {
             try
             {
@@ -101,7 +96,6 @@ namespace ProAgil.WebAPI.Controllers
         /// <param name="theme"></param>
         /// <returns></returns>
         [HttpGet("get-by-theme")]
-        [AllowAnonymous]
         public async Task<IActionResult> GetEventsByTheme([FromQuery] string theme)
         {
             try
@@ -117,7 +111,6 @@ namespace ProAgil.WebAPI.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> CreateEvent(EventDto model)
         {
             try
@@ -137,7 +130,6 @@ namespace ProAgil.WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        [AllowAnonymous]
         public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventDto model)
         {
             try
@@ -181,7 +173,6 @@ namespace ProAgil.WebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [AllowAnonymous]
         public async Task<IActionResult> DeleteEvent([FromRoute] int id)
         {
             try
