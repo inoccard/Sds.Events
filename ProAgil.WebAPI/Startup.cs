@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Proagil.WebAPI.Configs.SwaggerConfigurations;
 using ProAgil.Domain.Identity;
 using ProAgil.Repository.Data;
 
@@ -41,7 +43,6 @@ namespace ProAgil.WebAPI
             /// <typeparam name="ProAgilContext"></typeparam>
             /// <returns></returns>
             services.AddDbContext<ProAgilContext>(d => d.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddDbContext<ProAgilContext> (d => d.UseSqlite (Configuration.GetConnectionString ("DefaultConnectionSqlite")));
 
             /// <summary>
             /// Injeção de Dependência do ProAgilRepository
@@ -75,8 +76,7 @@ namespace ProAgil.WebAPI
             builder.AddSignInManager<SignInManager<User>>();
 
             // JWT Config
-            //services.AddAuthorization();
-            services.AddAuthentication(x =>
+            /*services.AddAuthentication(x =>
                {
                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -104,7 +104,9 @@ namespace ProAgil.WebAPI
                     options.CacheDuration = TimeSpan.FromMinutes(99);
                     options.EnableCaching = true;
                     options.RoleClaimType = ClaimTypes.Role;
-            });
+                });
+
+            services.AddAuthorization();*/
 
             // Determina qual determinado controller será chamado, e adicionando uma política
             // Não é mais necessário colocar autenticação no controller
@@ -116,9 +118,10 @@ namespace ProAgil.WebAPI
                     .Build();
                 options
                     .Filters.Add(new AuthorizeFilter(policy)); // filtra todas as chamadas do controller
-
             })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+            services.AddVersionedSwagger();
 
             services.AddAutoMapper();
             services.AddCors();
@@ -126,15 +129,14 @@ namespace ProAgil.WebAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else
                 app.UseHsts();
 
-            //app.UseHttpsRedirection();
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions()
             {
@@ -146,13 +148,15 @@ namespace ProAgil.WebAPI
 
             app.UseRouting();
 
+            //app.UseAuthentication();
+            //app.UseAuthorization();
+
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
-            app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseVersionedSwagger(apiVersionDescriptionProvider);
 
             app.UseEndpoints(endpoints =>
             {
