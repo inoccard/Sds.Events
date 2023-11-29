@@ -17,7 +17,10 @@ namespace Proagil.WebAPI.Configs.App
             /// </summary>
             /// <returns></returns>
             services.AddScoped<IProAgilRepository, ProAgilRepository>();
+        }
 
+        public static void AddIdentityUser(this IServiceCollection services)
+        {
             // todos os controller terão que passar por uma autenticação
             // quem vai consumir a API precisa estar autenticado e autorizado
             // remove as obrigatoriedades padrão de senha

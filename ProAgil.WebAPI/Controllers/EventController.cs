@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace ProAgil.WebAPI.Controllers
 {
     [ApiController]
-    [Route("v{v:apiVersion}/event")]
+    [Route("api/v{version:apiVersion}/event")]
     public class EventController : ControllerBase
     {
         private readonly IProAgilRepository context;
@@ -27,8 +27,8 @@ namespace ProAgil.WebAPI.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpGet("get-events")]
+        public async Task<IActionResult> GetEvents()
         {
             try
             {
@@ -75,8 +75,8 @@ namespace ProAgil.WebAPI.Controllers
             }
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("get-event{id}")]
+        public async Task<IActionResult> GetEvent(int id)
         {
             try
             {

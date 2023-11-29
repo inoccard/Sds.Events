@@ -44,8 +44,12 @@ namespace ProAgil.WebAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider apiVersionDescriptionProvider)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+                              IApiVersionDescriptionProvider apiVersionDescriptionProvider,
+                              ProAgilContext dbContext)
         {
+            dbContext.Database.Migrate();
+
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else

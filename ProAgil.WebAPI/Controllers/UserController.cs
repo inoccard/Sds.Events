@@ -18,7 +18,7 @@ using ProAgil.Domain.Identity;
 namespace Proagil.WebAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/user")]
     public class UserController : ControllerBase
     {
         private readonly IConfiguration _config;
@@ -40,7 +40,6 @@ namespace Proagil.WebAPI.Controllers
         /// <param name="userDto"></param>
         /// <returns></returns>
         [HttpGet("get-user")]
-        //[AllowAnonymous]
         public async Task<IActionResult> GetUser()
         {
             try
@@ -110,7 +109,8 @@ namespace Proagil.WebAPI.Controllers
                 var result = await _userManager.CreateAsync(user, user.PasswordHash);
                 var userToResult = _mapper.Map<UserDto>(user);
 
-                if (result.Succeeded){
+                if (result.Succeeded)
+                {
                     //userToResult.PasswordHash = null;
                     return Created("user", userToResult);
                 }
@@ -124,6 +124,7 @@ namespace Proagil.WebAPI.Controllers
         }
 
         #region private Methods
+
         /// <summary>
         /// Generate token
         /// </summary>
@@ -157,6 +158,7 @@ namespace Proagil.WebAPI.Controllers
 
             return tokenHandler.WriteToken(token);
         }
-        #endregion
+
+        #endregion private Methods
     }
 }
