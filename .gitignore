@@ -8,17 +8,17 @@
 /.vs/*
 
 
-/ProAgil.Domain/bin
-/ProAgil.MVC/bin
-/ProAgil.Repository/bin
-/ProAgil.Web/bin
-/ProAgil.WebAPI/bin
+/Sds.Events.Domain/bin
+/Sds.Events.MVC/bin
+/Sds.Events.Repository/bin
+/Sds.Events.Web/bin
+/Sds.Events.WebAPI/bin
 
-/ProAgil.Domain/obj
-/ProAgil.MVC/obj
-/ProAgil.Repository/obj
-/ProAgil.Web/obj
-/ProAgil.WebAPI/obj
+/Sds.Events.Domain/obj
+/Sds.Events.MVC/obj
+/Sds.Events.Repository/obj
+/Sds.Events.Web/obj
+/Sds.Events.WebAPI/obj
 
 /ProAgil-App/node_modules
 /.vs/
