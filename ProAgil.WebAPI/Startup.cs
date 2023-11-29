@@ -1,25 +1,16 @@
-using System;
 using System.IO;
-using System.Security.Claims;
-using System.Text;
 using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
+using Proagil.WebAPI.Configs.App;
 using Proagil.WebAPI.Configs.SwaggerConfigurations;
-using ProAgil.Domain.Identity;
 using ProAgil.Repository.Data;
 
 namespace ProAgil.WebAPI
@@ -39,87 +30,11 @@ namespace ProAgil.WebAPI
             /// <summary>
             /// Injeção de Dependêncica
             /// </summary>
-            /// <param name="("DefaultConnection")"></param>
-            /// <typeparam name="ProAgilContext"></typeparam>
             /// <returns></returns>
             services.AddDbContext<ProAgilContext>(d => d.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            /// <summary>
-            /// Injeção de Dependência do ProAgilRepository
-            /// </summary>
-            /// <typeparam name="IProAgilRepository"></typeparam>
-            /// <typeparam name="ProAgilRepository"></typeparam>
-            /// <returns></returns>
-            services.AddScoped<IProAgilRepository, ProAgilRepository>();
-
-            // todos os controller terão que passar por uma autenticação
-            // quem vai consumir a API precisa estar autenticado e autorizado
-            // remove as obrigatoriedades padrão de senha
-            IdentityBuilder builder = services.AddIdentity<User, Role>(options =>
-            {
-                options.Password.RequireDigit = false; // sem caracteres especiais
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequiredLength = 4;
-            })
-                .AddEntityFrameworkStores<ProAgilContext>(); // EntityFramework levará em consideração sempre o contexto
-
-            /// <summary>
-            /// instancia o IdentityBuilder com o tipo de usuário, tipo de papel e o serviço criado acima
-            /// </summary>
-            /// <returns></returns>
-            builder = new IdentityBuilder(builder.UserType, typeof(Role), builder.Services);
-
-            builder.AddRoleValidator<RoleValidator<Role>>();
-            builder.AddRoleManager<RoleManager<Role>>(); // gerenciador dos papeis
-            builder.AddSignInManager<SignInManager<User>>();
-
-            // JWT Config
-            /*services.AddAuthentication(x =>
-               {
-                   x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                   x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-               })
-                .AddJwtBearer(opt =>
-                {
-                    opt.RequireHttpsMetadata = false;
-                    opt.SaveToken = true;
-                    opt.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        // assinatura da chave do emissor
-                        ValidateIssuerSigningKey = true,
-                        // config da chave da API
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
-                        ValidateIssuer = false,
-                        ValidateAudience = false,
-                        SaveSigninToken = true
-                    };
-                })
-                .AddIdentityServerAuthentication(options =>
-                {
-                    options.Authority = "";
-                    options.ApiName = "";
-                    options.ApiSecret = "";
-                    options.CacheDuration = TimeSpan.FromMinutes(99);
-                    options.EnableCaching = true;
-                    options.RoleClaimType = ClaimTypes.Role;
-                });
-
-            services.AddAuthorization();*/
-
-            // Determina qual determinado controller será chamado, e adicionando uma política
-            // Não é mais necessário colocar autenticação no controller
-            services.AddMvc(options =>
-            {
-                // toda vez que um controller for chamado, deverá respeitar esta política
-                var policy = new AuthorizationPolicyBuilder()
-                    .RequireAuthenticatedUser() // requer que o usuário esteja autenticado
-                    .Build();
-                options
-                    .Filters.Add(new AuthorizeFilter(policy)); // filtra todas as chamadas do controller
-            })
-            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            //services.AddAuthenticationConfiguration(Configuration);
+            services.AddAppServices();
 
             services.AddVersionedSwagger();
 
@@ -148,8 +63,7 @@ namespace ProAgil.WebAPI
 
             app.UseRouting();
 
-            //app.UseAuthentication();
-            //app.UseAuthorization();
+            //app.UseIdentityConfiguration();
 
             app.UseCors(x => x
                 .AllowAnyOrigin()
