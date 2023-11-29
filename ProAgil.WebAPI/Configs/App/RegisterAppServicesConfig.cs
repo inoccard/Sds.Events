@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using ProAgil.Domain.Identity;
-using ProAgil.Repository.Data;
+using Sds.Events.Domain.Identity;
 
-namespace Proagil.WebAPI.Configs.App
+using Sds.Events.Repository.Data;
+
+namespace Sds.Events.WebAPI.Configs.App
 {
     public static class RegisterAppServicesConfig
     {

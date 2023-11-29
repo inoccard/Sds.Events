@@ -22,7 +22,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProAgil.Domain\Proagil.Domain.csproj" />
-    <ProjectReference Include="..\ProAgil.Repository\Proagil.Repository.csproj" />
+    <ProjectReference Include="..\ProAgil.Domain\Sds.Events.Domain.csproj" />
+    <ProjectReference Include="..\ProAgil.Repository\Sds.Events.Repository.csproj" />
   </ItemGroup>
 </Project>

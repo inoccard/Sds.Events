@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using ProAgil.Domain.Entities;
+using Sds.Events.Domain.Entities;
 
-namespace ProAgil.Repository.Data {
+namespace Sds.Events.Repository.Data {
     public interface IProAgilRepository {
         /// <summary>
         /// Tipo Generico

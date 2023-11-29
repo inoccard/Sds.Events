@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using ProAgil.Domain.Identity;
+using Sds.Events.Domain.Identity;
 
-namespace ProAgil.Domain.Entities
+namespace Sds.Events.Domain.Entities
 {
     public class Speaker
     {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace ProAgil.WebAPI
+namespace Sds.Events.WebAPI
 {
     public class Program
     {

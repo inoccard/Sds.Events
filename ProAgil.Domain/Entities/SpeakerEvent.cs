@@ -1,4 +1,4 @@
-namespace ProAgil.Domain.Entities
+namespace Sds.Events.Domain.Entities
 {
     public class SpeakerEvent
     {

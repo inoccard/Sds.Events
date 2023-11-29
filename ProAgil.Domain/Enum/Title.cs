@@ -1,4 +1,4 @@
-namespace ProAgil.Domain.Enum
+namespace Sds.Events.Domain.Enum
 {
     public enum Title
     {

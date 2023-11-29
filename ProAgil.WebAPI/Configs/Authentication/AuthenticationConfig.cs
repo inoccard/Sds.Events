@@ -8,7 +8,7 @@ using System;
 using System.Security.Claims;
 using System.Text;
 
-namespace Proagil.WebAPI.Configs.Authentication
+namespace Sds.Events.WebAPI.Configs.Authentication
 {
     public static class AuthenticationConfig
     {

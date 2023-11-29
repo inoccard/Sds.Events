@@ -1,11 +1,11 @@
 using System.Linq;
 using AutoMapper;
-using Proagil.WebAPI.Dtos;
-using ProAgil.Domain.Entities;
-using ProAgil.Domain.Identity;
-using ProAgil.WebAPI.Dtos;
+using Sds.Events.WebAPI.Dtos;
+using Sds.Events.Domain.Entities;
+using Sds.Events.Domain.Identity;
+using Sds.Events.WebAPI.Dtos;
 
-namespace ProAgil.WebAPI.Helpers
+namespace Sds.Events.WebAPI.Helpers
 {
     public class AutoMapperProfiles : Profile
     {

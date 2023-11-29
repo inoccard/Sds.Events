@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 
-namespace ProAgil.Domain.Identity
+namespace Sds.Events.Domain.Identity
 {
     public class Role : IdentityRole<int>
     {

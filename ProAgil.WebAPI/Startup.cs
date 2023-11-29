@@ -9,11 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using Proagil.WebAPI.Configs.App;
-using Proagil.WebAPI.Configs.SwaggerConfigurations;
-using ProAgil.Repository.Data;
+using Sds.Events.WebAPI.Configs.App;
 
-namespace ProAgil.WebAPI
+using Sds.Events.WebAPI.Configs.SwaggerConfigurations;
+using Sds.Events.Repository.Data;
+
+namespace Sds.Events.WebAPI
 {
     public class Startup
     {

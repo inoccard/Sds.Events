@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProAgil.Domain.Entities {
+namespace Sds.Events.Domain.Entities {
     public class Lot {
         public int Id { get; set; }
         public string Name { get; set; }

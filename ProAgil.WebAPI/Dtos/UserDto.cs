@@ -1,4 +1,4 @@
-﻿namespace Proagil.WebAPI.Dtos
+﻿namespace Sds.Events.WebAPI.Dtos
 {
     public class UserDto
     {

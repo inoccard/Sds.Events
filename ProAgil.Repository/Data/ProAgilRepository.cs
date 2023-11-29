@@ -1,9 +1,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ProAgil.Domain.Entities;
+using Sds.Events.Domain.Entities;
 
-namespace ProAgil.Repository.Data
+namespace Sds.Events.Repository.Data
 {
     public class ProAgilRepository : IProAgilRepository
     {

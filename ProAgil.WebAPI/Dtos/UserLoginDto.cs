@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Proagil.WebAPI.Dtos
+namespace Sds.Events.WebAPI.Dtos
 {
     public class UserLoginDto
     {

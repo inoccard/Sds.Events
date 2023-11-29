@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProAgil.Repository.Data;
+using Sds.Events.Repository.Data;
 
-namespace ProAgil.Repository.Migrations
+namespace Sds.Events.Repository.Migrations
 {
     [DbContext(typeof(ProAgilContext))]
     partial class ProAgilContextModelSnapshot : ModelSnapshot
@@ -89,7 +89,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Entities.Event", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Entities.Event", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,7 +119,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Entities.Lot", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Entities.Lot", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -145,7 +145,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("Lots");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Entities.SocialNetWork", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Entities.SocialNetWork", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -168,7 +168,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("SocialNetWorks");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Entities.Speaker", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Entities.Speaker", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -191,7 +191,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("Speakers");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Entities.SpeakerEvent", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Entities.SpeakerEvent", b =>
                 {
                     b.Property<int>("EventId");
 
@@ -206,7 +206,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("SpeakerEvents");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Identity.Role", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Identity.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -231,7 +231,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Identity.User", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Identity.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -286,7 +286,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Identity.UserRole", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Identity.UserRole", b =>
                 {
                     b.Property<int>("RoleId");
 
@@ -301,7 +301,7 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.Role")
+                    b.HasOne("Sds.Events.Domain.Identity.Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -309,7 +309,7 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.User")
+                    b.HasOne("Sds.Events.Domain.Identity.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -317,7 +317,7 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.User")
+                    b.HasOne("Sds.Events.Domain.Identity.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -325,52 +325,52 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.User")
+                    b.HasOne("Sds.Events.Domain.Identity.User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Entities.Lot", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Entities.Lot", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Entities.Event")
+                    b.HasOne("Sds.Events.Domain.Entities.Event")
                         .WithMany("Lots")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Entities.SocialNetWork", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Entities.SocialNetWork", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Entities.Event")
+                    b.HasOne("Sds.Events.Domain.Entities.Event")
                         .WithMany("SocialNetworks")
                         .HasForeignKey("EventId");
 
-                    b.HasOne("ProAgil.Domain.Entities.Speaker")
+                    b.HasOne("Sds.Events.Domain.Entities.Speaker")
                         .WithMany("SocialNetworks")
                         .HasForeignKey("SpeakerId");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Entities.SpeakerEvent", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Entities.SpeakerEvent", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Entities.Event", "Event")
+                    b.HasOne("Sds.Events.Domain.Entities.Event", "Event")
                         .WithMany("SpeakerEvents")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ProAgil.Domain.Entities.Speaker", "Spreaker")
+                    b.HasOne("Sds.Events.Domain.Entities.Speaker", "Spreaker")
                         .WithMany("SpeakerEvents")
                         .HasForeignKey("SpeakerId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Identity.UserRole", b =>
+            modelBuilder.Entity("Sds.Events.Domain.Identity.UserRole", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.Role", "Role")
+                    b.HasOne("Sds.Events.Domain.Identity.Role", "Role")
                         .WithMany("UserRoles")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ProAgil.Domain.Identity.User", "User")
+                    b.HasOne("Sds.Events.Domain.Identity.User", "User")
                         .WithMany("UserRoles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

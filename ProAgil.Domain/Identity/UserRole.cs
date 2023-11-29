@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Identity;
 
-namespace ProAgil.Domain.Identity
+namespace Sds.Events.Domain.Identity
 {
     public class UserRole : IdentityUserRole<int>
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ProAgil.Repository.Migrations
+namespace Sds.Events.Repository.Migrations
 {
     public partial class alteredfullname : Migration
     {

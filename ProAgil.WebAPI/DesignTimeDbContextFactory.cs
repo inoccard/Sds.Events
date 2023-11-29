@@ -2,9 +2,9 @@ using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using ProAgil.Repository.Data;
+using Sds.Events.Repository.Data;
 
-namespace ProAgil.WebAPI
+namespace Sds.Events.WebAPI
 {
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ProAgilContext>
 {

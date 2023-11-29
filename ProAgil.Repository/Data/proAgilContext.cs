@@ -5,17 +5,20 @@ using Microsoft.AspNetCore.Identity;
 /// <summary>
 /// Entities
 /// </summary>
-using ProAgil.Domain.Identity;
-using ProAgil.Domain.Entities;
+using Sds.Events.Domain.Identity;
+
+using Sds.Events.Domain.Entities;
 
 /// <summary>
 /// Conext DB Class
 /// </summary>
-namespace ProAgil.Repository.Data
+namespace Sds.Events.Repository.Data
 {
     public class ProAgilContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
-        public ProAgilContext (DbContextOptions<ProAgilContext> options) : base (options) { }
+        public ProAgilContext(DbContextOptions<ProAgilContext> options) : base(options)
+        {
+        }
 
         public DbSet<Event> Events { get; set; }
         public DbSet<Speaker> Speakers { get; set; }
@@ -27,7 +30,8 @@ namespace ProAgil.Repository.Data
         /// Indica relacionamento de n:n
         /// </summary>
         /// <param name="modelBuilder"></param>
-        protected override void OnModelCreating (ModelBuilder modelBuilder) {
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<UserRole>(userRole =>
             {
@@ -44,8 +48,8 @@ namespace ProAgil.Repository.Data
                 .HasForeignKey(ur => ur.UserId)
                 .IsRequired();
             });
-            
-            modelBuilder.Entity<SpeakerEvent> ().HasKey (PE => new { PE.EventId, PE.SpeakerId });
+
+            modelBuilder.Entity<SpeakerEvent>().HasKey(PE => new { PE.EventId, PE.SpeakerId });
         }
     }
 }

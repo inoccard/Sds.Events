@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ProAgil.Domain.Entities;
-using ProAgil.Repository.Data;
-using ProAgil.WebAPI.Dtos;
-using Microsoft.AspNetCore.Authorization;
 
-namespace ProAgil.WebAPI.Controllers
+using Sds.Events.Repository.Data;
+using Sds.Events.WebAPI.Dtos;
+using Sds.Events.Domain.Entities;
+
+namespace Sds.Events.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/v{version:apiVersion}/event")]

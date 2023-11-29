@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProAgil.WebAPI.Dtos
+namespace Sds.Events.WebAPI.Dtos
 {
     public class LotDto
     {

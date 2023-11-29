@@ -12,10 +12,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Proagil.WebAPI.Dtos;
-using ProAgil.Domain.Identity;
+using Sds.Events.WebAPI.Dtos;
 
-namespace Proagil.WebAPI.Controllers
+using Sds.Events.Domain.Identity;
+
+namespace Sds.Events.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/v{version:apiVersion}/user")]

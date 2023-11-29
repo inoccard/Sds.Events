@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
 
-namespace Proagil.WebAPI.Configs.SwaggerConfigurations
+namespace Sds.Events.WebAPI.Configs.SwaggerConfigurations
 {
     public static class VersionedSwagger
     {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ProAgil.WebAPI.Dtos
+namespace Sds.Events.WebAPI.Dtos
 {
     public class SocialNetworkDto
     {

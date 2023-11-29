@@ -2,7 +2,7 @@
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Proagil.WebAPI.Configs.SwaggerConfigurations
+namespace Sds.Events.WebAPI.Configs.SwaggerConfigurations
 {
     public class DefaultHeaderFilter : IOperationFilter
     {

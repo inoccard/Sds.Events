@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ProAgil.Repository.Migrations
+namespace Sds.Events.Repository.Migrations
 {
     public partial class init : Migration
     {

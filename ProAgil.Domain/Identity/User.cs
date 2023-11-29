@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
-using ProAgil.Domain.Enum;
+using Sds.Events.Domain.Enum;
 
-namespace ProAgil.Domain.Identity
+namespace Sds.Events.Domain.Identity
 {
     public class User : IdentityUser<int>
     {
