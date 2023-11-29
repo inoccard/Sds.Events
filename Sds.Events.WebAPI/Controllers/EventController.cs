@@ -17,16 +17,16 @@ namespace Sds.Events.WebAPI.Controllers
     [Route("api/v{version:apiVersion}/event")]
     public class EventController : ControllerBase
     {
-        private readonly IProAgilRepository context;
+        private readonly IEventsRepository context;
         private readonly IMapper mapper;
 
-        public EventController(IProAgilRepository context, IMapper mapper)
+        public EventController(IEventsRepository context, IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;
         }
 
-        [HttpGet("get-events")]
+        [HttpGet]
         public async Task<IActionResult> GetEvents()
         {
             try
@@ -74,7 +74,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
         }
 
-        [HttpGet("get-event{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetEvent(int id)
         {
             try

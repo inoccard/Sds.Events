@@ -9,7 +9,7 @@ using Sds.Events.Repository.Data;
 
 namespace Sds.Events.Repository.Migrations
 {
-    [DbContext(typeof(ProAgilContext))]
+    [DbContext(typeof(EventsContext))]
     [Migration("20200722001344_init")]
     partial class init
     {

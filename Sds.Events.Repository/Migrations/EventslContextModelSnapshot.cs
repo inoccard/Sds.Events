@@ -8,8 +8,8 @@ using Sds.Events.Repository.Data;
 
 namespace Sds.Events.Repository.Migrations
 {
-    [DbContext(typeof(ProAgilContext))]
-    partial class ProAgilContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(EventsContext))]
+    partial class EventsContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

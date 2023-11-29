@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Sds.Events.Domain.Entities;
+
 /// <summary>
 /// Entities
 /// </summary>
@@ -12,9 +13,9 @@ using Sds.Events.Domain.Identity;
 /// </summary>
 namespace Sds.Events.Repository.Data
 {
-    public class ProAgilContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
+    public class EventsContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
-        public ProAgilContext(DbContextOptions<ProAgilContext> options) : base(options)
+        public EventsContext(DbContextOptions<EventsContext> options) : base(options)
         {
         }
 

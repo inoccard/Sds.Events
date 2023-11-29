@@ -13,10 +13,10 @@ namespace Sds.Events.WebAPI.Configs.App
         public static void AddAppServices(this IServiceCollection services)
         {
             /// <summary>
-            /// Injeção de Dependência do ProAgilRepository
+            /// Injeção de Dependência do EventsRepository
             /// </summary>
             /// <returns></returns>
-            services.AddScoped<IProAgilRepository, ProAgilRepository>();
+            services.AddScoped<IEventsRepository, EventsRepository>();
         }
 
         public static void AddIdentityUser(this IServiceCollection services)
@@ -32,7 +32,7 @@ namespace Sds.Events.WebAPI.Configs.App
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 4;
             })
-             .AddEntityFrameworkStores<ProAgilContext>(); // EntityFramework levará em consideração sempre o contexto
+             .AddEntityFrameworkStores<EventsContext>(); // EntityFramework levará em consideração sempre o contexto
 
             /// <summary>
             /// instancia o IdentityBuilder com o tipo de usuário, tipo de papel e o serviço criado acima

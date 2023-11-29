@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Sds.Events.Repository.Data
 {
-    public class ProAgilRepository : IProAgilRepository
+    public class EventsRepository : IEventsRepository
     {
-        private readonly ProAgilContext context;
+        private readonly EventsContext context;
 
-        public ProAgilRepository(ProAgilContext context)
+        public EventsRepository(EventsContext context)
         {
             this.context = context;
         }

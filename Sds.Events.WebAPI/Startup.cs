@@ -31,7 +31,7 @@ namespace Sds.Events.WebAPI
             /// Injeção de Dependêncica
             /// </summary>
             /// <returns></returns>
-            services.AddDbContext<ProAgilContext>(d => d.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<EventsContext>(d => d.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             //services.AddAuthenticationConfiguration(Configuration);
             services.AddAppServices();
@@ -46,7 +46,7 @@ namespace Sds.Events.WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
                               IApiVersionDescriptionProvider apiVersionDescriptionProvider,
-                              ProAgilContext dbContext)
+                              EventsContext dbContext)
         {
             dbContext.Database.Migrate();
 
