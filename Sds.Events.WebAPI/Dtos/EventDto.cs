@@ -17,7 +17,7 @@ namespace Sds.Events.WebAPI.Dtos
         public DateTime EventDate { get; set; }
 
         [Column(TypeName = "varchar(500)")]
-        [RequiredAttribute(ErrorMessage = "O tema deve ser Preenchido")]
+        [Required(ErrorMessage = "O tema deve ser Preenchido")]
         public string Theme { get; set; }
 
         [Range(2, 12000, ErrorMessage = "Quantidade de pessoas deve ser entre 2 a 12000")]
@@ -29,12 +29,12 @@ namespace Sds.Events.WebAPI.Dtos
         [Phone]
         [Column(TypeName = "varchar(500)")]
         public string ContactPhone { get; set; }
+
         [Column(TypeName = "varchar(500)")]
-        public string contactEmail { get; set; }
+        public string ContactEmail { get; set; }
 
         public List<LotDto> Lots { get; set; }
         public List<SocialNetworkDto> SocialNetworks { get; set; }
         public List<SpeakerDto> Speakers { get; set; }
-
     }
 }

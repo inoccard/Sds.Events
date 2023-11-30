@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Security.Claims;
 using System.Text;
 
 namespace Sds.Events.WebAPI.Configs.Authentication
@@ -33,18 +30,7 @@ namespace Sds.Events.WebAPI.Configs.Authentication
                         ValidateAudience = false,
                         SaveSigninToken = true
                     };
-                })
-                .AddIdentityServerAuthentication(options =>
-                {
-                    options.Authority = "";
-                    options.ApiName = "";
-                    options.ApiSecret = "";
-                    options.CacheDuration = TimeSpan.FromMinutes(99);
-                    options.EnableCaching = true;
-                    options.RoleClaimType = ClaimTypes.Role;
                 });
-
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddAuthorization();
         }

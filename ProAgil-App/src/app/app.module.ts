@@ -10,7 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { NgxMaskModule } from 'ngx-mask';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -67,7 +67,8 @@ import { HomeComponent } from './home/home.component';
       ModalModule.forRoot(),
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
-      NgxMaskModule.forRoot(),
+      NgxMaskDirective,
+      NgxMaskPipe,
       CurrencyMaskModule,
       ToastrModule.forRoot({
          timeOut: 7000,
@@ -83,7 +84,8 @@ import { HomeComponent } from './home/home.component';
          provide: HTTP_INTERCEPTORS,
          useClass: AuthInterceptor,
          multi: true
-      }
+      },
+      provideNgxMask()
    ],
    bootstrap: [
       AppComponent

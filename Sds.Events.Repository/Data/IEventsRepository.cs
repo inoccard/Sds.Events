@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Sds.Events.Repository.Data
 {
-    public interface IProAgilRepository
+    public interface IEventsRepository
     {
         /// <summary>
         /// Tipo Generico

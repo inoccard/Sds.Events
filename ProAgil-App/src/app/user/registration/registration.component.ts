@@ -47,8 +47,11 @@ export class RegistrationComponent implements OnInit {
   register() {
     if (this.registerForm.valid) {
       this.user = Object.assign(
-        { passwordHash: this.registerForm.get('passwords.password').value }, this.registerForm.value);
-      this.authService.register(this.user).subscribe(
+        { passwordHash: this.registerForm.get('passwords.password').value }, 
+          this.registerForm.value
+        );
+      
+        this.authService.register(this.user).subscribe(
         (newUser: any) => {
           this.router.navigate(['/user/login']);
           this.toastr.success('Cadastro Realizado');

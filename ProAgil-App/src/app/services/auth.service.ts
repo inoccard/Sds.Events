@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  baseURL = 'http://localhost:5000/api/user/';
+  baseURL = 'http://localhost:5000/api/v1/user/';
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 
@@ -19,6 +19,7 @@ export class AuthService {
   login(model: any) {
     return this.http.post(`${this.baseURL}login`, model).pipe(
       map((response: any) => {
+        console.log(response);
         const user = response;
         if (user) {
           localStorage.setItem('token', user.token);

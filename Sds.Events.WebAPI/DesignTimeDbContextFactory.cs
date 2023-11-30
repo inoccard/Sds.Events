@@ -6,18 +6,18 @@ using System.IO;
 
 namespace Sds.Events.WebAPI
 {
-    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ProAgilContext>
+    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<EventsContext>
     {
-        public ProAgilContext CreateDbContext(string[] args)
+        public EventsContext CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
-            var builder = new DbContextOptionsBuilder<ProAgilContext>();
+            var builder = new DbContextOptionsBuilder<EventsContext>();
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             builder.UseSqlServer(connectionString);
-            return new ProAgilContext(builder.Options);
+            return new EventsContext(builder.Options);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -13,10 +14,12 @@ namespace Sds.Events.WebAPI.Configs.App
         public static void AddAppServices(this IServiceCollection services)
         {
             /// <summary>
-            /// Injeção de Dependência do ProAgilRepository
+            /// Injeção de Dependência do EventsRepository
             /// </summary>
             /// <returns></returns>
-            services.AddScoped<IProAgilRepository, ProAgilRepository>();
+            services.AddScoped<IEventsRepository, EventsRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         public static void AddIdentityUser(this IServiceCollection services)
@@ -24,7 +27,7 @@ namespace Sds.Events.WebAPI.Configs.App
             // todos os controller terão que passar por uma autenticação
             // quem vai consumir a API precisa estar autenticado e autorizado
             // remove as obrigatoriedades padrão de senha
-            IdentityBuilder builder = services.AddIdentity<User, Role>(options =>
+            var builder = services.AddIdentity<User, Role>(options =>
             {
                 options.Password.RequireDigit = false; // sem caracteres especiais
                 options.Password.RequireNonAlphanumeric = false;
@@ -32,7 +35,7 @@ namespace Sds.Events.WebAPI.Configs.App
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 4;
             })
-             .AddEntityFrameworkStores<ProAgilContext>(); // EntityFramework levará em consideração sempre o contexto
+             .AddEntityFrameworkStores<EventsContext>(); // EntityFramework levará em consideração sempre o contexto
 
             /// <summary>
             /// instancia o IdentityBuilder com o tipo de usuário, tipo de papel e o serviço criado acima
