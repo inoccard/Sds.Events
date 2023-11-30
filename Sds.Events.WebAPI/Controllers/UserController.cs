@@ -40,11 +40,11 @@ namespace Sds.Events.WebAPI.Controllers
         /// <param name="userDto"></param>
         /// <returns></returns>
         [HttpGet("get-user")]
-        public async Task<IActionResult> GetUser()
+        public async Task<IActionResult> GetUser(string userName)
         {
             try
             {
-                var user = await _userManager.FindByNameAsync("inoccard");
+                var user = await _userManager.FindByNameAsync(userName);
                 var userToReturn = _mapper.Map<UserDto>(user);
                 userToReturn.PasswordHash = null;
                 return Ok(userToReturn);
@@ -52,7 +52,6 @@ namespace Sds.Events.WebAPI.Controllers
             catch (Exception e)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Não foi possível obter usuário: {e.Message}");
-                throw;
             }
         }
 

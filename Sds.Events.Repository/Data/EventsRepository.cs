@@ -98,7 +98,7 @@ namespace Sds.Events.Repository.Data
             return await speakers.AsNoTracking().ToArrayAsync();
         }
 
-        public async Task<Speaker> GetSpeakersAssyncById(int Id, bool includeEvents)
+        public async Task<Speaker> GetSpeakersAssyncById(int Id, bool includeEvents = false)
         {
             IQueryable<Speaker> speakers = context.Speakers
                .Include(e => e.SocialNetworks);
@@ -114,7 +114,7 @@ namespace Sds.Events.Repository.Data
             return await speakers.AsNoTracking().FirstOrDefaultAsync();
         }
 
-        public async Task<Speaker[]> GetSpeakersAssyncByName(string name, bool includeEvents)
+        public async Task<Speaker[]> GetSpeakersAssyncByName(string name, bool includeEvents = false)
         {
             IQueryable<Speaker> speakers = context.Speakers
                .Include(e => e.SocialNetworks);

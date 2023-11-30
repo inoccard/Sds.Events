@@ -33,18 +33,7 @@ namespace Sds.Events.WebAPI.Configs.Authentication
                         ValidateAudience = false,
                         SaveSigninToken = true
                     };
-                })
-                .AddIdentityServerAuthentication(options =>
-                {
-                    options.Authority = "";
-                    options.ApiName = "";
-                    options.ApiSecret = "";
-                    options.CacheDuration = TimeSpan.FromMinutes(99);
-                    options.EnableCaching = true;
-                    options.RoleClaimType = ClaimTypes.Role;
                 });
-
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddAuthorization();
         }

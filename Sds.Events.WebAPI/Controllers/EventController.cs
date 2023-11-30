@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sds.Events.Domain.Entities;
@@ -37,40 +38,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
-            }
-        }
-
-        [HttpPost("upload")]
-        public IActionResult Upload()
-        {
-            try
-            {
-                // pega o arquivo
-                var file = Request.Form.Files[0];
-                // pega o diretório onde a aplicação quer armazenar
-                var folferName = Path.Combine("Resources", "Images");
-                // Combina o diretório da aplicação + o onde a aplicação quer armazenar os arquivos
-                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folferName);
-
-                if (file.Length > 0)
-                {
-                    var filename = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
-                    var fullPath = Path.Combine(pathToSave, filename.Replace("\"", " ").Trim());
-
-                    using (var stream = new FileStream(fullPath, FileMode.Create))
-                    {
-                        // copia file parao stream
-                        file.CopyTo(stream);
-                    }
-
-                    return Ok();
-                }
-                return BadRequest("Erro ao fazer upload");
-            }
-            catch (Exception e)
-            {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
             }
         }
 
@@ -80,12 +48,13 @@ namespace Sds.Events.WebAPI.Controllers
             try
             {
                 var _event = await context.GetEventAssyncById(id, true);
+
                 var result = mapper.Map<EventDto>(_event);
                 return Ok(result);
             }
-            catch (System.Exception)
+            catch (Exception)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Não é possível obtér o evento");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Não é possível obtér o evento");
             }
         }
 
@@ -105,7 +74,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér o evento: {e.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér o evento: {e.Message}");
             }
         }
 
@@ -124,7 +93,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível criar o evento: {e.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível criar o evento: {e.Message}");
             }
         }
 
@@ -167,7 +136,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível alterar o evento {e.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível alterar o evento {e.Message}");
             }
         }
 
@@ -188,7 +157,40 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Não é possível alterar o evento");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Não é possível alterar o evento");
+            }
+        }
+
+        [HttpPost("upload")]
+        public IActionResult Upload()
+        {
+            try
+            {
+                // pega o arquivo
+                var file = Request.Form.Files[0];
+                // pega o diretório onde a aplicação quer armazenar
+                var folferName = Path.Combine("Resources", "Images");
+                // Combina o diretório da aplicação + o onde a aplicação quer armazenar os arquivos
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folferName);
+
+                if (file.Length > 0)
+                {
+                    var filename = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
+                    var fullPath = Path.Combine(pathToSave, filename.Replace("\"", " ").Trim());
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        // copia file parao stream
+                        file.CopyTo(stream);
+                    }
+
+                    return Ok();
+                }
+                return BadRequest("Erro ao fazer upload");
+            }
+            catch (Exception e)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Não é possível obtér a lista de eventos: {e.Message}");
             }
         }
     }

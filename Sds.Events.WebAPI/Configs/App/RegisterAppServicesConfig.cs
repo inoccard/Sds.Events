@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -17,6 +18,8 @@ namespace Sds.Events.WebAPI.Configs.App
             /// </summary>
             /// <returns></returns>
             services.AddScoped<IEventsRepository, EventsRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         public static void AddIdentityUser(this IServiceCollection services)
@@ -24,7 +27,7 @@ namespace Sds.Events.WebAPI.Configs.App
             // todos os controller terão que passar por uma autenticação
             // quem vai consumir a API precisa estar autenticado e autorizado
             // remove as obrigatoriedades padrão de senha
-            IdentityBuilder builder = services.AddIdentity<User, Role>(options =>
+            var builder = services.AddIdentity<User, Role>(options =>
             {
                 options.Password.RequireDigit = false; // sem caracteres especiais
                 options.Password.RequireNonAlphanumeric = false;

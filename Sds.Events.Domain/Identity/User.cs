@@ -9,6 +9,7 @@ namespace Sds.Events.Domain.Identity
     {
         [Column(TypeName = "NVARCHAR(150)")]
         public string FullName { get; set; }
+
         public Title Title { get; set; }
         public Function Function { get; set; }
         public string Description { get; set; }
