@@ -110,7 +110,7 @@ namespace Sds.Events.WebAPI.Controllers
 
                 if (result.Succeeded)
                 {
-                    //userToResult.PasswordHash = null;
+                    userToResult.PasswordHash = null;
                     return Created("user", userToResult);
                 }
 

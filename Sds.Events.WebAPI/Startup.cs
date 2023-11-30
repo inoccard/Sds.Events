@@ -28,10 +28,7 @@ namespace Sds.Events.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            /// <summary>
-            /// Injeção de Dependêncica
-            /// </summary>
-            /// <returns></returns>
+            // Injeção de Dependência
             services.AddDbContext<EventsContext>(d => d.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAuthenticationConfiguration(Configuration);
@@ -65,8 +62,6 @@ namespace Sds.Events.WebAPI
                 RequestPath = new PathString("/Resources")
             });
 
-            app.UseMvc();
-
             app.UseRouting();
 
             app.UseIdentityConfiguration();
@@ -77,6 +72,8 @@ namespace Sds.Events.WebAPI
                 .AllowAnyHeader());
 
             app.UseVersionedSwagger(apiVersionDescriptionProvider);
+
+            app.UseMvc();
 
             app.UseEndpoints(endpoints =>
             {
