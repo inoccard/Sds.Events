@@ -20,6 +20,6 @@
 /Sds.Events.Web/obj
 /Sds.Events.WebAPI/obj
 
-/ProAgil-App/node_modules
+/Sds.Events.UI/node_modules
 /.vs/
-/ProAgil-App/.angular
+/Sds.Events.UI/.angular
