@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ProAgil-App": {
+    "sds-events-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ProAgil-App",
+            "outputPath": "dist/sds-events-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ProAgil-App:build"
+            "browserTarget": "sds-events-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ProAgil-App:build:production"
+              "browserTarget": "sds-events-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ProAgil-App:build"
+            "browserTarget": "sds-events-ui:build"
           }
         },
         "test": {
@@ -117,18 +117,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ProAgil-App:serve"
+            "devServerTarget": "sds-events-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ProAgil-App:serve:production"
+              "devServerTarget": "sds-events-ui:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ProAgil-App",
+  "defaultProject": "sds-events-ui",
   "cli": {
     "analytics": "4550c548-d52a-461b-90a8-ca55d05e3ebe"
   }
