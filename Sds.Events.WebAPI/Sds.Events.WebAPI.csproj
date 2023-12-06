@@ -5,7 +5,7 @@
   <ItemGroup>
 	  <PackageReference Include="EntityFramework" Version="6.4.4" />
 	  <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
-	  <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.25" />
+	  <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.25" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.25">
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		  <PrivateAssets>all</PrivateAssets>
@@ -22,9 +22,13 @@
     <PackageReference Include="CoreCompat.System.ComponentModel.DataAnnotations" Version="4.2.3-r7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.25" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="6.0.4" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sds.Events.Domain\Sds.Events.Domain.csproj" />
