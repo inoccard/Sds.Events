@@ -8,18 +8,18 @@
 /.vs/*
 
 
-/Sds.Events.Domain/bin
-/Sds.Events.MVC/bin
-/Sds.Events.Repository/bin
-/Sds.Events.Web/bin
-/Sds.Events.WebAPI/bin
+/src/Sds.Events.Domain/bin
+/src/Sds.Events.MVC/bin
+/src/Sds.Events.Repository/bin
+/src/Sds.Events.Web/bin
+/src/Sds.Events.WebAPI/bin
 
-/Sds.Events.Domain/obj
-/Sds.Events.MVC/obj
-/Sds.Events.Repository/obj
-/Sds.Events.Web/obj
-/Sds.Events.WebAPI/obj
+/src/Sds.Events.Domain/obj
+/src/Sds.Events.MVC/obj
+/src/Sds.Events.Repository/obj
+/src/Sds.Events.Web/obj
+/src/Sds.Events.WebAPI/obj
 
-/Sds.Events.UI/node_modules
+/src/Sds.Events.UI/node_modules
 /.vs/
-/Sds.Events.UI/.angular
+/src/Sds.Events.UI/.angular
