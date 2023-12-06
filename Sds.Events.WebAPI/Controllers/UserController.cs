@@ -58,7 +58,6 @@ namespace Sds.Events.WebAPI.Controllers
         /// <summary>
         /// Login
         /// Não pode retornar BadRequest
-        /// Não necessita de autenticação [AllowAnonymous]
         /// </summary>
         /// <param name="userLogin"></param>
         /// <returns></returns>
@@ -94,7 +93,6 @@ namespace Sds.Events.WebAPI.Controllers
 
         /// <summary>
         /// Cria novo usuário
-        /// Não necessita de autenticação [AllowAnonymous]
         /// </summary>
         /// <param name="userDto"></param>
         /// <returns></returns>
