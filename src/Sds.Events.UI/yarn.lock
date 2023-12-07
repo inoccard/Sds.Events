@@ -6086,10 +6086,10 @@ ngx-bootstrap@^11.0.2:
   dependencies:
     tslib "^2.3.0"
 
-ngx-mask@^17.0.2:
-  version "17.0.2"
-  resolved "https://registry.npmjs.org/ngx-mask/-/ngx-mask-17.0.2.tgz"
-  integrity sha512-L8HHh5WEMWItlUQ3oV3l+jf3Pa2uHS3HXC5QKELZskZD3unEkmTbWFbY21GJkgxyZRaiPv5gmWQTuYkFnxDDHg==
+ngx-mask@^16.0.0:
+  version "16.4.1"
+  resolved "https://registry.npmjs.org/ngx-mask/-/ngx-mask-16.4.1.tgz"
+  integrity sha512-goZFFYSTh4N5o3ZS83N6wG5zPy4lxd5nMW9082StUqetTyn19ivCyPVkYP7LwTauoTHpL/bjb4PUYN/npDNz9w==
   dependencies:
     tslib "^2.3.0"
 
