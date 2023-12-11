@@ -16,7 +16,7 @@ export class EventService {
   }
   
   getEvents() {
-    return this.http.get(this.baseURL);
+    return this.http.get(`${this.baseURL}events`);
   }
 
   getEventByTheme(theme: string): Observable<Events[]>{

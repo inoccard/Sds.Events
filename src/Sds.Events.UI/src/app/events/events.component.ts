@@ -95,8 +95,12 @@ export class EventsComponent implements OnInit {
         this.events = events;
         this.eventsFiltered = this.events;
       }, error: (error: any) => {
-        this.toastr.error(`Erro ao obter eventos: ${error}`);
-      }, complete: () => this.spinner.hide()
+        this.spinner.hide();
+        const toast = this.toastr.error(`Erro ao obter eventos: ${JSON.stringify(error)}`);
+        console.log(toast.message);
+      }, complete: () => {
+        return this.spinner.hide();
+      }
     });
   }
 

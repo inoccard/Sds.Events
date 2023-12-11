@@ -1,8 +1,11 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,14 +34,36 @@ namespace Sds.Events.WebAPI
             // Injeção de Dependência
             services.AddDbContext<EventsContext>(d => d.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Sds.Events.UI", builder =>
+                    builder.WithOrigins("http://localhost:4200")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod()
+                           .AllowCredentials());
+            });
+
             services.AddAuthenticationConfiguration(Configuration);
             services.AddAppServices();
             services.AddIdentityUser();
 
+            // Determina qual determinado controller será chamado, e adicionando uma política
+            // Não é mais necessário colocar autenticação no controller
+            services.AddMvc(options =>
+            {
+                // toda vez que um controller for chamado, deverá respeitar esta política
+                var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser() // requer que o usuário esteja autenticado
+                    .Build();
+                options
+                    .Filters.Add(new AuthorizeFilter(policy)); // filtra todas as chamadas do controller
+            })
+            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
             services.AddVersionedSwagger();
 
             services.AddAutoMapper();
-            services.AddCors();
+
             services.AddControllers(options => options.EnableEndpointRouting = false);
         }
 
@@ -49,6 +74,7 @@ namespace Sds.Events.WebAPI
         {
             dbContext.Database.Migrate();
 
+            app.UseCors("Sds.Events.UI");
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else
@@ -66,18 +92,15 @@ namespace Sds.Events.WebAPI
 
             app.UseIdentityConfiguration();
 
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-
             app.UseVersionedSwagger(apiVersionDescriptionProvider);
 
             app.UseMvc();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

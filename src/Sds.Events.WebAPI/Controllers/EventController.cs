@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 namespace Sds.Events.WebAPI.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/v{version:apiVersion}/event")]
     public class EventController : ControllerBase
     {
@@ -27,8 +28,7 @@ namespace Sds.Events.WebAPI.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
-        [AllowAnonymous]
+        [HttpGet("events")]
         public async Task<IActionResult> GetEvents()
         {
             try
