@@ -67,20 +67,17 @@ namespace Sds.Events.WebAPI.Controllers
         {
             try
             {
-                var user = await _userManager.FindByNameAsync(userLogin.UserName);
-                var result = await _userManager.CheckPasswordAsync(user, userLogin.PasswordHash);
-
-                if (result)
+                if (await CheckUserExists(userLogin))
                 {
                     var appUser = await _userManager.Users.FirstOrDefaultAsync(u => u.NormalizedUserName == userLogin.UserName.ToUpper());
 
-                    var userToReturn = _mapper.Map<UserLoginDto>(appUser);
-                    userToReturn.PasswordHash = null;
-                    return Ok(new
+                    var result = new
                     {
                         token = GenerateJwToken(appUser).Result,
-                        user = userToReturn
-                    });
+                        user = MapUser(appUser)
+                    };
+
+                    return Ok(result);
                 }
 
                 return Unauthorized("Não foi possível fazer login");
@@ -154,6 +151,19 @@ namespace Sds.Events.WebAPI.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return tokenHandler.WriteToken(token);
+        }
+
+        private UserLoginDto MapUser(User appUser)
+        {
+            var userDto = _mapper.Map<UserLoginDto>(appUser);
+            userDto.PasswordHash = null;
+            return userDto;
+        }
+
+        private async Task<bool> CheckUserExists(UserLoginDto userLogin)
+        {
+            var user = await _userManager.FindByNameAsync(userLogin.UserName);
+            return await _userManager.CheckPasswordAsync(user, userLogin.PasswordHash);
         }
 
         #endregion private Methods

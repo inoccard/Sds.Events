@@ -11,6 +11,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ErrorComponent } from './error/error.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 const routes: Routes = [
@@ -28,12 +29,12 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'contacts', component: ContactsComponent, canActivate: [AuthGuard] },
   { path: '', component: HomeComponent },
-  { path: '', redirectTo: '', pathMatch: 'full' },  // principal
   { path: '**', component: ErrorComponent }, // rota curinga: se o usuário digitar rotas inexistentes. sempre fica por último
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  exports: [RouterModule],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
 })
 export class AppRoutingModule { }

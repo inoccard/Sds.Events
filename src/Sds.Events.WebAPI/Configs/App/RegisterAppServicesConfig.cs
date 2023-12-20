@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using Sds.Events.Domain.Identity;
 using Sds.Events.Repository.Data;
@@ -47,18 +44,6 @@ namespace Sds.Events.WebAPI.Configs.App
             builder.AddRoleManager<RoleManager<Role>>(); // gerenciador dos papeis
             builder.AddSignInManager<SignInManager<User>>();
 
-            // Determina qual determinado controller será chamado, e adicionando uma política
-            // Não é mais necessário colocar autenticação no controller
-            services.AddMvc(options =>
-            {
-                // toda vez que um controller for chamado, deverá respeitar esta política
-                var policy = new AuthorizationPolicyBuilder()
-                    .RequireAuthenticatedUser() // requer que o usuário esteja autenticado
-                    .Build();
-                options
-                    .Filters.Add(new AuthorizeFilter(policy)); // filtra todas as chamadas do controller
-            })
-            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
     }
 }
