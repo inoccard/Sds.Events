@@ -35,7 +35,7 @@ builder.Services.AddVersionedSwagger();
 
 builder.Services.AddAutoMapper();
 
-builder.Services.AddControllers(options => options.EnableEndpointRouting = false);
+builder.Services.AddControllers(options => options.EnableEndpointRouting = true);
 
 builder.Services.AddDistributedMemoryCache();
 
@@ -43,8 +43,16 @@ builder.Services.AddAuthenticationConfiguration(builder.Configuration);
 
 var app = builder.Build();
 
-var dbContext = app.Services.GetRequiredService<EventsContext>();
-dbContext.Database.Migrate();
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    // Obtém o DbContext necessário para realizar a migração
+    var dbContext = services.GetRequiredService<EventsContext>();
+
+    // Aplica as migrações do banco de dados
+    dbContext.Database.Migrate();
+}
 
 app.UseCors("Sds.Events.UI");
 
