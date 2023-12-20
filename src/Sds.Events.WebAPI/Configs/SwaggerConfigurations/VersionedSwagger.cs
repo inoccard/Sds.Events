@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Linq;
 
 namespace Sds.Events.WebAPI.Configs.SwaggerConfigurations
 {
@@ -87,9 +88,9 @@ namespace Sds.Events.WebAPI.Configs.SwaggerConfigurations
         /// </summary>
         /// <param name="app"></param>
         /// <param name="apiVersionDescriptionProvider"></param>
-        public static void UseVersionedSwagger(this IApplicationBuilder app,
-            IApiVersionDescriptionProvider apiVersionDescriptionProvider)
+        public static void UseVersionedSwagger(this IApplicationBuilder app)
         {
+            var provider  = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
             app.UseSwagger();
 
             //create the UI for swagger
@@ -97,10 +98,10 @@ namespace Sds.Events.WebAPI.Configs.SwaggerConfigurations
                 options =>
                 {
                     //one for each version
-                    foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions)
+                    foreach (var groupName in provider.ApiVersionDescriptions.Select(desc => desc.GroupName))
                     {
-                        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
-                            description.GroupName.ToUpperInvariant());
+                        options.SwaggerEndpoint($"/swagger/{groupName}/swagger.json",
+                            groupName.ToUpperInvariant());
                         options.RoutePrefix = string.Empty;
                     }
                 });

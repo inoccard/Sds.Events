@@ -44,7 +44,6 @@ namespace Sds.Events.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
         public async Task<IActionResult> GetEvent(int id)
         {
             try
