@@ -1,0 +1,11 @@
+/* Reduzindo ainda mais o tamanho do botão e do ícone */
+.custom-btn {
+    padding: 0.10rem 0.5rem; /* Ajuste o preenchimento conforme necessário para reduzir o tamanho do botão */
+    height: 1.5rem; /* Ajuste a altura conforme necessário */
+  }
+  
+  .custom-icon {
+    font-size: 12px; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom : 1rem;
+  }
+  

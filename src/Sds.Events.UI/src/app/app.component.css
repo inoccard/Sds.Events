@@ -1,0 +1,22 @@
+html, body{
+    background-color: #F5F8FA;
+}
+
+#app{
+    max-width: 800px; /* Defina a largura máxima desejada */
+    margin: 0 auto; /* Isso centralizará a div horizontalmente */
+    padding: 20px; /* Adicione o preenchimento desejado conforme necessário */
+}
+
+/* Exemplo de uma media query para telas menores (como dispositivos móveis) */
+@media only screen and (max-width: 600px) {
+    #app {
+      max-width: 100%; /* Tornar a largura máxima 100% em telas menores */
+      padding: 10px; /* Ajustar o preenchimento conforme necessário */
+    }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -14,6 +14,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 /** SERVICES */
 import { EventService } from './services/event/event.service';
@@ -76,7 +77,8 @@ import { HomeComponent } from './home/home.component';
          preventDuplicates: true
       }),
       NgxSpinnerModule,
-      CollapseModule.forRoot()
+      CollapseModule.forRoot(),
+      FlexLayoutModule
    ],
    providers: [
       EventService,
