@@ -34,7 +34,7 @@ namespace Sds.Events.WebAPI.Controllers
             try
             {
                 var events = await context.GetEventsAssync(true);
-                var results = mapper.Map<EventDto[]>(events);
+                var results = mapper.Map<EventDto[]>(events.OrderBy(e=>e.Id));
                 return Ok(results);
             }
             catch (Exception e)

@@ -28,11 +28,11 @@ namespace Sds.Events.Repository.Data
         /// <summary>
         /// Indica relacionamento de n:n
         /// </summary>
-        /// <param name="modelBuilder"></param>
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        /// <param name="builder"></param>
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<UserRole>(userRole =>
+            base.OnModelCreating(builder);
+            builder.Entity<UserRole>(userRole =>
             {
                 // RelationShip Many To Many
                 userRole.HasKey(ur => new { ur.RoleId, ur.UserId });
@@ -48,7 +48,7 @@ namespace Sds.Events.Repository.Data
                 .IsRequired();
             });
 
-            modelBuilder.Entity<SpeakerEvent>().HasKey(PE => new { PE.EventId, PE.SpeakerId });
+            builder.Entity<SpeakerEvent>().HasKey(PE => new { PE.EventId, PE.SpeakerId });
         }
     }
 }
