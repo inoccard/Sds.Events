@@ -1,32 +1,21 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Sds.Events.Repository.Data;
 using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
 using Sds.Events.WebAPI.Configs.App;
 using Sds.Events.WebAPI.Configs.Authentication;
 using Sds.Events.WebAPI.Configs.SwaggerConfigurations;
-using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Sds.Events.WebAPI.Configs.DataBase;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Injeção de Dependência
-builder.Services.AddDbContext<EventsContext>(d => d.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.AddDatabaseConfig();
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("Sds.Events.UI", builder =>
-        builder.WithOrigins("http://localhost:4200")
-               .AllowAnyHeader()
-               .AllowAnyMethod()
-               .AllowCredentials());
-});
+builder.Services.AddCorsOrigin();
 
 builder.Services.AddAppServices();
 builder.Services.AddIdentityUser();
@@ -43,18 +32,9 @@ builder.Services.AddAuthenticationConfiguration(builder.Configuration);
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
+app.AddMigration();
 
-    // Obtém o DbContext necessário para realizar a migração
-    var dbContext = services.GetRequiredService<EventsContext>();
-
-    // Aplica as migrações do banco de dados
-    dbContext.Database.Migrate();
-}
-
-app.UseCors("Sds.Events.UI");
+app.UseCorsOrigin();
 
 if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
