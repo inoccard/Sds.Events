@@ -15,7 +15,7 @@ export class EventsComponent implements OnInit {
   title = 'Eventos';
   file: FileList;
   eventsFiltered: any = [];
-  events: any = [];
+  events: Events[] = [];
   event: Events;
   showImg = false;
   // tslint:disable-next-line: variable-name
@@ -24,11 +24,11 @@ export class EventsComponent implements OnInit {
   bodyDeletarEvento: string;
 
   constructor(
-    private eventService: EventService, 
-    private fb: FormBuilder, 
-    private toastr: ToastrService, 
+    private eventService: EventService,
+    private fb: FormBuilder,
+    private toastr: ToastrService,
     private  spinner: NgxSpinnerService) { }
-    
+
   ngOnInit() {
     this.spinner.show();
 
@@ -97,6 +97,7 @@ export class EventsComponent implements OnInit {
       }, error: (error: any) => {
         this.spinner.hide();
         const toast = this.toastr.error(`Erro ao obter eventos: ${JSON.stringify(error)}`);
+        console.log(JSON.stringify(error.error));
         console.log(toast.message);
       }, complete: () => {
         return this.spinner.hide();
@@ -118,7 +119,7 @@ export class EventsComponent implements OnInit {
   // Salvar/editar evento
   saveEditions(template: ModalDirective) {
     if (this.registerForm.valid) {
-      // copiar evento   
+      // copiar evento
       if (!this.event) {
         this.event = Object.assign(this.registerForm.value);
       } else {

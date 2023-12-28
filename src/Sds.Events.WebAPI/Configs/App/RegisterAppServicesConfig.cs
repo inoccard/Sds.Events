@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Sds.Events.Domain.Identity;
+using Sds.Events.Domain.Core;
 using Sds.Events.Repository.Data;
 
 namespace Sds.Events.WebAPI.Configs.App;
@@ -15,6 +14,7 @@ public static class RegisterAppServicesConfig
         /// </summary>
         /// <returns></returns>
         services.AddScoped<IEventsRepository, EventsRepository>();
+        services.AddScoped<INotifierMessage, NotifierMessage>();
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
     }

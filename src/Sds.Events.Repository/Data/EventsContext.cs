@@ -31,7 +31,6 @@ namespace Sds.Events.Repository.Data
         /// <param name="builder"></param>
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
             builder.Entity<UserRole>(userRole =>
             {
                 // RelationShip Many To Many
@@ -49,6 +48,14 @@ namespace Sds.Events.Repository.Data
             });
 
             builder.Entity<SpeakerEvent>().HasKey(PE => new { PE.EventId, PE.SpeakerId });
+
+            builder.Entity<User>(u =>
+            {
+                u.HasIndex(_ => _.Email).IsUnique();
+                u.HasIndex(_ => _.UserName).IsUnique();
+            });
+
+            base.OnModelCreating(builder);
         }
     }
 }
