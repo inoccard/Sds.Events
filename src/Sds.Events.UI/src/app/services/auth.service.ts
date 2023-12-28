@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  baseURL = environment.apiEventBaseUrl;
+  baseURL = `${environment.apiEventBaseUrl}user/`;
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 
