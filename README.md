@@ -1,128 +1,65 @@
-# dotnet-angular
+# Sds.Events (Gerenciamento de Eventos)
 
-## Comandos utilizados no VS Code
+Este projeto é uma WebAPI em .NET Core 6.0 para gerenciais e administrar eventos, palestrantes, lotes de eventos e usuários.
 
-## Criando o projeto Angular
+## Índice
 
-* `ng new Sds.Events.UI`
+- [Sobre](#sobre)
+- [Pré-requisitos](#pré-requisitos)
+- [Configuração do Ambiente de Desenvolvimento](#configuração-do-ambiente-de-desenvolvimento)
+- [Como Iniciar o Projeto](#como-iniciar-o-projeto)
+- [Endpoints da API](#endpoints-da-api)
+- [Testes](#testes)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-## Criando o projeto web
+## Sobre
 
-* `dotnet new web -n Sds.Events.Web`
+Este projeto consiste em uma WebAPI desenvolvida em .NET Core 6.0, projetada para facilitar a administração e gestão de eventos. A aplicação oferece funcionalidades abrangentes para o gerenciamento de eventos, palestrantes, lotes de eventos e usuários.
 
-## Criando o projeto MVC
+Dentro do projeto contém um diretório com o projeto front-end em Angular para poder rodar e testar a api.
 
-* `dotnet new mvc -n Sds.Events.MVC
+## Pré-requisitos
 
-## Criando o projeto webapi
+- .NET 6.0
+- Node.JS
+- Angular CLI
+- VSCode
+- Visual Studio
+- SQL Server E SQL Management Studio, ou um gerenciador de banco de sua preferência
 
-* `dotnet new webapi -n .WebAPI`
+## Configuração do Ambiente de Desenvolvimento
 
-## Criando o projeto Domímio
+- Clone o projeto na máquina local;
+- Abra a solução "Sds.Events.sln" no Visual Studio;
+- Abra o diretório do projeto angular Sds.Events/Sds.Events.UI no VS Code:
+- Abra terminal (CTRL+SHIFT+'), instale as dependências do projeto angular executando `npm install` dentro do diretório Sds.Events/Sds.Events.UI
 
-* `dotnet new classlib -n Sds.Events.Domain`
+## Como Iniciar o Projeto
 
-## Criando o projeto Repositório
+Explique como iniciar o projeto localmente. Inclua instruções sobre como restaurar pacotes, aplicar migrações, e iniciar o servidor.
 
-* `dotnet new classlib -n Sds.Events.Repository`
+- No visual Studio:
+    - Abra o arquivo appSettings.Development.json e configure o banco de dados de sua preferência;
+    - Clique em executar ou pressione F5. O banco de dados e as tabelas serão criadas automaticamente;
+    
+    ![Alt text](image.png)
 
-## Criando a solution
+```bash
+# Iniciar projeto angular (terminal)
+ng serve ou ng s
 
-* `dotnet new sln -n Sds.Events`
+```
 
-## Adicionando depedência (Adicionar o Domain no Repository)
+## Endpoints da API
 
-* `dotnet add Sds.Events.Repository/Sds.Events.Repository.csproj reference Sds.Events.Domain/Sds.Events.Domain.csproj`
-* `dotnet add Sds.Events.WebAPI/Sds.Events.WebAPI.csproj reference Sds.Events.Repository/Sds.Events.Repository.csproj`
+Acesse os endpoints através do navegador ou usando algum client HTTP como Postman, Insomnia etc.
 
-## Adicionando os projetos na solution
+Acesse os endpoints através desta url: http://localhost:5000/
 
-* `dotnet sln Sds.Events.sln add Sds.Events.WebAPI/Sds.Events.WebAPI.csproj Sds.Events.Repository/Sds.Events.Repository.csproj Sds.Events.Domain/Sds.Events.Domain.csproj`
+![Alt text](image-1.png)
 
-## Adicionando pacotes
+## Contribuição
 
-* `dotnet add package Microsoft.EntityFrameworkCore.Sqlite`
-* `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
-* `dotnet add package Microsoft.EntityFrameworkCore.Design`
-* `dotnet tool install --global dotnet-ef`
-
-## Instalar o bootstrap e fontawesome
-
-* `npm i --save bootstrap @fortawesome/fontawesome-free`
-
-## Migrations e Criar Database
-
-* `dotnet-ef migrations add init`
-    ou
-* `dotnet ef migrations add init`
-
-* `dotnet ef database -h`
-    ou
-* `dotnet ef database update`
-
-## Buildar o projeto/solução
-
-* `dotnet build`
-
-## Restart o aqruivo de configuração
-
-* `dotnet restore`
-
-## Rodar Aplicação .NET
-
-* `dotnet watch run`
-
-## Rodar aplicação angular
-
-* `ng s`
-
-## Entrar no projeto Repository e executar as migratons
-
-* `dotnet ef --startup-project ../Sds.Events.WebAPI migrations add init`
-* `dotnet ef --startup-project ../Sds.Events.WebAPI database update`
-
-## Instalando Ngx Bootstrap
-
-* `npm install ngx-bootstrap --save`
-
-## Adicionando AutoMapper
-
-* `Ctrl+Shift+P`
-* `AutoMapper.Extensions.Microsoft.DependencyInjection`
-
-## Instalando NGx Toastr
-
-* `npm i ngx-toastr`
-
-## Nova Migrations com IdentityContext
-
-* `Entre no projeto repository`
-* `Remova a migrations antiga, depois:`
-* `dotnet ef --startup-project ../Sds.Events.WebAPI migrations add init`
-* `dotnet ef --startup-project ../Sds.Events.WebAPI database update`
-
-## JWT no lado do cliente [ANGULAR]
- * `npm i @auth0/angular-jwt`
-
-## Gerar Guardião
-* `ng g g auth/auth`
-
-## Máscara
-* `npm i ngx-mask`
-
-## Máscara R$ (Dinheiro) Reais
-* `npm i ngx-currency`
-
-## Bootswatch
-* `npm i bootswatch`
-
-## Antes de fazer Deployment, Instalar:
-* `npm install source-map-explorer --save-dev`
-## Deployment
-* `ng build --prod --source-map`
-
-## Carregamento de tela
-* `npm i ngx-spinner --save`
-
-## Atualizar versões do projeto
-* `ng update @angular/core @angular/cli`
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas, enviar solicitações de pull e participar do desenvolvimento deste projeto. Consulte o [CONTRIBUTING.md](CONTRIBUTING.md#como-contribuir)
+ para obter orientações sobre como contribuir.
