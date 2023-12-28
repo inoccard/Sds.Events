@@ -28,7 +28,7 @@
           <div class="form-row">
             <div class="form-group col-md-8">
               <label>Local</label>
-              <input type="text" class="form-control" [(ngModel)]="event.local" [ngClass]="{'is-invalid': registerForm.get('local').errors 
+              <input type="text" class="form-control" [(ngModel)]="event.local" [ngClass]="{'is-invalid': registerForm.get('local').errors
               && registerForm.get('local').touched}" formControlName="local" placeholder="">
               <div *ngIf="registerForm.get('local').hasError('required')
               && registerForm.get('local').touched" class="invalid-feedback">
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group col-md-4">
               <label>Data e Hora</label>
-              <input type="datetime-local" class="form-control" [(ngModel)]="event.eventDate" bsDatepicker [ngClass]="{'is-invalid': registerForm.get('eventDate').errors 
+              <input type="datetime-local" class="form-control" [(ngModel)]="event.eventDate" bsDatepicker [ngClass]="{'is-invalid': registerForm.get('eventDate').errors
             && registerForm.get('eventDate').touched}" formControlName="eventDate" placeholder="">
               <div *ngIf="registerForm.get('eventDate').hasError('required')
             && registerForm.get('eventDate').touched" class="invalid-feedback">
@@ -48,7 +48,7 @@
           <div class="form-row">
             <div class="form-group col-md-2">
               <label>Qtd Pessoas</label>
-              <input type="text" [(ngModel)]="event.personQtd" [ngClass]="{'is-invalid': registerForm.get('personQtd').errors 
+              <input type="text" [(ngModel)]="event.personQtd" [ngClass]="{'is-invalid': registerForm.get('personQtd').errors
               && registerForm.get('personQtd').touched}" class="form-control is-invalid" formControlName="personQtd"
                 placeholder="">
               <div *ngIf="registerForm.get('personQtd').hasError('required')
@@ -63,7 +63,7 @@
 
             <div class="form-group col-md-4">
               <label>Telefone</label>
-              <input type="text" mask="(00) 00000-0000" class="form-control" [(ngModel)]="event.contactPhone" [ngClass]="{'is-invalid': registerForm.get('contactPhone').errors 
+              <input type="text" mask="(00) 00000-0000" class="form-control" [(ngModel)]="event.contactPhone" [ngClass]="{'is-invalid': registerForm.get('contactPhone').errors
             && registerForm.get('contactPhone').touched}" formControlName="contactPhone" placeholder="(00) 00000-0000">
               <div *ngIf="registerForm.get('contactPhone').hasError('required')
             && registerForm.get('contactPhone').touched" class="invalid-feedback">
@@ -72,7 +72,7 @@
             </div>
             <div class="form-group col-md-6">
               <label>Email</label>
-              <input type="text" class="form-control" [(ngModel)]="event.contactEmail" [ngClass]="{'is-invalid': registerForm.get('contactEmail').errors 
+              <input type="text" class="form-control" [(ngModel)]="event.contactEmail" [ngClass]="{'is-invalid': registerForm.get('contactEmail').errors
             && registerForm.get('contactEmail').touched}" formControlName="contactEmail" placeholder="e-mail">
               <div *ngIf="registerForm.get('contactEmail').hasError('required')
             && registerForm.get('contactEmail').touched" class="invalid-feedback">
@@ -107,7 +107,7 @@
                   </div>
                   <div class="form-group col-md-4">
                     <label>Preço</label>
-                    <input type="text" class="form-control" 
+                    <input type="text" class="form-control"
                     currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
                     [ngClass]="{'is-invalid': lots.get(i+'.price').errors && lots.get(i+'.price').touched}" formControlName="price" placeholder="R$ 0,00">
                   </div>
@@ -211,8 +211,9 @@
           </p>
           <div class="row">
             <div class="icon-block col-md-8 iconesSociais">
-              <a class="mr-3" href="{{socialNetworks.get(l+'.url').value}}" 
+              <a class="mr-3" href="{{socialNetworks.get(l+'.url').value}}"
                   *ngFor="let social of socialNetworks.controls; let l=index"
+                  rel="noopener noreferrer"
                   target="_blank">
                 <i class="{{socialNetworks.get(l+'.name').value}}"></i>
               </a>
