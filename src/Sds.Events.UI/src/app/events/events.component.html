@@ -1,19 +1,22 @@
 <app-title [title]="title"></app-title>
-<div class="d-flex">
-  <div class="form-inline mr-auto" action="" method="get">
-    <div class="form-group mb-2">
-      <input type="text" class="form-control mr-2" placeholder="Buscar" [(ngModel)]="filterList" />
-      <button class="btn btn-outline-success">Buscar</button>
-    </div>
+<div class="row mb-2">
+  <div class="col-md-12" action="" method="get">
+      <div class="input-group">
+        <input type="text" class="form-control mr-2" placeholder="Buscar" [(ngModel)]="filterList" />
+          <div class="input-group-append">
+              <button class="btn btn-outline-success" type="button">Pesquisar</button>
+          </div>
+      </div>
   </div>
-  <div>
+</div>
+<div class="row">
+  <div class="col-md-12">
     <button class="btn btn-outline-primary" (click)="newEvent(template)">
       <i class="fa fa-plus-circle"></i>&nbsp;
       Novo Registro
     </button>
   </div>
 </div>
-<h3>Filtro {{filterList}}</h3>
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>

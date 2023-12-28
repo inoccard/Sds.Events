@@ -1,21 +1,22 @@
 import { Events } from './../../models/Events';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
 
-  events: any = [];
-  baseURL = 'http://localhost:5000/api/v1/event/';
+  baseURL = `${environment.apiEventBaseUrl}event/`;
 
   constructor(private http: HttpClient) {
     this.getEvents();
   }
-  
+
   getEvents() {
+    console.log(this.baseURL)
     return this.http.get(`${this.baseURL}events`);
   }
 

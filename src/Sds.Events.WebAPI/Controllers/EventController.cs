@@ -47,8 +47,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não é possível obtér a lista de eventos: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não é possível obtér a lista de eventos: {e.Message}");
             }
         }
 
@@ -73,8 +72,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception)
             {
-                AddMessage("Não é possível obter o evento, verifique o id informado e tente novamente");
-                return CustomResponse();
+                return HandleException("Não é possível obter o evento, verifique o id informado e tente novamente");
             }
         }
 
@@ -99,8 +97,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não é possível obtér o evento: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não é possível obtér o evento: {e.Message}");
             }
         }
 
@@ -130,8 +127,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não é possível criar o evento: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não é possível criar o evento: {e.Message}");
             }
         }
 
@@ -182,8 +178,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não é possível atualizar o evento: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não é possível atualizar o evento: {e.Message}");
             }
         }
 
@@ -213,8 +208,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não é possível deletar o evento: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não é possível deletar o evento: {e.Message}");
             }
         }
 
@@ -253,8 +247,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não é possível obtér a lista de eventos: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não é possível obtér a lista de eventos: {e.Message}");
             }
         }
 

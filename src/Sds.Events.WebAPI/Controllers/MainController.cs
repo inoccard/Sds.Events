@@ -58,4 +58,11 @@ public abstract class MainController : ControllerBase
 
     private ResponseResult InstatiateValidationProblem(short statusCode)
         => new("Ocorreu um ou mais erros", statusCode, _notifierMessage.GetMessages());
+
+    protected IActionResult HandleException(string errorMessage)
+    {
+        AddMessage(errorMessage);
+        return CustomResponse();
+    }
+
 }
