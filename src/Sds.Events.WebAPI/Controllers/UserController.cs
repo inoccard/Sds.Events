@@ -60,8 +60,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não foi possível obter usuário: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não foi possível obter usuário: {e.Message}");
             }
         }
 
@@ -77,17 +76,18 @@ namespace Sds.Events.WebAPI.Controllers
         {
             try
             {
-                if (!await CheckUserExists(userLogin))
+                var user = await GetUserByUsername(userLogin.UserName);
+
+                if (user == null || !await _userManager.CheckPasswordAsync(user, userLogin.PasswordHash))
                 {
                     AddMessage("Não foi possível fazer login: usuário ou senha inválidos");
                     return CustomResponse(statusCode: 401);
                 }
-                var appUser = await _userManager.Users.FirstOrDefaultAsync(u => u.NormalizedUserName == userLogin.UserName.ToUpper());
 
                 var result = new
                 {
-                    token = await GenerateJwToken(appUser),
-                    user = MapUser(appUser)
+                    token = await GenerateJwToken(user),
+                    user = MapUser(user)
                 };
 
                 return CustomResponse(result);
@@ -95,8 +95,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não foi possível fazer login: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não foi possível fazer login: {e.Message}");
             }
         }
 
@@ -130,8 +129,7 @@ namespace Sds.Events.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                AddMessage($"Não foi possível criar usuário: {e.Message}");
-                return CustomResponse();
+                return HandleException($"Não foi possível criar usuário: {e.Message}");
             }
         }
 
@@ -144,18 +142,17 @@ namespace Sds.Events.WebAPI.Controllers
         /// <returns></returns>
         private async Task<string> GenerateJwToken(User user)
         {
-            var claims = new List<Claim> {
-                new(ClaimTypes.NameIdentifier, user.Id.ToString ()),
+            var claims = new List<Claim>
+            {
+                new(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new(ClaimTypes.Name, user.UserName)
             };
 
             var roles = await _userManager.GetRolesAsync(user);
 
-            foreach (var role in roles)
-                claims.Add(new Claim(ClaimTypes.Role, role));
+            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
-            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_config.GetSection("AppSettings:Token").Value));
-
+            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_config["AppSettings:Token"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -178,13 +175,11 @@ namespace Sds.Events.WebAPI.Controllers
             return userDto;
         }
 
-        private async Task<bool> CheckUserExists(UserLoginDto userLogin)
+        private async Task<User> GetUserByUsername(string username)
         {
-            var user = await _userManager.FindByNameAsync(userLogin.UserName);
-            return await _userManager.CheckPasswordAsync(user, userLogin.PasswordHash);
-
+            return await _userManager.Users
+                .FirstOrDefaultAsync(u => u.NormalizedUserName == username.ToUpper());
         }
-
         #endregion private Methods
     }
 }
