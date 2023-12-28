@@ -1,16 +1,17 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Sds.Events.Domain.Core;
 using Sds.Events.Domain.Identity;
 using Sds.Events.WebAPI.Dtos;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,16 @@ namespace Sds.Events.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/v{version:apiVersion}/user")]
-    public class UserController : ControllerBase
+    public class UserController : MainController
     {
         private readonly IConfiguration _config;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IMapper _mapper;
 
-        public UserController(IConfiguration config, UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper)
+        public UserController(IConfiguration config, UserManager<User> userManager, SignInManager<User> signInManager,
+            IMapper mapper, INotifierMessage notifier)
+        : base(notifier)
         {
             _config = config;
             _userManager = userManager;
@@ -44,14 +47,21 @@ namespace Sds.Events.WebAPI.Controllers
         {
             try
             {
-                var user = await _userManager.FindByNameAsync(userName);
+                var user = await _signInManager.UserManager.FindByNameAsync(userName);
+                if (user == null)
+                {
+                    AddMessage("Usuário não encontrado");
+                    return CustomResponse();
+                }
+
                 var userToReturn = _mapper.Map<UserDto>(user);
                 userToReturn.PasswordHash = null;
-                return Ok(userToReturn);
+                return CustomResponse(userToReturn);
             }
             catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Não foi possível obter usuário: {e.Message}");
+                AddMessage($"Não foi possível obter usuário: {e.Message}");
+                return CustomResponse();
             }
         }
 
@@ -67,24 +77,26 @@ namespace Sds.Events.WebAPI.Controllers
         {
             try
             {
-                if (await CheckUserExists(userLogin))
+                if (!await CheckUserExists(userLogin))
                 {
-                    var appUser = await _userManager.Users.FirstOrDefaultAsync(u => u.NormalizedUserName == userLogin.UserName.ToUpper());
-
-                    var result = new
-                    {
-                        token = GenerateJwToken(appUser).Result,
-                        user = MapUser(appUser)
-                    };
-
-                    return Ok(result);
+                    AddMessage("Não foi possível fazer login: usuário ou senha inválidos");
+                    return CustomResponse(statusCode: 401);
                 }
+                var appUser = await _userManager.Users.FirstOrDefaultAsync(u => u.NormalizedUserName == userLogin.UserName.ToUpper());
 
-                return Unauthorized("Não foi possível fazer login");
+                var result = new
+                {
+                    token = await GenerateJwToken(appUser),
+                    user = MapUser(appUser)
+                };
+
+                return CustomResponse(result);
+
             }
             catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Não foi possível fazer login: {e.Message}");
+                AddMessage($"Não foi possível fazer login: {e.Message}");
+                return CustomResponse();
             }
         }
 
@@ -99,21 +111,27 @@ namespace Sds.Events.WebAPI.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return CustomResponse(ModelState);
+
                 var user = _mapper.Map<User>(userDto);
                 var result = await _userManager.CreateAsync(user, user.PasswordHash);
-                var userToResult = _mapper.Map<UserDto>(user);
 
-                if (result.Succeeded)
+                if (!result.Succeeded)
                 {
-                    userToResult.PasswordHash = null;
-                    return Created("user", userToResult);
+                    AddMessage("Não foi possível criar usuário");
+                    AddMessageRange(result.Errors.Select(e => e.Description).ToArray());
+                    return CustomResponse();
                 }
 
-                return BadRequest(result.Errors);
+                var userToResult = _mapper.Map<UserDto>(user);
+                userToResult.PasswordHash = null;
+                return CustomResponse(userToResult, 201, "user");
             }
             catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Não foi possível criar usuário: {e.Message}");
+                AddMessage($"Não foi possível criar usuário: {e.Message}");
+                return CustomResponse();
             }
         }
 
@@ -127,8 +145,8 @@ namespace Sds.Events.WebAPI.Controllers
         private async Task<string> GenerateJwToken(User user)
         {
             var claims = new List<Claim> {
-                new Claim (ClaimTypes.NameIdentifier, user.Id.ToString ()),
-                new Claim (ClaimTypes.Name, user.UserName)
+                new(ClaimTypes.NameIdentifier, user.Id.ToString ()),
+                new(ClaimTypes.Name, user.UserName)
             };
 
             var roles = await _userManager.GetRolesAsync(user);
@@ -164,6 +182,7 @@ namespace Sds.Events.WebAPI.Controllers
         {
             var user = await _userManager.FindByNameAsync(userLogin.UserName);
             return await _userManager.CheckPasswordAsync(user, userLogin.PasswordHash);
+
         }
 
         #endregion private Methods
