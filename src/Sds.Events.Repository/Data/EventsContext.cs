@@ -31,20 +31,18 @@ namespace Sds.Events.Repository.Data
         /// <param name="builder"></param>
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
+
             builder.Entity<UserRole>(userRole =>
             {
-                // RelationShip Many To Many
-                userRole.HasKey(ur => new { ur.RoleId, ur.UserId });
                 // um papel que tem muitos usuários e o relacionamento é obrigatório
                 userRole.HasOne(ur => ur.Role)
                 .WithMany(r => r.UserRoles)
-                .HasForeignKey(ur => ur.RoleId)
-                .IsRequired();
+                .HasForeignKey(ur => ur.RoleId);
                 // um usuário com muitos papéis e o relacionamento é obrigatório
                 userRole.HasOne(ur => ur.User)
                 .WithMany(r => r.UserRoles)
-                .HasForeignKey(ur => ur.UserId)
-                .IsRequired();
+                .HasForeignKey(ur => ur.UserId);
             });
 
             builder.Entity<SpeakerEvent>().HasKey(PE => new { PE.EventId, PE.SpeakerId });
@@ -55,7 +53,6 @@ namespace Sds.Events.Repository.Data
                 u.HasIndex(_ => _.UserName).IsUnique();
             });
 
-            base.OnModelCreating(builder);
         }
     }
 }

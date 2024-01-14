@@ -21,8 +21,6 @@ namespace Sds.Events.WebAPI.Dtos
         [Required(ErrorMessage = "Campo obrigatório")]
         [Column(TypeName = "varchar(500)")]
         [DataType(DataType.Password)]
-        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$", 
-            ErrorMessage = "A senha deve ter pelo menos 5 caracteres, incluindo letras, números e caracteres especiais.")]
         public string PasswordHash { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
