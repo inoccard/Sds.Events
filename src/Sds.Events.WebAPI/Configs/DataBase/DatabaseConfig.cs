@@ -10,10 +10,12 @@ public static class DatabaseConfig
 {
     public static void AddDatabaseConfig(this WebApplicationBuilder builder)
     {
-            builder.Services
-                   .AddDbContext<EventsContext>(d => 
-                   d.UseSqlServer(builder.Configuration
-                   .GetConnectionString("DefaultConnection")
-                   ));
+        var connection = builder.Configuration
+                   .GetConnectionString("DefaultConnection");
+
+        builder.Services
+               .AddDbContext<EventsContext>(d =>
+               d.UseSqlServer(connection
+               ));
     }
 }

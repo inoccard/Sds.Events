@@ -23,3 +23,5 @@
 /src/Sds.Events.UI/node_modules
 /.vs/
 /src/Sds.Events.UI/.angular
+/src/bin/Debug
+/src/obj
