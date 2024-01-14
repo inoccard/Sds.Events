@@ -16,7 +16,7 @@ public static class RegisterCors
                        .AllowCredentials());
         });
     }
-    
+
     public static void UseCorsOrigin(this WebApplication app)
     {
         app.UseCors("Sds.Events.UI");
