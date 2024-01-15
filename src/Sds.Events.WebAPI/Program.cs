@@ -1,15 +1,15 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Hosting;
 using Sds.Events.WebAPI.Configs.App;
 using Sds.Events.WebAPI.Configs.Authentication;
-using Sds.Events.WebAPI.Configs.SwaggerConfigurations;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.FileProviders;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
 using Sds.Events.WebAPI.Configs.DataBase;
+using Sds.Events.WebAPI.Configs.SwaggerConfigurations;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 

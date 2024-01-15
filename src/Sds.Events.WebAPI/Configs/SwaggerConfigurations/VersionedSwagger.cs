@@ -90,7 +90,7 @@ namespace Sds.Events.WebAPI.Configs.SwaggerConfigurations
         /// <param name="apiVersionDescriptionProvider"></param>
         public static void UseVersionedSwagger(this IApplicationBuilder app)
         {
-            var provider  = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
+            var provider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
             app.UseSwagger();
 
             //create the UI for swagger
