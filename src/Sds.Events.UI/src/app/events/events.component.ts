@@ -5,6 +5,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal/public_api';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ErrorDetails } from '../shared/ErrorDetails';
 
 @Component({
   selector: 'app-events',
@@ -42,17 +43,30 @@ export class EventsComponent implements OnInit {
     this._filterList = value;
     this.eventsFiltered = this._filterList ? this.filterEvent(this._filterList) : this.events;
   }
-  // Abrir modal
+
+  /**
+   * abrir modal
+   * @param template
+   */
   openModal(template: ModalDirective) {
     this.registerForm.reset();
     template.show();
   }
 
+  /**
+   * criar novo evento
+   * @param template
+   */
   newEvent(template: any) {
     this.event = null;
     this.openModal(template);
   }
 
+  /**
+   * editar
+   * @param template
+   * @param event
+   */
   editEvent(template: ModalDirective, event: Events) {
     this.openModal(template);
     this.event = Object.assign({}, event);
@@ -60,12 +74,21 @@ export class EventsComponent implements OnInit {
     this.registerForm.patchValue(this.event);
   }
 
+  /**
+   * excluir
+   * @param confirm
+   * @param event
+   */
   deleteEvent(confirm: ModalDirective, event: Events) {
     this.openModal(confirm);
     this.event = event;
     this.bodyDeletarEvento = `Tem certeza que deseja excluir o Evento: ${event.theme}, Código: ${event.id}`;
   }
 
+  /**
+   * confirmar excluir
+   * @param confirm
+   */
   confirmDelete(confirm: ModalDirective) {
     this.eventService.deleteEvent(this.event.id).subscribe(
       () => {
@@ -84,22 +107,28 @@ export class EventsComponent implements OnInit {
       (event: { theme: string; }) => event.theme.toLocaleLowerCase().indexOf(filterBy) !== -1
     );
   }
-  // mostrar | ocultar imagem
+
+  /**
+   * mostrar | ocultar imagem
+   */
   alterImg() {
     this.showImg = !this.showImg;
   }
-  // Obter eventos
-  getEvents() {
+  /**
+   * obter eventos
+   */
+  getEvents(): void {
     this.eventService.getEvents().subscribe({
       next: (events: Events[]) => {
         this.events = events;
         this.eventsFiltered = this.events;
-      }, error: (error: any) => {
+      },
+      error: (exception: any) => {
         this.spinner.hide();
-        const toast = this.toastr.error(`Erro ao obter eventos: ${JSON.stringify(error)}`);
-        console.log(JSON.stringify(error.error));
-        console.log(toast.message);
-      }, complete: () => {
+        const errorDetails: ErrorDetails = exception.error;
+        this.handleErrorResponse(errorDetails);
+      },
+      complete: () => {
         return this.spinner.hide();
       }
     });
@@ -155,4 +184,24 @@ export class EventsComponent implements OnInit {
       console.log(event);
     }
   }
+
+  /**
+   * tratamento de erro
+   * @param errorDetails
+   */
+  private handleErrorResponse(errorDetails: ErrorDetails): void {
+    let errorMessage = '';
+
+    // Adiciona as mensagens do array à mensagem de erro
+    if (errorDetails.messages && errorDetails.messages.length > 0) {
+      errorMessage += '<ul>';
+      errorDetails.messages.forEach(message => {
+        errorMessage += `<li>${message}</li>`;
+      });
+
+      errorMessage += '</ul>';
+    }
+    this.toastr.error(errorMessage, errorDetails.title, { enableHtml: true });
+  }
+
 }
