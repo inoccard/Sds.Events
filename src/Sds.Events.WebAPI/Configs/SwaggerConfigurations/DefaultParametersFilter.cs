@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace IATec.DocSearch.Api.SwaggerConfigurations
+namespace Sds.Events.WebAPI.Configs.SwaggerConfigurations
 {
     public class DefaultParametersFilter : IParameterFilter
     {

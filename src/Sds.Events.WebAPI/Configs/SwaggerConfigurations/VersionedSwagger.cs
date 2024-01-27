@@ -1,5 +1,4 @@
-﻿using IATec.DocSearch.Api.SwaggerConfigurations;
-using IdentityServer4.AccessTokenValidation;
+﻿using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,7 +43,7 @@ namespace Sds.Events.WebAPI.Configs.SwaggerConfigurations
                     //describe the info
                     var info = new OpenApiInfo
                     {
-                        Title = $"DocSearch {description.GroupName}",
+                        Title = $"Event {description.GroupName}",
                         Version = description.ApiVersion?.ToString(),
                         Description = "Event Api",
                         License = new OpenApiLicense()
