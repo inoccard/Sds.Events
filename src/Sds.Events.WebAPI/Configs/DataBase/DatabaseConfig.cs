@@ -15,7 +15,8 @@ public static class DatabaseConfig
 
         builder.Services
                .AddDbContext<EventsContext>(d =>
-               d.UseSqlServer(connection
+               d.UseSqlServer(connection,
+               sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()
                ));
     }
 }
