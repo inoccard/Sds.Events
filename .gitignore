@@ -25,3 +25,5 @@
 /src/Sds.Events.UI/.angular
 /src/bin/Debug
 /src/obj
+/src/Sds.Events.Tests/bin/Debug/net6.0
+/src/Sds.Events.Tests/obj
