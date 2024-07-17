@@ -1,6 +1,6 @@
 # Sds.Events (Gerenciamento de Eventos)
 
-Este projeto é uma WebAPI em .NET Core 6.0 para gerenciais e administrar eventos, palestrantes, lotes de eventos e usuários.
+Este projeto é uma WebAPI em .NET Core 6.0 + Angular para gerenciair e administrar eventos, palestrantes, lotes de eventos e usuários.
 
 ## Índice
 
@@ -15,7 +15,7 @@ Este projeto é uma WebAPI em .NET Core 6.0 para gerenciais e administrar evento
 
 ## Sobre
 
-Este projeto consiste em uma WebAPI desenvolvida em .NET Core 6.0, projetada para facilitar a administração e gestão de eventos. A aplicação oferece funcionalidades abrangentes para o gerenciamento de eventos, palestrantes, lotes de eventos e usuários.
+Este projeto consiste em uma WebAPI desenvolvida em .NET Core 6.0 com um projeto para o front-end (Angular), projetada para facilitar a administração e gestão de eventos. A aplicação oferece funcionalidades abrangentes para o gerenciamento de eventos, palestrantes, lotes de eventos e usuários.
 
 Dentro do projeto contém um diretório com o projeto front-end em Angular para poder rodar e testar a api.
 
